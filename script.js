@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         bs.to Startseite Serien Skript
 // @namespace    https://github.com/Sly321/
-// @version      0.2.1
+// @version      0.2.2
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
 // @author       Slyox
 // @icon		 http://s.bs.to/favicon.ico
@@ -17,7 +17,12 @@ var FantasyString = '<ul>' +
 '<li><a href="serie/The-Originals">The Originals</a></li>' + 
 '</ul>';
 
-var AnimeString = '<ul><li><a href="">Naruto Shippuden</a></li><li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li><li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li><li><a href="http://bs.to/serie/Attack-on-Titan">Shingeki no Kyojin</a></li></ul>';
+var AnimeString = '<ul>' + 
+'<li><a href="">Naruto Shippuden</a></li>' + 
+'<li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li>' + 
+'<li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li>' + 
+'<li><a href="http://bs.to/serie/Attack-on-Titan">Shingeki no Kyojin</a></li>' + 
+'</ul>';
 
 var column1 = document.getElementById("column1");
 var column2 = document.getElementById("column2");
