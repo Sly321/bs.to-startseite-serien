@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         bs.to Startseite Serien Skript
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
-// @version      0.2.3.2
+// @version      0.2.4
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
 // @author       Sly321
 // @icon		 http://s.bs.to/favicon.ico
 // @match        http://bs.to/
 // @include      http://bs.to/
 // @grant        none
-// @updateURL	 https://github.com/Sly321/bs.to-startseite-serien/raw/master/script.js
+// @updateURL	 https://cdn.rawgit.com/Sly321/bs.to-startseite-serien/master/script.js
 // ==/UserScript==
 
 var FantasyString = '<ul>' + 
