@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         bs.to Startseite Serien Skript
 // @namespace    http://your.homepage/
-// @version      0.1
+// @version      0.2
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
 // @author       Slyox
 // @icon		 http://s.bs.to/favicon.ico
