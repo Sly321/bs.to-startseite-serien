@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         bs.to Startseite Serien Skript
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
-// @version      0.2.1
+// @version      0.2.3
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
 // @author       Sly321
 // @icon		 http://s.bs.to/favicon.ico
