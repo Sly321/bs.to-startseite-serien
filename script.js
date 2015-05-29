@@ -16,5 +16,5 @@ var AnimeString = '<ul><li><a href="">Naruto Shippuden</a></li><li><a href="seri
 var column1 = document.getElementById("column1");
 var column2 = document.getElementById("column2");
 
-column1.innerHTML = "<br><h2>Fantasy</h2>" + FantasyString;
+column1.innerHTML = "<br><h2>Serien</h2>" + FantasyString;
 column2.innerHTML = "<br><h2>Anime</h2>" + AnimeString;
