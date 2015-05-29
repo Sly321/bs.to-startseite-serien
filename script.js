@@ -4,8 +4,9 @@
 // @author       Sly321
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
 // @include      http://bs.to/
+// @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.2.4.1
+// @version      0.2.5
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.js
 // ==/UserScript==
@@ -21,7 +22,8 @@ var AnimeString = '<ul>' +
 '<li><a href="">Naruto Shippuden</a></li>' + 
 '<li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li>' + 
 '<li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li>' + 
-'<li><a href="http://bs.to/serie/Attack-on-Titan">Shingeki no Kyojin</a></li>' + 
+'<li><a href="serie/Attack-on-Titan">Shingeki no Kyojin</a></li>' + 
+'<li><a href="serie/One-Piece">One Piece</a></li>' + 
 '</ul>';
 
 var column1 = document.getElementById("column1");
