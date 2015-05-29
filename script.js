@@ -7,7 +7,7 @@
 // @icon		 http://s.bs.to/favicon.ico
 // @version      0.2.4.1
 // @grant        none
-// @updateURL	 https://cdn.rawgit.com/Sly321/bs.to-startseite-serien/master/script.js
+// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.js
 // ==/UserScript==
 
 var FantasyString = '<ul>' + 
