@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         bs.to Startseite Serien Skript
-// @namespace    https://github.com/Sly321/
-// @version      0.2.2
+// @namespace    https://github.com/Sly321/bs.to-startseite-serien
+// @version      0.2.1
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
-// @author       Slyox
+// @author       Sly321
 // @icon		 http://s.bs.to/favicon.ico
 // @match        http://bs.to/
 // @grant        none
-// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.js
+// @updateURL	 https://github.com/Sly321/bs.to-startseite-serien/raw/master/script.js
 // ==/UserScript==
 
 var FantasyString = '<ul>' + 
@@ -29,3 +29,18 @@ var column2 = document.getElementById("column2");
 
 column1.innerHTML = "<br><h2>Serien</h2>" + FantasyString;
 column2.innerHTML = "<br><h2>Anime</h2>" + AnimeString;
+
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+};
+
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = 0, len = this.length; i < len; i++) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+};
+
+var teaser = document.getElementById('teaser');
+teaser.remove();
