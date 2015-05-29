@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         bs.to Startseite Serien Skript
-// @namespace    http://your.homepage/
+// @namespace    https://github.com/Sly321/
 // @version      0.2
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
 // @author       Slyox
 // @icon		 http://s.bs.to/favicon.ico
 // @match        http://bs.to/
 // @grant        none
-// @updateURL	 https://github.com/Seglormeister/Pr0gramm.com-by-Seglor/raw/master/pr0gramm_dick.user.js
+// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.js
 // ==/UserScript==
 
 var FantasyString = '<ul><li><a href="serie/Supernatural-Zur-Hoelle-mit-dem-Boesen">Supernatural</a></li><li><a href="serie/Vampire-Diaries">Vampire Diaries</a></li><li><a href="serie/Game-of-Thrones">Game of Thrones</a></li><li><a href="serie/The-Originals">The Originals</a></li></ul>';
