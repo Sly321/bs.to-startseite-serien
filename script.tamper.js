@@ -6,7 +6,7 @@
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.2.6
+// @version      0.2.7
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.tamper.js
 // ==/UserScript==
