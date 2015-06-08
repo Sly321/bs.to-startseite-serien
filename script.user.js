@@ -6,7 +6,7 @@
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.2.3
+// @version      1.0.1
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js
 // ==/UserScript==
@@ -16,8 +16,26 @@ var LeftString = '<ul>' +
 '<li><a href="serie/Vampire-Diaries">Vampire Diaries</a></li>' + 
 '<li><a href="serie/Game-of-Thrones">Game of Thrones</a></li>' + 
 '<li><a href="serie/The-Originals">The Originals</a></li>' + 
+'<li><a href="serie/The-Blacklist">The Blacklist</a></li>' +
+'<li><a href="serie/Suits">Suits</a></li>' +
+'<li><a href="serie/Forever">Forever</a></li>' +
+'<li><a href="serie/Gotham">Gotham</a></li>' +
+'<li><a href="serie/Agents-of-S-H-I-E-L-D">Agents-of-S-H-I-E-L-D</a></li>' +
+'<li><a href="serie/The-Flash">The Flash</a></li>' +
+'<li><a href="serie/Elementary">Elementary</a></li>' +
+'<li><a href="serie/House-of-Cards">House of Cards</a></li>' +
+'<li><a href="serie/Better-Call-Saul">Better Call Saul</a></li>' +
+'<li><a href="serie/iZombie">iZombie</a></li>' +
+'<li><a href="serie/Arrow">Arrow</a></li>' +
+'<li><a href="serie/Marvel-s-Daredevil">Daredevil</a></li>' +
+'<li><a href="serie/Hannibal">Hannibal</a></li>' +
+'<li><a href="serie/The-Strain">The Strain</a></li>' +
+'<li><a href="serie/The-Tomorrow-People">The Tomorrow People</a></li>' +
+'<li><a href="serie/The-100">The 100</a></li>' +
+'<li><a href="serie/Revolution">Revolution</a></li>' +
+'<li><a href="serie/Extant">Extant</a></li>' +
 '</ul>' +
-'<br><h2>Sitcom</h2><ul>' + 
+'<br><h2>Sitcoms</h2><ul>' + 
 '<li><a href="serie/The-Big-Bang-Theory">The Big Bang Theory</a></li>' + 
 '</ul>';
 
@@ -32,7 +50,7 @@ var AnimeString = '<ul>' +
 '<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' + 
 '<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' + 
 '<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' + 
-'<li><a href="serie/Btooom">Btooom!</a></li>' + 
+'<li><a href="serie/Btooom">Btooom!!</a></li>' + 
 '</ul>';
 
 var column1 = document.getElementById("column1");
