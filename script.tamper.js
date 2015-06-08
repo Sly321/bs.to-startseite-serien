@@ -6,17 +6,20 @@
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.2.8.1
+// @version      0.2.9
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.tamper.js
 // ==/UserScript==
 
-var FantasyString = '<ul>' + 
+var LeftString = '<ul>' + 
 '<li><a href="serie/Supernatural-Zur-Hoelle-mit-dem-Boesen">Supernatural</a></li>' + 
 '<li><a href="serie/Vampire-Diaries">Vampire Diaries</a></li>' + 
 '<li><a href="serie/Game-of-Thrones">Game of Thrones</a></li>' + 
 '<li><a href="serie/The-Originals">The Originals</a></li>' + 
-'</ul>';
+'</ul>' +
+'<br><h2>Sitcoms</h2><ul>' + 
+'<li><a href="serie/The-Big-Bang-Theory">The Big Bang Theory</a></li>' + 
+'</ul>';;
 
 var AnimeString = '<ul>' + 
 '<li><a href="serie/Naruto">Naruto</a></li>' + 
@@ -34,7 +37,7 @@ var AnimeString = '<ul>' +
 var column1 = document.getElementById("column1");
 var column2 = document.getElementById("column2");
 
-column1.innerHTML = "<br><h2>Serien</h2>" + FantasyString;
+column1.innerHTML = "<br><h2>Serien</h2>" + LeftString;
 column2.innerHTML = "<br><h2>Anime</h2>" + AnimeString;
 
 Element.prototype.remove = function() {
