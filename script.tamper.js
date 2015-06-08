@@ -6,7 +6,7 @@
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.2.7
+// @version      0.2.8
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.tamper.js
 // ==/UserScript==
@@ -28,6 +28,7 @@ var AnimeString = '<ul>' +
 '<li><a href="serie/One-Piece">One Piece</a></li>' + 
 '<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' + 
 '<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' + 
+'<li><img src="//s.bs.to/img/cover/1544.jpg" alt="Cover"><a href="serie/No-Game-No-Life">No Game No Life</a></li>' + 
 '</ul>';
 
 var column1 = document.getElementById("column1");
