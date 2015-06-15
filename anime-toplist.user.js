@@ -6,7 +6,7 @@
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.5
+// @version      0.5.1
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
