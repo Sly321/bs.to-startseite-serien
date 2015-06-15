@@ -8,10 +8,18 @@
 // @icon		 http://s.bs.to/favicon.ico
 // @version      0.2
 // @grant        none
+// @require		 http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
+// @require		 https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
+// @grant        GM_addStyle
+// @grant        GM_getResourceText
+// @resource     customCSS https://jqueryui.com/resources/demos/style.css
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
-document.getElementsByTagName('footer')[0].innerHTML = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' + 
+var newCSS = GM_getResourceText ("customCSS");
+GM_addStyle (newCSS);
+
+$('footer').append('<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' + 
 '<table class="inner" style="min-width:0;" align="center"><tbody><tr><td align="center">' +
 '<a href="serie/sword-art-online">' +
 '<img style="margin: 10px;" class="tip" title="1# Sword Art Online II" width="150" height="190" src="//cdn.proxer.me/cover/7697.jpg">' +
@@ -412,4 +420,20 @@ document.getElementsByTagName('footer')[0].innerHTML = '<div style="min-width:0;
 '<a href="/info/1600#top">' +
 '<img style="margin: 10px;" class="tip" title="100# Kore wa Zombie Desu ka?" width="150" height="190" src="//cdn.proxer.me/cover/1600.jpg">' +
 '</a>' +
-'</td></tr><tr><td colspan="5"></td></tr></tbody></table>From http://proxer.me/?set=popular#top';
+'</td></tr><tr><td colspan="5"></td></tr></tbody></table>' + 
+'<div id="tabs">' +
+ '<ul>' +
+    '<li><a href="#tabs-1">Nunc tincidunt</a></li>' +
+    '<li><a href="#tabs-2">Proin dolor</a></li>' +
+  '</ul>' +
+  '<div id="tabs-1">' +
+    '<p>Proin elit ipsum. Nunc tristique tempus lectus.</p>' +
+  '</div>' +
+  '<div id="tabs-2">' +
+    '<p>Morbi   et purus.</p>' +
+  '</div>' +
+'</div>');
+
+$(function() {
+    $( "#tabs" ).tabs();
+});
