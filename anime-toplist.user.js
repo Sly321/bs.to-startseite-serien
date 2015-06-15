@@ -2,11 +2,11 @@
 // @name         bs.to Top Anime Script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @description  Zeigt dir eine Anime Toplist auf der Startseite an 30/100 verlinkt.
+// @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.4
+// @version      0.5
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -14,8 +14,24 @@
 
 $("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">');
 
+function addGlobalStyle(css) {
+    var head, style;
+    head = document.getElementsByTagName('head')[0];
+    if (!head) { return; }
+    style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = css;
+    head.appendChild(style);
+}
+
+
+addGlobalStyle('.ui-state-default a { color: #555555; background-color: #BBBBFF; text-decoration: none; }');
+addGlobalStyle('.ui-state-active a, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { background: #6666FF; font-weight: normal; color: #212121; }');
+addGlobalStyle('.ui-state-hover a { background: #9A9AFF; font-weight: normal; color: #212121; }');
+addGlobalStyle('.ui-widget-content { background: #FFFFFF; margin: 0px; padding: 0px; border: 0px }');
+
 var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' + 
-'<table class="inner" style="min-width:0;" align="center"><tbody><tr><td align="center">' +
+'<table class="inner" style="min-width:0;margin-left: 5px;" align="center"><tbody><tr><td align="center">' +
 '<a href="serie/sword-art-online">' +
 '<img style="margin: 10px;" class="tip" title="1# Sword Art Online II" width="150" height="190" src="//cdn.proxer.me/cover/7697.jpg">' +
 '</a>' +
@@ -417,12 +433,20 @@ var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</
 '</a>' +
 '</td></tr><tr><td colspan="5"></td></tr></tbody></table>';
 
-$('footer').html('<div id="tabs"><ul><li><a href="#tabs-1">proxer.me</a></li><li><a href="#tabs-2">another</a></li>' +
-'</ul><div id="tabs-1" style="display: block;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">' +
+var other = '<div align="center" style="margin-top: 20px">Platzhalter links:<br>' +
+'<a href="http://www.animenewsnetwork.com/encyclopedia/ratings-anime.php">Anime News Network</a><br>' +
+'<a href="http://www.anisearch.com/anime/toplist">Anisearch</a><br>' +
+'<a href="http://www.eliteanimes.com/anime/toplist/">Eliteanimes</a><br>' +
+'<a href="http://proxer.me/?set=popular#top">Proxer</a><br>' +
+'</div>';
+
+
+$('footer').html('<div id="tabs"><ul><li><a href="#tabs-1">proxer.me</a></li><li><a href="#tabs-2">Links</a></li>' +
+'</ul><div id="tabs-1" style="display: block; padding: 0px;">' +
 proxerAnimes + 
 '</div>' +
-'<div id="tabs-2" style="display: block;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">' +
-'<p>Kommt i.wann</p>' +
+'<div id="tabs-2" style="display: block; padding: 0px;">' +
+other +
 '</div>' +
 '</div>');
 
