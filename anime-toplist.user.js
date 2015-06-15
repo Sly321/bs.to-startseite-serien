@@ -433,7 +433,7 @@ var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</
 '</a>' +
 '</td></tr><tr><td colspan="5"></td></tr></tbody></table>';
 
-var other = '<div align="center" style="margin-top: 20px">Platzhalter links:<br>' +
+var other = '<div align="center" style="margin-top: 20px; margin-bottom: 100px;">Platzhalter links:<br>' +
 '<a href="http://www.animenewsnetwork.com/encyclopedia/ratings-anime.php">Anime News Network</a><br>' +
 '<a href="http://www.anisearch.com/anime/toplist">Anisearch</a><br>' +
 '<a href="http://www.eliteanimes.com/anime/toplist/">Eliteanimes</a><br>' +
