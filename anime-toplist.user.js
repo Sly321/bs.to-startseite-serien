@@ -2,11 +2,11 @@
 // @name         bs.to Top Anime Script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @description  Zeigt dir eine Anime Toplist auf der Startseite an 15/100 verlinkt.
+// @description  Zeigt dir eine Anime Toplist auf der Startseite an 30/100 verlinkt.
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.1
+// @version      0.2
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
@@ -77,39 +77,39 @@ document.getElementsByTagName('footer')[0].innerHTML = '<div style="min-width:0;
 '<img style="margin: 10px;" class="tip" title="16# No Game No Life" width="150" height="190" src="//cdn.proxer.me/cover/6587.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/9651#top">' +
+'<a href="serie/Akatsuki-no-Yona">' +
 '<img style="margin: 10px;" class="tip" title="17# Akatsuki no Yona" width="150" height="190" src="//cdn.proxer.me/cover/9651.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/9219#top">' +
+'<a href="serie/High-School-DxD-BorN">' +
 '<img style="margin: 10px;" class="tip" title="18# High School DxD BorN" width="150" height="190" src="//cdn.proxer.me/cover/9219.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/8606#top">' +
+'<a href="serie/Ao-Haru-Ride">' +
 '<img style="margin: 10px;" class="tip" title="19# Ao Haru Ride" width="150" height="190" src="//cdn.proxer.me/cover/8606.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/10393#top">' +
+'<a href="serie/Death-Parade">' +
 '<img style="margin: 10px;" class="tip" title="20# Death Parade" width="150" height="190" src="//cdn.proxer.me/cover/10393.jpg">' +
 '</a>' +
 '</td></tr><tr><td align="center">' +
-'<a href="/info/8455#top">' +
+'<a href="serie/Zankyou-no-Terror">' +
 '<img style="margin: 10px;" class="tip" title="21# Zankyou no Terror" width="150" height="190" src="//cdn.proxer.me/cover/8455.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/9918#top">' +
+'<a href="serie/Shinmai-Maou-no-Testament">' +
 '<img style="margin: 10px;" class="tip" title="22# Shinmai Maou no Testament" width="150" height="190" src="//cdn.proxer.me/cover/9918.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/8476#top">' +
+'<a href="serie/DRAMAtical-Murder">' +
 '<img style="margin: 10px;" class="tip" title="23# DRAMAtical Murder" width="150" height="190" src="//cdn.proxer.me/cover/8476.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/11065#top">' +
+'<a href="serie/Owari-no-Seraph">' +
 '<img style="margin: 10px;" class="tip" title="24# Owari no Seraph" width="150" height="190" src="//cdn.proxer.me/cover/11065.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="/info/8438#top">' +
+'<a href="serie/Log-Horizon">' +
 '<img style="margin: 10px;" class="tip" title="25# Log Horizon Season 2" width="150" height="190" src="//cdn.proxer.me/cover/8438.jpg">' +
 '</a>' +
 '</td></tr><tr><td align="center">' +
