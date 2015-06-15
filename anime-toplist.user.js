@@ -6,20 +6,15 @@
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.2
+// @version      0.4
 // @grant        none
-// @require		 http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
-// @require		 https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
-// @grant        GM_addStyle
-// @grant        GM_getResourceText
-// @resource     customCSS https://jqueryui.com/resources/demos/style.css
+// @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
-var newCSS = GM_getResourceText ("customCSS");
-GM_addStyle (newCSS);
+$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">');
 
-$('footer').append('<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' + 
+var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' + 
 '<table class="inner" style="min-width:0;" align="center"><tbody><tr><td align="center">' +
 '<a href="serie/sword-art-online">' +
 '<img style="margin: 10px;" class="tip" title="1# Sword Art Online II" width="150" height="190" src="//cdn.proxer.me/cover/7697.jpg">' +
@@ -420,18 +415,15 @@ $('footer').append('<div style="min-width:0;" align="center"><h1>Anime Toplist</
 '<a href="/info/1600#top">' +
 '<img style="margin: 10px;" class="tip" title="100# Kore wa Zombie Desu ka?" width="150" height="190" src="//cdn.proxer.me/cover/1600.jpg">' +
 '</a>' +
-'</td></tr><tr><td colspan="5"></td></tr></tbody></table>' + 
-'<div id="tabs">' +
- '<ul>' +
-    '<li><a href="#tabs-1">Nunc tincidunt</a></li>' +
-    '<li><a href="#tabs-2">Proin dolor</a></li>' +
-  '</ul>' +
-  '<div id="tabs-1">' +
-    '<p>Proin elit ipsum. Nunc tristique tempus lectus.</p>' +
-  '</div>' +
-  '<div id="tabs-2">' +
-    '<p>Morbi   et purus.</p>' +
-  '</div>' +
+'</td></tr><tr><td colspan="5"></td></tr></tbody></table>';
+
+$('footer').html('<div id="tabs"><ul><li><a href="#tabs-1">proxer.me</a></li><li><a href="#tabs-2">another</a></li>' +
+'</ul><div id="tabs-1" style="display: block;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">' +
+proxerAnimes + 
+'</div>' +
+'<div id="tabs-2" style="display: block;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">' +
+'<p>Kommt i.wann</p>' +
+'</div>' +
 '</div>');
 
 $(function() {
