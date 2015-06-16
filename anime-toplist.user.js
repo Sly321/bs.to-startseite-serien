@@ -4,11 +4,10 @@
 // @author       Sly321
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
-// @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.5.1
+// @version      0.6
 // @grant        none
-// @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
+// @require		 http://code.jquery.com/ui/1.11.4/jquery-ui.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
@@ -441,15 +440,24 @@ var other = '<div align="center" style="margin-top: 20px; margin-bottom: 100px;"
 '</div>';
 
 
-$('footer').html('<div id="tabs"><ul><li><a href="#tabs-1">proxer.me</a></li><li><a href="#tabs-2">Links</a></li>' +
-'</ul><div id="tabs-1" style="display: block; padding: 0px;">' +
-proxerAnimes + 
-'</div>' +
-'<div id="tabs-2" style="display: block; padding: 0px;">' +
-other +
-'</div>' +
+$('footer').html('' +
+'<div id="tabsbar">' + 
+  '<ul>' + 
+    '<li>' + 
+      '<a href="#ui-tabs-1">proxer.me</a>' + 
+    '</li>' +
+    '<li>' + 
+      '<a href="#ui-tabs-2">Links</a>' + 
+    '</li>' +
+  '</ul>' + 
+  '<div id="ui-tabs-1" style="display: block; padding: 0px;">' +
+                 proxerAnimes +
+  '</div>' +
+  '<div id="ui-tabs-2" style="display: block; padding: 0px;">' +
+                 other +
+  '</div>' +
 '</div>');
 
 $(function() {
-    $( "#tabs" ).tabs();
+    $("#tabsbar").tabs();
 });
