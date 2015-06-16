@@ -7,7 +7,7 @@
 // @icon		 http://s.bs.to/favicon.ico
 // @version      0.6
 // @grant        none
-// @require		 http://code.jquery.com/ui/1.11.4/jquery-ui.js
+// @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
