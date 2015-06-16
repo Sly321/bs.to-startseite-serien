@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.6.1
+// @version      0.6.2
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -99,7 +99,7 @@ var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</
 '<img style="margin: 10px;" class="tip" title="17# Akatsuki no Yona" width="150" height="190" src="//cdn.proxer.me/cover/9651.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="serie/High-School-DxD-BorN">' +
+'<a href="serie/High-School-D-D">' +
 '<img style="margin: 10px;" class="tip" title="18# High School DxD BorN" width="150" height="190" src="//cdn.proxer.me/cover/9219.jpg">' +
 '</a>' +
 '</td><td align="center">' +
@@ -111,7 +111,7 @@ var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</
 '<img style="margin: 10px;" class="tip" title="20# Death Parade" width="150" height="190" src="//cdn.proxer.me/cover/10393.jpg">' +
 '</a>' +
 '</td></tr><tr><td align="center">' +
-'<a href="serie/Zankyou-no-Terror">' +
+'<a href="serie/Terror-in-Tokyo">' +
 '<img style="margin: 10px;" class="tip" title="21# Zankyou no Terror" width="150" height="190" src="//cdn.proxer.me/cover/8455.jpg">' +
 '</a>' +
 '</td><td align="center">' +
@@ -123,7 +123,7 @@ var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</
 '<img style="margin: 10px;" class="tip" title="23# DRAMAtical Murder" width="150" height="190" src="//cdn.proxer.me/cover/8476.jpg">' +
 '</a>' +
 '</td><td align="center">' +
-'<a href="serie/Owari-no-Seraph">' +
+'<a href="serie/Seraph-of-the-End">' +
 '<img style="margin: 10px;" class="tip" title="24# Owari no Seraph" width="150" height="190" src="//cdn.proxer.me/cover/11065.jpg">' +
 '</a>' +
 '</td><td align="center">' +
