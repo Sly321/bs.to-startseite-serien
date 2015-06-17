@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.6.2
+// @version      0.7
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -51,7 +51,7 @@ var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</
 '<img style="margin: 10px;" class="tip" title="5# One Piece" width="150" height="190" src="//cdn.proxer.me/cover/53.jpg">' +
 '</a>' +
 '</td></tr><tr><td align="center">' +
-'<a href="serie/hunter-x-hunter">' +
+'<a href="serie/Hunter-x-Hunter-2011">' +
 '<img style="margin: 10px;" class="tip" title="6# Hunter X Hunter (2011)" width="150" height="190" src="//cdn.proxer.me/cover/2089.jpg">' +
 '</a>' +
 '</td><td align="center">' +
@@ -440,21 +440,27 @@ var other = '<div align="center" style="margin-top: 20px; margin-bottom: 100px;"
 '</div>';
 
 
-$('footer').html('' +
+$('section').html('' +
 '<div id="tabsbar">' + 
   '<ul>' + 
     '<li>' + 
-      '<a href="#ui-tabs-1">proxer.me</a>' + 
+      '<a href="#ui-tabs-1">Serien</a>' + 
     '</li>' +
     '<li>' + 
-      '<a href="#ui-tabs-2">Links</a>' + 
+      '<a href="#ui-tabs-2">Top 100</a>' + 
+    '</li>' +
+    '<li>' + 
+      '<a href="#ui-tabs-3">Links</a>' + 
     '</li>' +
   '</ul>' + 
   '<div id="ui-tabs-1" style="display: block; padding: 0px;">' +
-                 proxerAnimes +
+                 section +
   '</div>' +
   '<div id="ui-tabs-2" style="display: block; padding: 0px;">' +
-                 other +
+               proxerAnimes   +
+  '</div>' +
+  '<div id="ui-tabs-2" style="display: block; padding: 0px;">' +
+               other +
   '</div>' +
 '</div>');
 

@@ -6,7 +6,7 @@
 // @include      http://bs.to/
 // @include		 http://bs.to/home
 // @icon		 http://s.bs.to/favicon.ico
-// @version      1.3
+// @version      1.4
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js
 // ==/UserScript==
@@ -55,11 +55,10 @@ var AnimeString = '<ul>' +
 '<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' +
 '</ul>';
 
-var column1 = document.getElementById("column1");
-var column2 = document.getElementById("column2");
+var column1 = "<br><h2>Serien</h2>" + LeftString;
+var column2 = "<br><h2>Anime</h2>" + AnimeString;
 
-column1.innerHTML = "<br><h2>Serien</h2>" + LeftString;
-column2.innerHTML = "<br><h2>Anime</h2>" + AnimeString;
+var section = "<section class='home'><div id='column1'>" + column1 + "</div>" + column2 + "<div id='column2'></div></section>";
 
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
@@ -75,3 +74,5 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
 
 var teaser = document.getElementById('teaser');
 teaser.remove();
+
+$('footer').remove();
