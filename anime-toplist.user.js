@@ -50,7 +50,7 @@ var AnimeString = '<ul>' +
     '<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
     '<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' +
     '<li><a href="serie/One-Piece">One Piece</a></li>' +
-    '<li><a href="serie/Attack-on-Titan">Shingeki no Kyojin</a></li>' +
+    '<li><a href="serie/Shingeki-no-Kyojin">Shingeki no Kyojin</a></li>' +
     '<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' +
     '<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' +
     '</ul>';
