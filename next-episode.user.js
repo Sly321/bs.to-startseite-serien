@@ -3,7 +3,7 @@
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
-// @version      0.1
+// @version      1.0
 // @include		 http://bs.to/serie*
 // @icon		 http://s.bs.to/favicon.ico
 // @grant        none
@@ -28,10 +28,14 @@ children.each(function( index ) {
     }
 });
 
-var nextEpisode = jQuery("a", children[indexOfNext]).attr("href");
-console.log("Next Episode: " + nextEpisode);
+if(parent.children().size() != indexOfNext)
+{
+    var nextEpisode = jQuery("a", children[indexOfNext]).attr("href");
+    console.log("Next Episode: " + nextEpisode);
 
-var nextEpisodeSC = nextEpisode + '/Streamcloud-1';
-var nextEpisodeNV = nextEpisode + '/NowVideo-1';
-parent.append("<li><a style='background-color: rgb(44, 168, 210)' href='" + nextEpisodeSC + "'>►</a><div class='epiInfo'>Streamcloud</div></li>");
-parent.append("<li><a style='background-color: rgb(252, 109, 76)' href='" + nextEpisodeNV + "'>►</a><div class='epiInfo'>NowVideo</div></li>");
+    var nextEpisodeSC = nextEpisode + '/Streamcloud-1';
+    var nextEpisodeNV = nextEpisode + '/NowVideo-1';
+
+    parent.append("<li><a id='nextSC' style='background-color: rgb(44, 168, 210)' href='" + nextEpisodeSC + "'>►</a><div class='epiInfo'>Next with <a class='v-centered icon Streamcloud'></a></div></li>");
+    parent.append("<li><a id='nextNV' style='background-color: rgb(252, 109, 76)' href='" + nextEpisodeNV + "'>►</a><div class='epiInfo'>Next with <a class='v-centered icon NowVideo'></a></div></li>");
+}
