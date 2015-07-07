@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.1
+// @version      0.8.2
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -45,6 +45,7 @@ var AnimeString = '<ul>' +
     '<li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li>' +
     '<li><a href="serie/Btooom">Btooom!</a></li>' +
     '<li><a href="serie/Fate-Zero">Fate/Zero</a></li>' +
+    '<li><a href="serie/Dragonball-Super">Dragonball Super</a></li>' +
     '<li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li>' +
     '<li><a href="serie/Naruto">Naruto</a></li>' +
     '<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
@@ -103,7 +104,7 @@ addGlobalStyle('#tabbar { background-color: #66f; width: 900px; height: 45px; pa
 addGlobalStyle('#tabbar > li > a { padding-bottom: 11px; padding-top: 11px; height: 22px;}');
 addGlobalStyle('#tabbar > li { margin: 0px; border: 0px border-left: 1px; border-right: 1px; border-radius: 0px}');
 
-var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' + 
+var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' +
     '<table class="inner" style="min-width:0;margin-left: 5px;" align="center"><tbody><tr><td align="center">' +
     '<a href="serie/sword-art-online">' +
     '<img style="margin: 10px;" class="tip" title="1# Sword Art Online II" width="150" height="190" src="//cdn.proxer.me/cover/7697.jpg">' +
@@ -519,19 +520,19 @@ document.getElementsByTagName('footer')[0].innerHTML = "";
 document.getElementsByTagName('nav')[0].innerHTML = "";
 document.getElementsByTagName('section')[1].remove();
 
-$('nav').html('<div id="tabsbar">' + 
-                 '<ul id="tabbar">' + 
-                   '<li>' + 
-                     '<a href="#ui-tabs-1">Serien</a>' + 
+$('nav').html('<div id="tabsbar">' +
+                 '<ul id="tabbar">' +
+                   '<li>' +
+                     '<a href="#ui-tabs-1">Serien</a>' +
                    '</li>' +
-                   '<li>' + 
-                     '<a href="#ui-tabs-2">Top 100</a>' + 
+                   '<li>' +
+                     '<a href="#ui-tabs-2">Top 100</a>' +
                    '</li>' +
-                   '<li>' + 
-                     '<a href="#ui-tabs-3">Links</a>' + 
+                   '<li>' +
+                     '<a href="#ui-tabs-3">Links</a>' +
                    '</li>' +
-                   '<li>' + 
-                       '<a class="btn" href="#andere-serien">Alle Serien</a>' + 
+                   '<li>' +
+                       '<a class="btn" href="#andere-serien">Alle Serien</a>' +
                    '</li>' +
                  '</ul>' + '<div id="ui-tabs-1" style="display: block; padding: 0px;">' +
                  section +
