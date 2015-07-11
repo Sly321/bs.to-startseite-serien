@@ -3,15 +3,21 @@
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
-// @version      1.0.1
+// @version      1.0.2
 // @include		 http://bs.to/serie*
 // @icon		 http://s.bs.to/favicon.ico
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js
 // ==/UserScript==
 
-var current = $('section>div>ul:eq(1)>.current');
-var currentHref = $('section>div>ul:eq(1)>.current>a').attr("href");
+var fallbacks = [
+    'Streamcloud',
+    'FlashX',
+    'Vivo',
+];
+
+var current = $('section > div > ul:eq(1) > .current');
+var currentHref = $('section > div > ul:eq(1) > .current > a').attr("href");
 console.log("CurrentHref: " + currentHref);
 var parent = current.parent();
 var children = parent.children();
@@ -30,12 +36,40 @@ children.each(function( index ) {
 
 if(parent.children().size() != indexOfNext)
 {
+    var completeLink = window.location.href;
+    var indexOfSlash = completeLink.lastIndexOf('/') + 1;
+    var hoster = completeLink.substr(indexOfSlash, completeLink.lastIndexOf('-') - indexOfSlash);
+    console.log("Hoster: " + hoster);
+    
     var nextEpisode = jQuery("a", children[indexOfNext]).attr("href");
     console.log("Next Episode: " + nextEpisode);
 
-    var nextEpisodeSC = nextEpisode + '/Streamcloud-1';
-    var nextEpisodeNV = nextEpisode + '/NowVideo-1';
+    // If there's still a "-" it's the episode itself. Hoster don't have it
+    if(hoster.indexOf('-') == -1)
+    {
+        // JS version of PHP's unset
+        var index = fallbacks.indexOf(hoster);
+        if(index > -1)
+        {
+            fallbacks.splice(index, 1);
+        }
 
-    parent.append("<li><a id='nextSC' style='background-color: rgb(44, 168, 210)' href='" + nextEpisodeSC + "'>►</a><div class='epiInfo'>Next with <a class='v-centered icon Streamcloud'></a></div></li>");
-    parent.append("<li><a id='nextNV' style='background-color: rgb(252, 109, 76)' href='" + nextEpisodeNV + "'>►</a><div class='epiInfo'>Next with <a class='v-centered icon NowVideo'></a></div></li>");
+        var hosterLink = nextEpisode + '/' + hoster + '-1';
+        var element = $('a[href="'+ hosterLink +'"]');
+        while(element.length == 0 && fallbacks.length != 0)
+        {
+            hoster = fallbacks[0];
+            fallbacks.splice(0, 1);
+            hosterLink = nextEpisode + '/' + hoster + '-1';
+            element = $('a[href="'+ hosterLink +'"]');
+        }
+
+        if(element.length != 0)
+        {
+            console.log('Hoster: ' + hoster);
+            nextEpisode = hosterLink;
+        }
+    }
+
+    parent.append("<li><a id='next' style='background-color: rgb(44, 168, 210)' href='" + nextEpisode + "'>►</a><div class='epiInfo'>Next</div></li>");
 }
