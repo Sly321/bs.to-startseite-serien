@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.2
+// @version      0.8.3
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -41,19 +41,22 @@ var LeftString = '<ul>' +
     '</ul>';
 
 var AnimeString = '<ul>' +
-    '<li><a href="serie/Akame-ga-Kill">Akame ga Kill!</a></li>' +
-    '<li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li>' +
-    '<li><a href="serie/Btooom">Btooom!</a></li>' +
-    '<li><a href="serie/Dragonball-Super">Dragonball Super</a></li>' +
-    '<li><a href="serie/Fate-Zero">Fate/Zero</a></li>' +
-    '<li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li>' +
-    '<li><a href="serie/Naruto">Naruto</a></li>' +
-    '<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
-    '<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' +
-    '<li><a href="serie/One-Piece">One Piece</a></li>' +
-    '<li><a href="serie/Shingeki-no-Kyojin">Shingeki no Kyojin</a></li>' +
-    '<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' +
-    '<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' +
+'<li><a href="serie/Afro-Samurai">Afro Samurai</a></li>' +
+'<li><a href="serie/Akame-ga-Kill">Akame ga Kill!</a></li>' +
+'<li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li>' +
+'<li><a href="serie/Btooom">Btooom!</a></li>' +
+'<li><a href="serie/Dragonball-Super">Dragonball Super</a></li>' +
+'<li><a href="serie/Fate-Zero">Fate/Zero</a></li>' +
+'<li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li>' +
+'<li><a href="serie/Naruto">Naruto</a></li>' +
+'<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
+'<li><a href="serie/Neon-Genesis-Evangelion">Neon Genesis Evangelion</a></li>' +
+'<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' +
+'<li><a href="serie/One-Piece">One Piece</a></li>' +
+'<li><a href="serie/Attack-on-Titan">Shingeki no Kyojin</a></li>' +
+'<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' +
+'<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' +
+'<li><a href="serie/Tokyo-Ghoul">Tokyo Ghoul</a></li>' +
     '</ul>';
 
 var column1 = "<br><h2>Serien</h2>" + LeftString;
