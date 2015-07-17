@@ -48,6 +48,7 @@ var AnimeString = '<ul>' +
 '<li><a href="serie/Dragonball-Super">Dragonball Super</a></li>' +
 '<li><a href="serie/Fate-Zero">Fate/Zero</a></li>' +
 '<li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li>' +
+'<li><a href="serie/Gurren-Lagann">Gutten Lagann</a></li>' +
 '<li><a href="serie/Naruto">Naruto</a></li>' +
 '<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
 '<li><a href="serie/Neon-Genesis-Evangelion">Neon Genesis Evangelion</a></li>' +
