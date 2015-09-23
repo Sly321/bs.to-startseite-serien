@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.4
+// @version      0.8.5
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -18,6 +18,7 @@ var LeftString = '<ul>' +
     '<li><a href="serie/Marvel-s-Daredevil">Daredevil</a></li>' +
     '<li><a href="serie/Elementary">Elementary</a></li>' +
     '<li><a href="serie/Extant">Extant</a></li>' +
+    '<li><a href="serie/Fear-the-Walking-Dead">Fear the Walking Dead</a></li>' +
     '<li><a href="serie/Forever">Forever</a></li>' +
     '<li><a href="serie/Game-of-Thrones">Game of Thrones</a></li>' +
     '<li><a href="serie/Gotham">Gotham</a></li>' +
@@ -34,6 +35,7 @@ var LeftString = '<ul>' +
     '<li><a href="serie/The-Originals">The Originals</a></li>' +
     '<li><a href="serie/The-Strain">The Strain</a></li>' +
     '<li><a href="serie/The-Tomorrow-People">The Tomorrow People</a></li>' +
+    '<li><a href="serie/The-Walking-Dead">The Walking Dead</a></li>' +
     '<li><a href="serie/Vampire-Diaries">Vampire Diaries</a></li>' +
     '</ul>' +
     '<br><h2>Sitcoms</h2><ul>' +
