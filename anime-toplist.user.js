@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.6
+// @version      0.8.6.1
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -70,14 +70,10 @@ var AnimeString = '<ul>' +
 '<li><a href="serie/Tokyo-Ghoul">Tokyo Ghoul</a></li>' +
     '</ul>'+
 '<br><h2>New *__*</h2><ul>' +
-'<li><a id="magi" href="serie/Magi-The-Labyrinth-of-Magic">Magi - The Labyrinth of Magic (GerDub 2012-13)</a></li>' +
-'<li><a id="gate" href="serie/Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri">Gate: Jieitai Kanochi nite, Kaku Tatakaeri (GerSub 2015 - ...)</a></li>' +
-'<li><a id="over" href="serie/Overlord">Overlord (GerDub 2015)</a></li>' +
-'</ul>';;
-
-$( "#magi" ).tooltip({ content: '<img src="http://s.bs.to/img/cover/1195.jpg" />' });
-$( "#gate" ).tooltip({ content: '<img src="http://s.bs.to/img/cover/3271.jpg" />' });
-$( "#over" ).tooltip({ content: '<img src="http://s.bs.to/img/cover/3308.jpg" />' });
+'<li><a id="magi" href="serie/Magi-The-Labyrinth-of-Magic">Magi - The Labyrinth of Magic</a></li>' +
+'<li><a id="gate" href="serie/Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri">Gate: Jieitai Kanochi nite, Kaku Tatakaeri</a></li>' +
+'<li><a id="over" href="serie/Overlord">Overlord</a></li>' +
+'</ul>';
 
 var column1 = "<br><h2>Serien</h2>" + LeftString;
 var column2 = "<br><h2>Anime</h2>" + AnimeString;
