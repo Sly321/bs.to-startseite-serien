@@ -6,8 +6,11 @@
 // @include		 http://bs.to/home*
 // @include		 http://bs.to/andere-serien*
 // @include		 http://bs.to/serie*
+// @include		 http://bs.to/search*
+// @include		 http://bs.to/random*
+// @include		 http://bs.to/android*
 // @icon		 http://s.bs.to/favicon.ico
-// @version      2.0.1
+// @version      2.0.2
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js
 // ==/UserScript==
