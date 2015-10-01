@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.5
+// @version      0.8.5.1
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -63,7 +63,7 @@ var AnimeString = '<ul>' +
 '<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' +
 '<li><a href="serie/One-Piece">One Piece</a></li>' +
 '<li><a href="serie/Psycho-Pass">Psycho Pass</a></li>' +
-'<li><a href="serie/Attack-on-Titan">Shingeki no Kyojin</a></li>' +
+'<li><a href="serie/Shingeki-no-Kyojin">Shingeki no Kyojin</a></li>' +
 '<li><a href="serie/Spice-and-Wolf">Spice and Wolf</a></li>' +
 '<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' +
 '<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' +
