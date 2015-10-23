@@ -1,11 +1,11 @@
-// ==UserScript==
+﻿// ==UserScript==
 // @name         bs.to Top Anime Script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.6.2
+// @version      0.8.6.3
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -26,6 +26,7 @@ var LeftString = '<ul>' +
     '<li><a href="serie/Hannibal">Hannibal</a></li>' +
     '<li><a href="serie/iZombie">iZombie</a></li>' +
     '<li><a href="serie/Marvel-s-Agent-Carter">Marvels Agent Carter</a></li>' +
+    '<li><a href="/serie/Nip-Tuck-Schoenheit-hat-ihren-Preis">Nip/Tuck</a></li>' +
     '<li><a href="serie/Revolution">Revolution</a></li>' +
     '<li><a href="serie/Suits">Suits</a></li>' +
     '<li><a href="serie/Supernatural-Zur-Hoelle-mit-dem-Boesen">Supernatural</a></li>' +
@@ -76,6 +77,7 @@ var AnimeString = '<ul>' +
 '<li><a id="over" href="serie/God-Eater">God Eater</a></li>' +
 '<li><a id="over" href="serie/Rokka-no-Yuusha">Rokka no Yuusha</a></li>' +
 '<li><a id="over" href="serie/Kuusen-Madoushi-Kouhosei-no-Kyoukan">Kuusen Madoushi Kouhosei no Kyoukan</a></li>' +
+'<li><a id="over" href="/serie/Owari-no-Seraph">Owari no Seraph</a></li>' +
 '</ul>';
 
 var column1 = "<br><h2>Serien</h2>" + LeftString;
