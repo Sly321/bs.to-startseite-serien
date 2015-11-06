@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.6.4
+// @version      0.8.6.5
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -15,6 +15,7 @@ var LeftString = '<ul>' +
     '<li><a href="serie/Agents-of-S-H-I-E-L-D">Agents-of-S-H-I-E-L-D</a></li>' +
     '<li><a href="serie/Arrow">Arrow</a></li>' +
     '<li><a href="serie/Better-Call-Saul">Better Call Saul</a></li>' +
+    '<li><a href="serie/Constantine">Constantine</a></li>' +
     '<li><a href="serie/Marvel-s-Daredevil">Daredevil</a></li>' +
     '<li><a href="serie/Elementary">Elementary</a></li>' +
     '<li><a href="serie/Extant">Extant</a></li>' +
