@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.6.6
+// @version      0.8.6.7
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -82,7 +82,7 @@ var AnimeString = '<ul>' +
 '<li><a id="over" href="/serie/The-Irregular-at-Magic-High-School">The Irregular at Magic High School</a></li>' +
 '<li><a id="over" href="/serie/K-Project/1">K-Project</a></li>' +
 '<li><a id="over" href="/serie/Jormungand/1">Jormungand</a></li>' +
-'<li><a id="over" href="/Black-Bullet">Black Bullet</a></li>' +
+'<li><a id="over" href="/serie/Black-Bullet">Black Bullet</a></li>' +
 '<li><a id="over" href="/serie/Log-Horizon/1">Log-Horizon</a></li>' +
 '</ul>';
 
