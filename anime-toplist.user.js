@@ -5,13 +5,13 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.6.7
+// @version      0.8.7.0
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
-var LeftString = '<ul>' +
+var Serien = '<ul>' +
     '<li><a href="serie/Agents-of-S-H-I-E-L-D">Agents-of-S-H-I-E-L-D</a></li>' +
     '<li><a href="serie/Arrow">Arrow</a></li>' +
     '<li><a href="serie/Better-Call-Saul">Better Call Saul</a></li>' +
@@ -39,12 +39,13 @@ var LeftString = '<ul>' +
     '<li><a href="serie/The-Tomorrow-People">The Tomorrow People</a></li>' +
     '<li><a href="serie/The-Walking-Dead">The Walking Dead</a></li>' +
     '<li><a href="serie/Vampire-Diaries">Vampire Diaries</a></li>' +
-    '</ul>' +
-    '<br><h2>Sitcoms</h2><ul>' +
+    '</ul>';
+
+var SitComs = '<ul>' +
     '<li><a href="serie/The-Big-Bang-Theory">The Big Bang Theory</a></li>' +
     '</ul>';
 
-var AnimeString = '<ul>' +
+var AnimeOld = '<ul>' +
 '<li><a href="serie/Afro-Samurai">Afro Samurai</a></li>' +
 '<li><a href="serie/Akame-ga-Kill">Akame ga Kill!</a></li>' +
 '<li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li>' +
@@ -70,8 +71,8 @@ var AnimeString = '<ul>' +
 '<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' +
 '<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' +
 '<li><a href="serie/Tokyo-Ghoul">Tokyo Ghoul</a></li>' +
-    '</ul>'+
-'<br><h2>New *__*</h2><ul>' +
+    '</ul>';
+var AnimeNew = '<ul>' +
 '<li><a id="magi" href="serie/Magi-The-Labyrinth-of-Magic">Magi - The Labyrinth of Magic</a></li>' +
 '<li><a id="gate" href="serie/Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri">Gate: Jieitai Kanochi nite, Kaku Tatakaeri</a></li>' +
 '<li><a id="over" href="serie/Overlord">Overlord</a></li>' +
@@ -86,8 +87,8 @@ var AnimeString = '<ul>' +
 '<li><a id="over" href="/serie/Log-Horizon/1">Log-Horizon</a></li>' +
 '</ul>';
 
-var column1 = "<br><h2>Serien</h2>" + LeftString;
-var column2 = "<br><h2>Anime</h2>" + AnimeString;
+var accordionLinks  = "<div id='accordionLinks'><h3>Serien</h3><div>" + Serien + '</div><h3>Sitcoms</h3><div>' + SitComs + "</div></div>";
+var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeString + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div>";
 
 var section = "<div class='home'><div id='column1' class='column'>" + column1 + "</div><div id='column2' class='column'>" + column2 + "</div></div>";
 
@@ -590,3 +591,10 @@ $(function() {
         window.location = "http://bs.to/andere-serien/";
     });
 });
+
+$(function() {
+    $( "#accordionLinks" ).accordion();
+  });
+$(function() {
+    $( "#accordionRechts" ).accordion();
+  });
