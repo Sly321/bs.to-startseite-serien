@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.7.1
+// @version      0.8.7.3
 // @grant        none
 // @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -88,9 +88,9 @@ var AnimeNew = '<ul>' +
 '</ul>';
 
 var accordionLinks  = "<div id='accordionLinks'><h3>Serien</h3><div>" + Serien + '</div><h3>Sitcoms</h3><div>' + SitComs + "</div></div>";
-var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeString + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div></div>";
+var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeOld + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div></div>";
 
-var section = "<div class='home'><div id='column1' class='column'>" + column1 + "</div><div id='column2' class='column'>" + column2 + "</div></div>";
+var section = "<div class='home'><div id='column1' class='column'>" + accordionLinks + "</div><div id='column2' class='column'>" + accordionRechts + "</div></div>";
 
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
@@ -127,6 +127,7 @@ addGlobalStyle('.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }');
 addGlobalStyle('.ui-helper-reset { line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }');
 addGlobalStyle('.ui-helper-clearfix:before, .ui-helper-clearfix:after { content: ""; display: table; border-collapse: collapse; }');
 addGlobalStyle('.ui-helper-clearfix:after { clear: both; }');
+addGlobalStyle('.ui-accordion .ui-accordion-content { padding: 0px; }')
 
 addGlobalStyle('.column { width: 420; margin: 5px; } ');
 addGlobalStyle('#column1 { float:left; } ');
