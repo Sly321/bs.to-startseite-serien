@@ -4,11 +4,11 @@
 // @author       Sly321
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
-// @icon		 http://s.bs.to/favicon.ico
-// @version      0.8.7.3
+// @icon         http://s.bs.to/favicon.ico
+// @version      0.8.7.4
 // @grant        none
-// @require		 https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
-// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
+// @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
+// @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
 var Serien = '<ul>' +
@@ -128,6 +128,7 @@ addGlobalStyle('.ui-helper-reset { line-height: 1.3; text-decoration: none; font
 addGlobalStyle('.ui-helper-clearfix:before, .ui-helper-clearfix:after { content: ""; display: table; border-collapse: collapse; }');
 addGlobalStyle('.ui-helper-clearfix:after { clear: both; }');
 addGlobalStyle('.ui-accordion .ui-accordion-content { padding: 0px; }')
+addGlobalStyle('::-webkit-scrollbar { width: 0.5em; height: 0.5em; }::-webkit-scrollbar-track {box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);}::-webkit-scrollbar-thumb { background: rgba(100, 100, 100, 0.8); border-radius: 5px;}::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb:window-inactive { background: rgba(100, 100, 100, 0.4); }');
 
 addGlobalStyle('.column { width: 420; margin: 5px; } ');
 addGlobalStyle('#column1 { float:left; } ');
@@ -594,8 +595,12 @@ $(function() {
 });
 
 $(function() {
-    $( "#accordionLinks" ).accordion();
+    $( "#accordionLinks" ).accordion({
+      //heightStyle: "content"
+    });
   });
 $(function() {
-    $( "#accordionRechts" ).accordion();
+    $( "#accordionRechts" ).accordion({
+      heightStyle: "content"
+    });
   });
