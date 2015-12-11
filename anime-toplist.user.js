@@ -88,7 +88,7 @@ var AnimeNew = '<ul>' +
 '</ul>';
 
 var accordionLinks  = "<div id='accordionLinks'><h3>Serien</h3><div>" + Serien + '</div><h3>Sitcoms</h3><div>' + SitComs + "</div></div>";
-var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeString + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div>";
+var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeString + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div></div>";
 
 var section = "<div class='home'><div id='column1' class='column'>" + column1 + "</div><div id='column2' class='column'>" + column2 + "</div></div>";
 
