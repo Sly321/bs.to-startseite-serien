@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.7.5
+// @version      0.8.7.6
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -60,11 +60,8 @@ var AnimeOld = '<ul>' +
 '<li><a href="serie/Gurren-Lagann">Gutten Lagann</a></li>' +
 '<li><a href="serie/High-School-D-D">Highschool DxD</a></li>' +
 '<li><a href="serie/InuYasha">InuYasha</a></li>' +
-'<li><a href="serie/Naruto">Naruto</a></li>' +
-'<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
 '<li><a href="serie/Neon-Genesis-Evangelion">Neon Genesis Evangelion</a></li>' +
 '<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' +
-'<li><a href="serie/One-Piece">One Piece</a></li>' +
 '<li><a href="serie/Psycho-Pass">Psycho Pass</a></li>' +
 '<li><a href="serie/Shingeki-no-Kyojin">Shingeki no Kyojin</a></li>' +
 '<li><a href="serie/Spice-and-Wolf">Spice and Wolf</a></li>' +
@@ -88,8 +85,15 @@ var AnimeNew = '<ul>' +
 '<li><a id="over" href="/serie/Log-Horizon/1">Log-Horizon</a></li>' +
 '</ul>';
 
+var AnimeClassy = '<ul>' +
+'<li><a href="serie/Fairy-Tail">Fairy Tail</a></li>' +
+'<li><a href="serie/Naruto">Naruto</a></li>' +
+'<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
+'<li><a href="serie/One-Piece">One Piece</a></li>' +
+'</ul>';
+
 var accordionLinks  = "<div id='accordionLinks'><h3>Serien</h3><div>" + Serien + '</div><h3>Sitcoms</h3><div>' + SitComs + "</div></div>";
-var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeOld + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div></div>";
+var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeOld + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div><h3>Classy</h3><div>" + AnimeClassy + "</div></div></div>";
 
 var section = "<div class='home'><div id='column1' class='column'>" + accordionLinks + "</div><div id='column2' class='column'>" + accordionRechts + "</div></div>";
 
