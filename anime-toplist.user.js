@@ -5,14 +5,14 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.7.7
+// @version      0.8.7.8
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
 var Serien = '<ul>' +
-    '<li><a href="serie/Agents-of-S-H-I-E-L-D">Agents-of-S-H-I-E-L-D</a></li>' +
+    '<li><a href="serie/Marvel-s-Agents-of-S-H-I-E-L-D">Agents-of-S-H-I-E-L-D</a></li>' +
     '<li><a href="serie/Arrow">Arrow</a></li>' +
     '<li><a href="serie/Better-Call-Saul">Better Call Saul</a></li>' +
     '<li><a href="serie/Constantine">Constantine</a></li>' +
@@ -27,6 +27,7 @@ var Serien = '<ul>' +
     '<li><a href="serie/Hannibal">Hannibal</a></li>' +
     '<li><a href="serie/iZombie">iZombie</a></li>' +
     '<li><a href="serie/Marvel-s-Agent-Carter">Marvels Agent Carter</a></li>' +
+    '<li><a href="/serie/Minority-Report">Minority Report</a></li>' +
     '<li><a href="/serie/Nip-Tuck-Schoenheit-hat-ihren-Preis">Nip/Tuck</a></li>' +
     '<li><a href="serie/Revolution">Revolution</a></li>' +
     '<li><a href="serie/Suits">Suits</a></li>' +
