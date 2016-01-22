@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.7.8
+// @version      0.8.7.9
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -44,6 +44,10 @@ var Serien = '<ul>' +
 
 var SitComs = '<ul>' +
     '<li><a href="serie/The-Big-Bang-Theory">The Big Bang Theory</a></li>' +
+    '</ul>';
+
+var MslsListe = '<ul>' +
+    '<li><a href="serie/bla">neuneu</a></li>' +
     '</ul>';
 
 var AnimeOld = '<ul>' +
@@ -93,8 +97,17 @@ var AnimeClassy = '<ul>' +
 '<li><a href="serie/One-Piece">One Piece</a></li>' +
 '</ul>';
 
-var accordionLinks  = "<div id='accordionLinks'><h3>Serien</h3><div>" + Serien + '</div><h3>Sitcoms</h3><div>' + SitComs + "</div></div>";
-var accordionRechts = "<div id='accordionRechts'><h3>Anime</h3><div>" + AnimeOld + "</div><h3>New *__*</h3><div>" + AnimeNew + "</div><h3>Classy</h3><div>" + AnimeClassy + "</div></div>";
+var accordionLinks  = "<div id='accordionLinks'>" + 
+                      "<h3>Serien</h3><div>" + Serien + "</div>" + 
+                      "<h3>Serien</h3><div>" + MslsListe + "</div>" + 
+                      "<h3>Sitcoms</h3><div>" + SitComs + "</div>" + 
+                      "</div>";
+
+var accordionRechts = "<div id='accordionRechts'>" + 
+                      "<h3>Anime</h3><div>" + AnimeOld + "</div>" + 
+                      "<h3>New *__*</h3><div>" + AnimeNew + "</div>" + 
+                      "<h3>Classy</h3><div>" + AnimeClassy + "</div>" + 
+                      "</div>";
 
 var section = "<div class='home'><div id='column1' class='column'>" + accordionLinks + "</div><div id='column2' class='column'>" + accordionRechts + "</div></div>";
 
