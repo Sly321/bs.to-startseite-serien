@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.7.9
+// @version      0.8.7.10
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -27,18 +27,14 @@ var Serien = '<ul>' +
     '<li><a href="serie/Hannibal">Hannibal</a></li>' +
     '<li><a href="serie/iZombie">iZombie</a></li>' +
     '<li><a href="serie/Marvel-s-Agent-Carter">Marvels Agent Carter</a></li>' +
-    '<li><a href="/serie/Minority-Report">Minority Report</a></li>' +
     '<li><a href="/serie/Nip-Tuck-Schoenheit-hat-ihren-Preis">Nip/Tuck</a></li>' +
     '<li><a href="serie/Revolution">Revolution</a></li>' +
-    '<li><a href="serie/Scorpion">Scorpion</a></li>' +
-    '<li><a href="serie/Shadowhunters-The-Mortal-Instruments">Shadowhunters: The Mortal Instruments</a></li>' +
     '<li><a href="serie/Suits">Suits</a></li>' +
     '<li><a href="serie/Supernatural-Zur-Hoelle-mit-dem-Boesen">Supernatural</a></li>' + 
     '<li><a href="serie/The-100">The 100</a></li>' +
     '<li><a href="serie/The-Blacklist">The Blacklist</a></li>' +
     '<li><a href="serie/The-Flash">The Flash</a></li>' +
     '<li><a href="serie/The-Originals">The Originals</a></li>' +
-    '<li><a href="serie/The-Shannara-Chronicles">The Shannara Chronicles</a></li>' +
     '<li><a href="serie/The-Strain">The Strain</a></li>' +
     '<li><a href="serie/The-Tomorrow-People">The Tomorrow People</a></li>' +
     '<li><a href="serie/The-Walking-Dead">The Walking Dead</a></li>' +
@@ -50,7 +46,11 @@ var SitComs = '<ul>' +
     '</ul>';
 
 var MslsListe = '<ul>' +
-    '<li><a href="serie/bla">neuneu</a></li>' +
+    '<li><a href="/serie/Limitless">Limitless</a></li>' +
+    '<li><a href="/serie/Minority-Report">Minority Report</a></li>' +
+    '<li><a href="serie/Scorpion">Scorpion</a></li>' +
+    '<li><a href="serie/Shadowhunters-The-Mortal-Instruments">Shadowhunters: The Mortal Instruments</a></li>' +
+    '<li><a href="serie/The-Shannara-Chronicles">The Shannara Chronicles</a></li>' +
     '</ul>';
 
 var AnimeOld = '<ul>' +
@@ -102,7 +102,7 @@ var AnimeClassy = '<ul>' +
 
 var accordionLinks  = "<div id='accordionLinks'>" + 
                       "<h3>Serien</h3><div>" + Serien + "</div>" + 
-                      "<h3>Serien</h3><div>" + MslsListe + "</div>" + 
+                      "<h3>Msl's Liste</h3><div>" + MslsListe + "</div>" + 
                       "<h3>Sitcoms</h3><div>" + SitComs + "</div>" + 
                       "</div>";
 
