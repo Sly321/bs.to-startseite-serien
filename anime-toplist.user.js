@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.7.9
+// @version      0.8.7.10
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -65,6 +65,7 @@ var AnimeOld = '<ul>' +
 '<li><a href="serie/Gurren-Lagann">Gutten Lagann</a></li>' +
 '<li><a href="serie/High-School-D-D">Highschool DxD</a></li>' +
 '<li><a href="serie/InuYasha">InuYasha</a></li>' +
+'<li><a href="serie/The-Seven-Deadly-Sins">Nanatsu no Tasai</a></li>' +
 '<li><a href="serie/Neon-Genesis-Evangelion">Neon Genesis Evangelion</a></li>' +
 '<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' +
 '<li><a href="serie/Psycho-Pass">Psycho Pass</a></li>' +
@@ -92,6 +93,8 @@ var AnimeNew = '<ul>' +
 
 var AnimeClassy = '<ul>' +
 '<li><a href="serie/Fairy-Tail">Fairy Tail</a></li>' +
+'<li><a href="serie/Fullmetal-Alchemist-Brotherhood">Full Metal Alchemist: Brotherhood</a></li>' +
+'<li><a href="serie/Hunter-x-Hunter-2011">Hunter-x-Hunter</a></li>' +
 '<li><a href="serie/Naruto">Naruto</a></li>' +
 '<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
 '<li><a href="serie/One-Piece">One Piece</a></li>' +
