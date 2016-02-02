@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.8.2
+// @version      0.8.8.3
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -41,6 +41,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Game of Thrones", "Game-of-Thrones"], 
                                                         ["Hannibal", "Hannibal"], 
                                                         ["iZombie", "iZombie"], 
+                                                        ["Lucifer", "Lucifer"], 
                                                         ["Marvels Agent Carter", "Marvel-s-Agent-Carter"], 
                                                         ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
                                                         ["Supernatural", "Supernatural-Zur-Hoelle-mit-dem-Boesen"], 
@@ -69,26 +70,26 @@ var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-S
                                                         ["Elfen Lied", "Elfen-Lied"], 
                                                         ["Fate/Zero", "Fate-Zero"], 
                                                         ["Fate/Stay Night: Unlimited Blade Works", "Fate-Stay-Night-Unlimited-Blade-Works"], 
+                                                        ["Gate: Jieitai Kanochi nite, Kaku Tatakaeri", "Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri"],  
+                                                        ["God Eater", "God-Eater"],
                                                         ["Guilty Crown", "Guilty-Crown"], 
                                                         ["Gutten Lagann", "Gurren-Lagann"], 
                                                         ["Highschool DxD", "High-School-D-D"], 
                                                         ["InuYasha", "InuYasha"], 
+                                                        ["Kuusen Madoushi Kouhosei no Kyoukan", "Kuusen-Madoushi-Kouhosei-no-Kyoukan"],  
+                                                        ["Magi - The Labyrinth of Magic", "Magi-The-Labyrinth-of-Magic"], 
                                                         ["Nanatsu no Tasai", "The-Seven-Deadly-Sins"], 
                                                         ["Neon Genesis Evangelion", "Neon-Genesis-Evangelion"], 
                                                         ["No Game No Life", "No-Game-No-Life"], 
-                                                        ["Psycho Pass", "Psycho-Pass"], 
+                                                        ["Psycho Pass", "Psycho-Pass"],   
+                                                        ["Overlord", "Overlord"],
+                                                        ["Rokka no Yuusha", "Rokka-no-Yuusha"],
                                                         ["Shingeki no Kyojin", "Shingeki-no-Kyojin"], 
                                                         ["Spice and Wolf", "Spice-and-Wolf"], 
                                                         ["Steins;Gate", "Steins-Gate"], 
                                                         ["Sword Art Online", "Sword-Art-Online"], 
                                                         ["Tokyo Ghoul", "Tokyo-Ghoul"]]),
-                       new SerienTab("Anime New *__*", [["Magi - The Labyrinth of Magic", "Magi-The-Labyrinth-of-Magic"], 
-                                                        ["Gate: Jieitai Kanochi nite, Kaku Tatakaeri", "Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri"],  
-                                                        ["Overlord", "Overlord"], 
-                                                        ["God Eater", "God-Eater"], 
-                                                        ["Rokka no Yuusha", "Rokka-no-Yuusha"],
-                                                        ["Kuusen Madoushi Kouhosei no Kyoukan", "Kuusen-Madoushi-Kouhosei-no-Kyoukan"],  
-                                                        ["Owari no Seraph", "Owari-no-Seraph"], 
+                       new SerienTab("Anime New *__*", [["Owari no Seraph", "Owari-no-Seraph"], 
                                                         ["K-Project", "K-Project"], 
                                                         ["Jormungand", "Jormungand"], 
                                                         ["Black Bullet", "Black-Bullet"], 
