@@ -5,115 +5,139 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.7.12
+// @version      0.8.8.1
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
 
-var Serien = '<ul>' +
-    '<li><a href="serie/Marvel-s-Agents-of-S-H-I-E-L-D">Agents-of-S-H-I-E-L-D</a></li>' +
-    '<li><a href="serie/Arrow">Arrow</a></li>' +
-    '<li><a href="serie/Better-Call-Saul">Better Call Saul</a></li>' +
-    '<li><a href="serie/Constantine">Constantine</a></li>' +
-    '<li><a href="serie/Marvel-s-Daredevil">Daredevil</a></li>' +
-    '<li><a href="serie/Elementary">Elementary</a></li>' +
-    '<li><a href="serie/Extant">Extant</a></li>' +
-    '<li><a href="serie/Fear-the-Walking-Dead">Fear the Walking Dead</a></li>' +
-    '<li><a href="serie/Forever">Forever</a></li>' +
-    '<li><a href="serie/Game-of-Thrones">Game of Thrones</a></li>' +
-    '<li><a href="serie/Gotham">Gotham</a></li>' +
-    '<li><a href="serie/House-of-Cards">House of Cards</a></li>' +
-    '<li><a href="serie/Hannibal">Hannibal</a></li>' +
-    '<li><a href="serie/iZombie">iZombie</a></li>' +
-    '<li><a href="serie/Marvel-s-Agent-Carter">Marvels Agent Carter</a></li>' +
-    '<li><a href="/serie/Nip-Tuck-Schoenheit-hat-ihren-Preis">Nip/Tuck</a></li>' +
-    '<li><a href="serie/Revolution">Revolution</a></li>' +
-    '<li><a href="serie/Suits">Suits</a></li>' +
-    '<li><a href="serie/Supernatural-Zur-Hoelle-mit-dem-Boesen">Supernatural</a></li>' + 
-    '<li><a href="serie/The-100">The 100</a></li>' +
-    '<li><a href="serie/The-Blacklist">The Blacklist</a></li>' +
-    '<li><a href="serie/The-Flash">The Flash</a></li>' +
-    '<li><a href="serie/The-Originals">The Originals</a></li>' +
-    '<li><a href="serie/The-Strain">The Strain</a></li>' +
-    '<li><a href="serie/The-Tomorrow-People">The Tomorrow People</a></li>' +
-    '<li><a href="serie/The-Walking-Dead">The Walking Dead</a></li>' +
-    '<li><a href="serie/Vampire-Diaries">Vampire Diaries</a></li>' +
-    '</ul>';
 
-var SitComs = '<ul>' +
-    '<li><a href="serie/The-Big-Bang-Theory">The Big Bang Theory</a></li>' +
-    '</ul>';
+/*
+ * Kommentar: How to:
+ * //Name: [
+ *  [//Serienname, //SerienshortLink (ohne /serie)], 
+ *  ["Serie 2", "Href 2"]
+ * ], 
+ *
+ * Die Komma's beachten, der letzte eintrag hat keins.
+ */
 
-var MslsListe = '<ul>' +
-    '<li><a href="/serie/Limitless">Limitless</a></li>' +
-    '<li><a href="/serie/Minority-Report">Minority Report</a></li>' +
-    '<li><a href="serie/Scorpion">Scorpion</a></li>' +
-    '<li><a href="serie/Shadowhunters-The-Mortal-Instruments">Shadowhunters: The Mortal Instruments</a></li>' +
-    '<li><a href="serie/The-Shannara-Chronicles">The Shannara Chronicles</a></li>' +
-    '</ul>';
+// DON'T TOUCH THIS - - - - - -
+SerienTab = function(name, serienContainer) { 
+    this.name = name;
+    this.serien = serienContainer;
+}
 
-var AnimeOld = '<ul>' +
-'<li><a href="serie/Afro-Samurai">Afro Samurai</a></li>' +
-'<li><a href="serie/Akame-ga-Kill">Akame ga Kill!</a></li>' +
-'<li><a href="serie/Assassination-Classroom">Ansatsu Kyoushitsu</a></li>' +
-'<li><a href="serie/Btooom">Btooom!</a></li>' +
-'<li><a href="serie/Code-Geass">Code Geass</a></li>' +
-'<li><a href="serie/The-Devil-is-a-Part-Timer">Devil is a Part Timer</a></li>' +
-'<li><a href="serie/Dragonball-Super">Dragonball Super</a></li>' +
-'<li><a href="serie/Elfen-Lied">Elfen Lied</a></li>' +
-'<li><a href="serie/Fate-Zero">Fate/Zero</a></li>' +
-'<li><a href="serie/Fate-Stay-Night-Unlimited-Blade-Works">Fate/Stay Night: Unlimited Blade Works</a></li>' +
-'<li><a href="serie/Guilty-Crown">Guilty Crown</a></li>' +
-'<li><a href="serie/Gurren-Lagann">Gutten Lagann</a></li>' +
-'<li><a href="serie/High-School-D-D">Highschool DxD</a></li>' +
-'<li><a href="serie/InuYasha">InuYasha</a></li>' +
-'<li><a href="serie/The-Seven-Deadly-Sins">Nanatsu no Tasai</a></li>' +
-'<li><a href="serie/Neon-Genesis-Evangelion">Neon Genesis Evangelion</a></li>' +
-'<li><a href="serie/No-Game-No-Life">No Game No Life</a></li>' +
-'<li><a href="serie/Psycho-Pass">Psycho Pass</a></li>' +
-'<li><a href="serie/Shingeki-no-Kyojin">Shingeki no Kyojin</a></li>' +
-'<li><a href="serie/Spice-and-Wolf">Spice and Wolf</a></li>' +
-'<li><a href="serie/Steins-Gate">Steins;Gate</a></li>' +
-'<li><a href="serie/Sword-Art-Online">Sword Art Online</a></li>' +
-'<li><a href="serie/Tokyo-Ghoul">Tokyo Ghoul</a></li>' +
-    '</ul>';
-    
-var AnimeNew = '<ul>' +
-'<li><a id="magi" href="serie/Magi-The-Labyrinth-of-Magic">Magi - The Labyrinth of Magic</a></li>' +
-'<li><a id="gate" href="serie/Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri">Gate: Jieitai Kanochi nite, Kaku Tatakaeri</a></li>' +
-'<li><a id="over" href="serie/Overlord">Overlord</a></li>' +
-'<li><a id="over" href="serie/God-Eater">God Eater</a></li>' +
-'<li><a id="over" href="serie/Rokka-no-Yuusha">Rokka no Yuusha</a></li>' +
-'<li><a id="over" href="serie/Kuusen-Madoushi-Kouhosei-no-Kyoukan">Kuusen Madoushi Kouhosei no Kyoukan</a></li>' +
-'<li><a id="over" href="/serie/Owari-no-Seraph">Owari no Seraph</a></li>' +
-'<li><a id="over" href="/serie/The-Irregular-at-Magic-High-School">The Irregular at Magic High School</a></li>' +
-'<li><a id="over" href="/serie/K-Project/1">K-Project</a></li>' +
-'<li><a id="over" href="/serie/Jormungand/1">Jormungand</a></li>' +
-'<li><a id="over" href="/serie/Black-Bullet">Black Bullet</a></li>' +
-'<li><a id="over" href="/serie/Log-Horizon/1">Log-Horizon</a></li>' +
-'</ul>';
+// YOU CAN TOUCH THIS + + + + +
+var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D", "Marvel-s-Agents-of-S-H-I-E-L-D"], 
+                                                        ["Arrow", "Arrow"], 
+                                                        ["Better Call Saul", "Better-Call-Saul"], 
+                                                        ["Constantine", "Constantine"], 
+                                                        ["Daredevil", "Marvel-s-Daredevil"], 
+                                                        ["Elementary", "Elementary"], 
+                                                        ["Extant", "Extant"], 
+                                                        ["Fear the Walking Dead", "Fear-the-Walking-Dead"], 
+                                                        ["Forever", "Forever"], 
+                                                        ["Game of Thrones", "Game-of-Thrones"], 
+                                                        ["Hannibal", "Hannibal"], 
+                                                        ["iZombie", "iZombie"], 
+                                                        ["Marvels Agent Carter", "Marvel-s-Agent-Carter"], 
+                                                        ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
+                                                        ["Supernatural", "Supernatural-Zur-Hoelle-mit-dem-Boesen"], 
+                                                        ["The 100", "The-100"], 
+                                                        ["The Blacklist", "The-Blacklist"], 
+                                                        ["The Flash", "The-Flash"], 
+                                                        ["The Originals", "The-Originals"], 
+                                                        ["The Strain", "The-Strain"], 
+                                                        ["The Tomorrow-People", "The-Tomorrow-People"], 
+                                                        ["The Walking Dead", "The-Walking-Dead"]]),
+                       new SerienTab("Msl's Wannabe's", [["Limitless", "Limitless"], 
+                                                        ["Minority Report", "Minority-Report"], 
+                                                        ["Scorpion", "Scorpion"], 
+                                                        ["Shadowhunters: The Mortal Instruments", "Shadowhunters-The-Mortal-Instruments"], 
+                                                        ["The Shannara Chronicles", "The-Shannara-Chronicles"]]),
+                             new SerienTab("Sitcom's", [["The Big Bang Theory", "The-Big-Bang-Theory"]])
+                              ];
 
-var AnimeClassy = '<ul>' +
-'<li><a href="serie/Fairy-Tail">Fairy Tail</a></li>' +
-'<li><a href="serie/Fullmetal-Alchemist-Brotherhood">Full Metal Alchemist: Brotherhood</a></li>' +
-'<li><a href="serie/Hunter-x-Hunter-2011">Hunter-x-Hunter</a></li>' +
-'<li><a href="serie/Naruto">Naruto</a></li>' +
-'<li><a href="serie/Naruto-Shippuuden">Naruto Shippuden</a></li>' +
-'<li><a href="serie/One-Piece">One Piece</a></li>' +
-'</ul>';
+var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-Samurai"], 
+                                                        ["Akame ga Kill!", "Akame-ga-Kill"], 
+                                                        ["Ansatsu Kyoushitsu", "Assassination-Classroom"], 
+                                                        ["Btooom!", "Btooom"], 
+                                                        ["Code Geass", "Code-Geass"], 
+                                                        ["Devil is a Part Timer", "The-Devil-is-a-Part-Timer"], 
+                                                        ["Dragonball Super", "Dragonball-Super"], 
+                                                        ["Elfen Lied", "Elfen-Lied"], 
+                                                        ["Fate/Zero", "Fate-Zero"], 
+                                                        ["Fate/Stay Night: Unlimited Blade Works", "Fate-Stay-Night-Unlimited-Blade-Works"], 
+                                                        ["Guilty Crown", "Guilty-Crown"], 
+                                                        ["Gutten Lagann", "Gurren-Lagann"], 
+                                                        ["Highschool DxD", "High-School-D-D"], 
+                                                        ["InuYasha", "InuYasha"], 
+                                                        ["Nanatsu no Tasai", "The-Seven-Deadly-Sins"], 
+                                                        ["Neon Genesis Evangelion", "Neon-Genesis-Evangelion"], 
+                                                        ["No Game No Life", "No-Game-No-Life"], 
+                                                        ["Psycho Pass", "Psycho-Pass"], 
+                                                        ["Shingeki no Kyojin", "Shingeki-no-Kyojin"], 
+                                                        ["Spice and Wolf", "Spice-and-Wolf"], 
+                                                        ["Steins;Gate", "Steins-Gate"], 
+                                                        ["Sword Art Online", "Sword-Art-Online"], 
+                                                        ["Tokyo Ghoul", "Tokyo-Ghoul"]]),
+                       new SerienTab("Anime New *__*", [["Magi - The Labyrinth of Magic", "Magi-The-Labyrinth-of-Magic"], 
+                                                        ["Gate: Jieitai Kanochi nite, Kaku Tatakaeri", "Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri"],  
+                                                        ["Overlord", "Overlord"], 
+                                                        ["God Eater", "God-Eater"], 
+                                                        ["Rokka no Yuusha", "Rokka-no-Yuusha"],
+                                                        ["Kuusen Madoushi Kouhosei no Kyoukan", "Kuusen-Madoushi-Kouhosei-no-Kyoukan"],  
+                                                        ["Owari no Seraph", "Owari-no-Seraph"], 
+                                                        ["K-Project", "K-Project"], 
+                                                        ["Jormungand", "Jormungand"], 
+                                                        ["Black Bullet", "Black-Bullet"], 
+                                                        ["Log-Horizon", "Log-Horizon"]]),
+                             new SerienTab("Sitcom's", [["Bleach", "Bleach"], 
+                                                        ["Dragonball", "Dragonball"],
+                                                        ["Dragonball-Z", "Dragonball-Z"],
+                                                        ["Fairy Tail", "Fairy-Tail"],
+                                                        ["Full Metal Alchemist: Brotherhood", "Fullmetal-Alchemist-Brotherhood"], 
+                                                        ["Hunter-x-Hunter", "Hunter-x-Hunter-2011"], 
+                                                        ["Naruto", "Naruto"], 
+                                                        ["Naruto Shippuden", "Naruto-Shippuuden"], 
+                                                        ["One Piece", "One-Piece"]])
+                              ];
 
-var accordionLinks  = "<div id='accordionLinks'>" + 
-                      "<h3>Serien</h3><div>" + Serien + "</div>" + 
-                      "<h3>Msl's Wannabe's</h3><div>" + MslsListe + "</div>" + 
-                      "<h3>Sitcoms</h3><div>" + SitComs + "</div>" + 
-                      "</div>";
+// DON'T TOUCH THIS - ALL THIS DOWN HERE - - - - - - -
+SerienLinks = [];
+for(var y = 0; y < SerienTabContainerLinks.length; y++)
+{
+  var Serien = '<h3>' + SerienTabContainerLinks[y].name + '</h3><div><ul>';
+  for(var x = 0; x < SerienTabContainerLinks[y].serien.length; x++) {
+    Serien += '<li><a href="serie/' + SerienTabContainerLinks[y].serien[x][1] + '">' + SerienTabContainerLinks[y].serien[x][0] + '</a></li>'
+  }
+  Serien += '</ul></div>';
+  SerienLinks.push(Serien);
+}
 
-var accordionRechts = "<div id='accordionRechts'>" + 
-                      "<h3>Anime</h3><div>" + AnimeOld + "</div>" + 
-                      "<h3>New *__*</h3><div>" + AnimeNew + "</div>" + 
-                      "<h3>Classy</h3><div>" + AnimeClassy + "</div>" + 
-                      "</div>";
+SerienRechts = [];
+for(var y = 0; y < SerienTabContainerRechts.length; y++)
+{
+  var Serien = '<h3>' + SerienTabContainerRechts[y].name + '</h3><div><ul>';
+  for(var x = 0; x < SerienTabContainerRechts[y].serien.length; x++) {
+    Serien += '<li><a href="serie/' + SerienTabContainerRechts[y].serien[x][1] + '">' + SerienTabContainerRechts[y].serien[x][0] + '</a></li>'
+  }
+  Serien += '</ul></div>';
+  SerienRechts.push(Serien);
+}
+
+var accordionLinks  = "<div id='accordionLinks'>";
+for(var x = 0; x < SerienLinks.length; x++) {
+  accordionLinks += SerienLinks[x];
+}
+accordionLinks += "</div>";
+
+var accordionRechts = "<div id='accordionRechts'>";
+for(var x = 0; x < SerienRechts.length; x++) {
+  accordionRechts += SerienRechts[x];
+}
+accordionRechts += "</div>";
 
 var section = "<div class='home'><div id='column1' class='column'>" + accordionLinks + "</div><div id='column2' class='column'>" + accordionRechts + "</div></div>";
 
