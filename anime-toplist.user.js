@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      http://bs.to/
 // @icon         http://s.bs.to/favicon.ico
-// @version      0.8.8.1
+// @version      0.8.8.2
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -93,7 +93,7 @@ var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-S
                                                         ["Jormungand", "Jormungand"], 
                                                         ["Black Bullet", "Black-Bullet"], 
                                                         ["Log-Horizon", "Log-Horizon"]]),
-                             new SerienTab("Sitcom's", [["Bleach", "Bleach"], 
+                             new SerienTab("Classic's", [["Bleach", "Bleach"], 
                                                         ["Dragonball", "Dragonball"],
                                                         ["Dragonball-Z", "Dragonball-Z"],
                                                         ["Fairy Tail", "Fairy-Tail"],
