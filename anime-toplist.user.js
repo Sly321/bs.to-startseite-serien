@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.8.8.6
+// @version      0.8.8.8
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -26,7 +26,7 @@
 SerienTab = function(name, serienContainer) { 
     this.name = name;
     this.serien = serienContainer;
-}
+};
 
 // YOU CAN TOUCH THIS + + + + +
 var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D", "Marvel-s-Agents-of-S-H-I-E-L-D"], 
