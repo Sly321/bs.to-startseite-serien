@@ -3,8 +3,13 @@
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
+<<<<<<< HEAD
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
+=======
+// @include      http://bs.to/
+// @icon         http://s.bs.to/favicon.ico
+>>>>>>> origin/master
 // @version      0.8.8.6
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
@@ -45,19 +50,22 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Marvels Agent Carter", "Marvel-s-Agent-Carter"], 
                                                         ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
                                                         ["Supernatural", "Supernatural-Zur-Hoelle-mit-dem-Boesen"], 
+                                                        ["Suits", "Suits"], 
                                                         ["The 100", "The-100"], 
                                                         ["The Blacklist", "The-Blacklist"], 
                                                         ["The Flash", "The-Flash"], 
                                                         ["The Originals", "The-Originals"], 
                                                         ["The Strain", "The-Strain"], 
-                                                        ["The Tomorrow-People", "The-Tomorrow-People"], 
-                                                        ["The Walking Dead", "The-Walking-Dead"]]),
+                                                        ["The Tomorrow-People", "The-Tomorrow-People"],
+                                                        ["The Walking Dead", "The-Walking-Dead"],  
+                                                        ["Vampire Diaries", "Vampire-Diaries"]]),
                        new SerienTab("Msl's Wannabe's", [["Limitless", "Limitless"], 
                                                         ["Minority Report", "Minority-Report"], 
                                                         ["Scorpion", "Scorpion"], 
                                                         ["Shadowhunters: The Mortal Instruments", "Shadowhunters-The-Mortal-Instruments"], 
                                                         ["The Shannara Chronicles", "The-Shannara-Chronicles"]]),
-                             new SerienTab("Sitcom's", [["The Big Bang Theory", "The-Big-Bang-Theory"]])
+                             new SerienTab("Sitcom's", [["Sirens", "Sirens"], 
+                                                        ["The Big Bang Theory", "The-Big-Bang-Theory"]]),
                               ];
 
 var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-Samurai"], 
