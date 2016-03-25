@@ -3,9 +3,9 @@
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
-// @version      1.0.2
-// @include		 http://bs.to/serie*
-// @icon		 http://s.bs.to/favicon.ico
+// @version      1.0.3
+// @include		 https://bs.to/serie*
+// @icon		 https://s.bs.to/favicon.ico
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js
 // ==/UserScript==
