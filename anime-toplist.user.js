@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.8.8.8
+// @version      0.8.8.9
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -39,12 +39,13 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Fear the Walking Dead", "Fear-the-Walking-Dead"], 
                                                         ["Forever", "Forever"], 
                                                         ["Game of Thrones", "Game-of-Thrones"], 
+							["Gotham", "Gotham"],
                                                         ["Hannibal", "Hannibal"], 
                                                         ["iZombie", "iZombie"], 
                                                         ["Lucifer", "Lucifer"], 
                                                         ["Marvels Agent Carter", "Marvel-s-Agent-Carter"], 
                                                         ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
-                                                        ["Supernatural", "Supernatural-Zur-Hoelle-mit-dem-Boesen"], 
+                                                        ["Supernatural", "Supernatural"], 
                                                         ["Suits", "Suits"], 
                                                         ["The 100", "The-100"], 
                                                         ["The Blacklist", "The-Blacklist"], 
@@ -54,7 +55,8 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The Tomorrow-People", "The-Tomorrow-People"],
                                                         ["The Walking Dead", "The-Walking-Dead"],  
                                                         ["Vampire Diaries", "Vampire-Diaries"]]),
-                       new SerienTab("Msl's Wannabe's", [["Limitless", "Limitless"], 
+                       new SerienTab("Msl's Wannabe's", [["Into the Badlands", "Into-the-Badlands"],
+							["Limitless", "Limitless"], 
                                                         ["Minority Report", "Minority-Report"], 
                                                         ["Scorpion", "Scorpion"], 
                                                         ["Shadowhunters: The Mortal Instruments", "Shadowhunters-The-Mortal-Instruments"], 
@@ -100,7 +102,9 @@ var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-S
                                                         ["D.Gray-Man", "D-Gray-Man"], 
                                                         ["Magic Kaito", "Magic-Kaito"], 
                                                         ["Pandora Hearts", "Pandora-Hearts"], 
-                                                        ["Oda Nobuna no Yabou", "Oda-Nobuna-no-Yabou"]]),
+                                                        ["Oda Nobuna no Yabou", "Oda-Nobuna-no-Yabou"]
+							["Trinity-Seven", "Trinity-Seven-7-nin-no-Masho-Tsukai"]
+							["Ajin", "Ajin"]]),
                              new SerienTab("Classic's", [["Bleach", "Bleach"], 
                                                         ["Dragonball", "Dragonball"],
                                                         ["Dragonball-Z", "Dragonball-Z"],
