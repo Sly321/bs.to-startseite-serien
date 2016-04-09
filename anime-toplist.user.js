@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.8.8.9
+// @version      0.8.8.10
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -102,9 +102,9 @@ var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-S
                                                         ["D.Gray-Man", "D-Gray-Man"], 
                                                         ["Magic Kaito", "Magic-Kaito"], 
                                                         ["Pandora Hearts", "Pandora-Hearts"], 
-                                                        ["Oda Nobuna no Yabou", "Oda-Nobuna-no-Yabou"]
-							["Trinity-Seven", "Trinity-Seven-7-nin-no-Masho-Tsukai"]
-							["Ajin", "Ajin"]]),
+                                                        ["Oda Nobuna no Yabou", "Oda-Nobuna-no-Yabou"],
+							                            ["Trinity-Seven", "Trinity-Seven-7-nin-no-Masho-Tsukai"],
+							                            ["Ajin", "Ajin"]]),
                              new SerienTab("Classic's", [["Bleach", "Bleach"], 
                                                         ["Dragonball", "Dragonball"],
                                                         ["Dragonball-Z", "Dragonball-Z"],
@@ -122,7 +122,7 @@ for(var y = 0; y < SerienTabContainerLinks.length; y++)
 {
   var Serien = '<h3>' + SerienTabContainerLinks[y].name + '</h3><div><ul>';
   for(var x = 0; x < SerienTabContainerLinks[y].serien.length; x++) {
-    Serien += '<li><a href="serie/' + SerienTabContainerLinks[y].serien[x][1] + '">' + SerienTabContainerLinks[y].serien[x][0] + '</a></li>'
+    Serien += '<li><a href="serie/' + SerienTabContainerLinks[y].serien[x][1] + '">' + SerienTabContainerLinks[y].serien[x][0] + '</a></li>';
   }
   Serien += '</ul></div>';
   SerienLinks.push(Serien);
@@ -133,7 +133,7 @@ for(var y = 0; y < SerienTabContainerRechts.length; y++)
 {
   var Serien = '<h3>' + SerienTabContainerRechts[y].name + '</h3><div><ul>';
   for(var x = 0; x < SerienTabContainerRechts[y].serien.length; x++) {
-    Serien += '<li><a href="serie/' + SerienTabContainerRechts[y].serien[x][1] + '">' + SerienTabContainerRechts[y].serien[x][0] + '</a></li>'
+    Serien += '<li><a href="serie/' + SerienTabContainerRechts[y].serien[x][1] + '">' + SerienTabContainerRechts[y].serien[x][0] + '</a></li>';
   }
   Serien += '</ul></div>';
   SerienRechts.push(Serien);
