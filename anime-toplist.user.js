@@ -188,7 +188,7 @@ addGlobalStyle('.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }');
 addGlobalStyle('.ui-helper-reset { line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }');
 addGlobalStyle('.ui-helper-clearfix:before, .ui-helper-clearfix:after { content: ""; display: table; border-collapse: collapse; }');
 addGlobalStyle('.ui-helper-clearfix:after { clear: both; }');
-addGlobalStyle('.ui-accordion .ui-accordion-content { padding: 0px; }')
+addGlobalStyle('.ui-accordion .ui-accordion-content { padding: 0px; }');
 addGlobalStyle('::-webkit-scrollbar { width: 0.5em; height: 0.5em; }::-webkit-scrollbar-track {box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);}::-webkit-scrollbar-thumb { background: rgba(100, 100, 100, 0.8); border-radius: 5px;}::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb:window-inactive { background: rgba(100, 100, 100, 0.4); }');
 
 addGlobalStyle('.column { width: 420; margin: 5px; } ');
