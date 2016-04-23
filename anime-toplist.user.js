@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.8.8.10
+// @version      0.8.8.11
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -55,7 +55,8 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The Tomorrow-People", "The-Tomorrow-People"],
                                                         ["The Walking Dead", "The-Walking-Dead"],  
                                                         ["Vampire Diaries", "Vampire-Diaries"]]),
-                       new SerienTab("Msl's Wannabe's", [["Into the Badlands", "Into-the-Badlands"],
+                       new SerienTab("Msl's Wannabe's", [["Helix", "Helix"],
+							["Into the Badlands", "Into-the-Badlands"],
 							["Limitless", "Limitless"], 
                                                         ["Minority Report", "Minority-Report"], 
                                                         ["Scorpion", "Scorpion"], 
@@ -103,8 +104,9 @@ var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-S
                                                         ["Magic Kaito", "Magic-Kaito"], 
                                                         ["Pandora Hearts", "Pandora-Hearts"], 
                                                         ["Oda Nobuna no Yabou", "Oda-Nobuna-no-Yabou"],
-							                            ["Trinity-Seven", "Trinity-Seven-7-nin-no-Masho-Tsukai"],
-							                            ["Ajin", "Ajin"]]),
+							["Trinity-Seven", "Trinity-Seven-7-nin-no-Masho-Tsukai"],
+							["Ajin", "Ajin"],
+							["Koutetsujou no Kabaneri", "Koutetsujou-no-Kabaneri"]]),
                              new SerienTab("Classic's", [["Bleach", "Bleach"], 
                                                         ["Dragonball", "Dragonball"],
                                                         ["Dragonball-Z", "Dragonball-Z"],
