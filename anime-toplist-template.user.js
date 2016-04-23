@@ -11,17 +11,6 @@
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist-template.user.js
 // ==/UserScript==
 
-
-/*
- * Kommentar: How to:
- * //Name: [
- *  [//Serienname, //SerienshortLink (ohne /serie)], 
- *  ["Serie 2", "Href 2"]
- * ], 
- *
- * Die Komma's beachten, der letzte eintrag hat keins.
- */
-
 // - - - - - - - - - - - - - - - - - - - - - - - - - - 
 // DON'T TOUCH THIS  - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - - - - - 
