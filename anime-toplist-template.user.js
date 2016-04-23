@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         bs.to Top Anime Script
+// @name         bs.to Top Anime Script Template
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sven Liebig / Marcel Burmeister
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
@@ -8,7 +8,7 @@
 // @version      0.1
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
-// @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
+// @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist-template.user.js
 // ==/UserScript==
 
 
