@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.8.8.11
+// @version      0.9
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -39,7 +39,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Fear the Walking Dead", "Fear-the-Walking-Dead"], 
                                                         ["Forever", "Forever"], 
                                                         ["Game of Thrones", "Game-of-Thrones"], 
-							["Gotham", "Gotham"],
+                            ["Gotham", "Gotham"],
                                                         ["Hannibal", "Hannibal"], 
                                                         ["iZombie", "iZombie"], 
                                                         ["Lucifer", "Lucifer"], 
@@ -56,8 +56,8 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The Walking Dead", "The-Walking-Dead"],  
                                                         ["Vampire Diaries", "Vampire-Diaries"]]),
                        new SerienTab("Msl's Wannabe's", [["Helix", "Helix"],
-							["Into the Badlands", "Into-the-Badlands"],
-							["Limitless", "Limitless"], 
+                            ["Into the Badlands", "Into-the-Badlands"],
+                            ["Limitless", "Limitless"], 
                                                         ["Minority Report", "Minority-Report"], 
                                                         ["Scorpion", "Scorpion"], 
                                                         ["Shadowhunters: The Mortal Instruments", "Shadowhunters-The-Mortal-Instruments"], 
@@ -104,9 +104,9 @@ var SerienTabContainerRechts = [new SerienTab("Anime", [["Afro Samurai", "Afro-S
                                                         ["Magic Kaito", "Magic-Kaito"], 
                                                         ["Pandora Hearts", "Pandora-Hearts"], 
                                                         ["Oda Nobuna no Yabou", "Oda-Nobuna-no-Yabou"],
-							["Trinity-Seven", "Trinity-Seven-7-nin-no-Masho-Tsukai"],
-							["Ajin", "Ajin"],
-							["Koutetsujou no Kabaneri", "Koutetsujou-no-Kabaneri"]]),
+                            ["Trinity-Seven", "Trinity-Seven-7-nin-no-Masho-Tsukai"],
+                            ["Ajin", "Ajin"],
+                            ["Koutetsujou no Kabaneri", "Koutetsujou-no-Kabaneri"]]),
                              new SerienTab("Classic's", [["Bleach", "Bleach"], 
                                                         ["Dragonball", "Dragonball"],
                                                         ["Dragonball-Z", "Dragonball-Z"],
@@ -179,6 +179,7 @@ function addGlobalStyle(css) {
     head.appendChild(style);
 }
 
+addGlobalStyle('.serie-info { float: right; }');
 addGlobalStyle('.ui-state-default a { color: #555555; background-color: #BBBBFF; text-decoration: none; }');
 addGlobalStyle('.ui-state-active a, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { background: #6666FF; font-weight: normal; color: #212121; }');
 addGlobalStyle('.ui-state-hover a { background: #9A9AFF; font-weight: normal; color: #212121; }');
@@ -667,3 +668,28 @@ $(function() {
       heightStyle: "content"
     });
   });
+
+// Cookie Action!
+
+function getAllSeriesCookies() {
+    var theCookies = document.cookie.split(';');
+    var regexForSerie = /serien_stand_([\w-]*)=([.\[\]\{\}\"\w:,-]*)/;
+    var cookieArray = [];
+    for (var i = 1 ; i <= theCookies.length; i++) {
+        var theSerieMatch = theCookies[i-1].match(regexForSerie);
+        if(theSerieMatch !== null) {
+           cookieArray.push(theSerieMatch[2]);
+        }
+    }
+    return cookieArray;
+}
+
+function addSerieInfoToElements(cookieArray) {
+    for (var x = 0; x < cookieArray.length; x++) {
+        var parsedCookie = JSON.parse(cookieArray[x])[0][0];
+        var element = $('a[href="serie/'+ parsedCookie.link + '"]');
+        element.html(element.html() + "<span class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</span>");
+    }
+}
+
+addSerieInfoToElements(getAllSeriesCookies());
