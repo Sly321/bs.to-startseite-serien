@@ -179,7 +179,7 @@ function addGlobalStyle(css) {
     head.appendChild(style);
 }
 
-addGlobalStyle('.serie-info { float: right; }');
+addGlobalStyle('.serie-info { float: right; font-size: 13px; padding: 2px; }');
 addGlobalStyle('.ui-state-default a { color: #555555; background-color: #BBBBFF; text-decoration: none; }');
 addGlobalStyle('.ui-state-active a, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { background: #6666FF; font-weight: normal; color: #212121; }');
 addGlobalStyle('.ui-state-hover a { background: #9A9AFF; font-weight: normal; color: #212121; }');
