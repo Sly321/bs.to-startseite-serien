@@ -54,6 +54,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The Originals", "The-Originals"], 
                                                         ["The Royals", "The-Royals"], 
                                                         ["The Strain", "The-Strain"], 
+                                                        ["The Man in the High Castle", "The-Man-in-the-High-Castle"], 
                                                         ["The Tomorrow-People", "The-Tomorrow-People"],
                                                         ["The Walking Dead", "The-Walking-Dead"],  
                                                         ["Vampire Diaries", "Vampire-Diaries"]]),
@@ -67,6 +68,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                              new SerienTab("Sitcom's", [["How I Met Your Mother", "How-I-Met-Your-Mother"], 
                                                         ["Sirens", "Sirens"], 
                                                         ["The Big Bang Theory", "The-Big-Bang-Theory"]]),
+                    new SerienTab("Good and Completed", [])
                               ];
 
 var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoushitsu", "Assassination-Classroom"], 
@@ -120,6 +122,7 @@ var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoush
                                                         ["Fate/Stay Night: Unlimited Blade Works", "Fate-Stay-Night-Unlimited-Blade-Works"],
                                                         ["Nanatsu no Tasai", "The-Seven-Deadly-Sins"], 
                                                         ["Psycho Pass", "Psycho-Pass"],
+                                                        ["Soul Eater", "Soul-Eater"],
                                                         ["Steins;Gate", "Steins-Gate"],
                                                         ["Tokyo Ghoul", "Tokyo-Ghoul"]])
                               ];
