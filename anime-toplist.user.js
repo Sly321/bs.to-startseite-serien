@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.0.9
+// @version      0.9.0.10
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -32,12 +32,10 @@ SerienTab = function(name, serienContainer) {
 var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D", "Marvel-s-Agents-of-S-H-I-E-L-D"], 
                                                         ["Arrow", "Arrow"], 
                                                         ["Better Call Saul", "Better-Call-Saul"], 
-                                                        ["Constantine", "Constantine"], 
                                                         ["Daredevil", "Marvel-s-Daredevil"], 
                                                         ["Elementary", "Elementary"], 
                                                         ["Extant", "Extant"], 
                                                         ["Fear the Walking Dead", "Fear-the-Walking-Dead"], 
-                                                        ["Forever", "Forever"], 
                                                         ["Game of Thrones", "Game-of-Thrones"], 
                                                         ["Gotham", "Gotham"],
                                                         ["Hannibal", "Hannibal"], 
@@ -45,7 +43,6 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["iZombie", "iZombie"], 
                                                         ["Lucifer", "Lucifer"], 
                                                         ["Marvels Agent Carter", "Marvel-s-Agent-Carter"], 
-                                                        ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
                                                         ["Supernatural", "Supernatural"], 
                                                         ["Suits", "Suits"], 
                                                         ["The 100", "The-100"], 
@@ -55,7 +52,6 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The Royals", "The-Royals"], 
                                                         ["The Strain", "The-Strain"], 
                                                         ["The Man in the High Castle", "The-Man-in-the-High-Castle"], 
-                                                        ["The Tomorrow-People", "The-Tomorrow-People"],
                                                         ["The Walking Dead", "The-Walking-Dead"],  
                                                         ["Vampire Diaries", "Vampire-Diaries"]]),
                        new SerienTab("Msl's Wannabe's", [["Helix", "Helix"],
@@ -68,7 +64,10 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                              new SerienTab("Sitcom's", [["How I Met Your Mother", "How-I-Met-Your-Mother"], 
                                                         ["Sirens", "Sirens"], 
                                                         ["The Big Bang Theory", "The-Big-Bang-Theory"]]),
-                            new SerienTab("Completed", [])
+                            new SerienTab("Completed", [["Constantine", "Constantine"],
+                                                        ["Forever", "Forever"],
+                                                        ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
+                                                        ["Revolution", "Revolution"],
                               ];
 
 var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoushitsu", "Assassination-Classroom"], 
