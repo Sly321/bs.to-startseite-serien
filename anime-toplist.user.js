@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.1.0
+// @version      0.9.1.1
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -672,9 +672,13 @@ $(function() {
         $("#ui-tabs-4 base").remove();
         $("#ui-tabs-4 meta").remove();
         $("#ui-tabs-4 #root header").remove();
+        $("#ui-tabs-4 #root footer").remove();
         $("#ui-tabs-4 #root nav").remove();
         $("#ui-tabs-4 #root .andere-serien p").remove();
+        $("#ui-tabs-4 #root .andere-serien h2").remove();
         $("#serInput").css("font-size", "15px");
+        $("#seriesContainer").css("font-size", "17px");
+        $("#seriesContainer").css("font-family", "calibri");
     });
 });
 
