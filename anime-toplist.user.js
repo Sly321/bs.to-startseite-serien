@@ -728,3 +728,6 @@ function addSerieInfoToElements(cookieArray) {
 }
 
 addSerieInfoToElements(getAllSeriesCookies());
+
+// Get the headers!
+// $("#column1 div h3");
