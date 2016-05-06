@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.0.8
+// @version      0.9.0.9
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -68,7 +68,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                              new SerienTab("Sitcom's", [["How I Met Your Mother", "How-I-Met-Your-Mother"], 
                                                         ["Sirens", "Sirens"], 
                                                         ["The Big Bang Theory", "The-Big-Bang-Theory"]]),
-                    new SerienTab("Good and Completed", [])
+                            new SerienTab("Completed", [])
                               ];
 
 var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoushitsu", "Assassination-Classroom"], 
