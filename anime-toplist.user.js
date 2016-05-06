@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.0.11
+// @version      0.9.0.12
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -38,7 +38,6 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Fear the Walking Dead", "Fear-the-Walking-Dead"], 
                                                         ["Game of Thrones", "Game-of-Thrones"], 
                                                         ["Gotham", "Gotham"],
-                                                        ["Hannibal", "Hannibal"], 
                                                         ["House of Cards", "House-of-Cards-US"], 
                                                         ["iZombie", "iZombie"], 
                                                         ["Lucifer", "Lucifer"], 
@@ -66,6 +65,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The Big Bang Theory", "The-Big-Bang-Theory"]]),
                             new SerienTab("Completed", [["Constantine", "Constantine"],
                                                         ["Forever", "Forever"],
+                                                        ["Hannibal", "Hannibal"], 
                                                         ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
                                                         ["Revolution", "Revolution"],
                                                         ["The Tomorrow-People", "The-Tomorrow-People"]])
