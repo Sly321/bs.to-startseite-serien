@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.0.10
+// @version      0.9.0.11
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -202,7 +202,6 @@ addGlobalStyle('.ui-helper-clearfix:before, .ui-helper-clearfix:after { content:
 addGlobalStyle('.ui-helper-clearfix:after { clear: both; }');
 addGlobalStyle('.ui-accordion .ui-accordion-content { padding: 0px; }');
 addGlobalStyle('::-webkit-scrollbar { width: 0.5em; height: 0.5em; }::-webkit-scrollbar-track {box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);}::-webkit-scrollbar-thumb { background: rgba(100, 100, 100, 0.8); border-radius: 5px;}::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb:window-inactive { background: rgba(100, 100, 100, 0.4); }');
-
 addGlobalStyle('.column { width: 420; margin: 5px; } ');
 addGlobalStyle('#column1 { float:left; } ');
 addGlobalStyle('#column2 { float:right; } ');
@@ -625,6 +624,7 @@ var other = '<div align="center" style="margin-top: 20px; margin-bottom: 100px;"
 document.getElementsByTagName('footer')[0].innerHTML = "";
 document.getElementsByTagName('nav')[0].innerHTML = "";
 document.getElementsByTagName('section')[1].remove();
+$("a[href='home']").attr("href", "");
 
 $('nav').html('<div id="tabsbar">' +
                  '<ul id="tabbar">' +
