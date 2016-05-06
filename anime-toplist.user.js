@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.0.7
+// @version      0.9.0.8
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -64,7 +64,8 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Scorpion", "Scorpion"], 
                                                         ["Shadowhunters: The Mortal Instruments", "Shadowhunters-The-Mortal-Instruments"], 
                                                         ["The Shannara Chronicles", "The-Shannara-Chronicles"]]),
-                             new SerienTab("Sitcom's", [["Sirens", "Sirens"], 
+                             new SerienTab("Sitcom's", [["How I Met Your Mother", "How-I-Met-Your-Mother"], 
+                                                        ["Sirens", "Sirens"], 
                                                         ["The Big Bang Theory", "The-Big-Bang-Theory"]]),
                               ];
 
