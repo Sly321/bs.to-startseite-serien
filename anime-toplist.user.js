@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.0.6
+// @version      0.9.0.7
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -114,6 +114,7 @@ var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoush
                                                         ["Akame ga Kill!", "Akame-ga-Kill"], 
                                                         ["Blue Exorcist", "Blue-Exorcist"], 
                                                         ["Code Geass", "Code-Geass"], 
+                                                        ["Death Note", "Death-Note"], 
                                                         ["Fate/Zero", "Fate-Zero"], 
                                                         ["Fate/Stay Night: Unlimited Blade Works", "Fate-Stay-Night-Unlimited-Blade-Works"],
                                                         ["Nanatsu no Tasai", "The-Seven-Deadly-Sins"], 
