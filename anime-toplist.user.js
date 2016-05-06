@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.0.12
+// @version      0.9.1.0
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -638,7 +638,7 @@ $('nav').html('<div id="tabsbar">' +
                      '<a href="#ui-tabs-3">Links</a>' +
                    '</li>' +
                    '<li>' +
-                       '<a class="btn" href="#andere-serien">Alle Serien</a>' +
+                       '<a class="btn" href="#ui-tabs-4">Alle Serien</a>' +
                    '</li>' +
                  '</ul>' + '<div id="ui-tabs-1" style="display: block; padding: 0px;">' +
                  section +
@@ -649,7 +649,12 @@ $('nav').html('<div id="tabsbar">' +
                  '<div id="ui-tabs-3" style="display: block; padding: 0px;">' +
                  other +
                  '</div>'+
+                 '<div id="ui-tabs-4" style="display: block; padding: 0px;">' +
+                 '</div>'+
                '</div>');
+
+
+$('#ui-tabs-4').load('https://bs.to/andere-serien/');
 
 $(function() {
     $("#tabsbar").tabs();
@@ -662,8 +667,14 @@ $(function() {
     $("a[href=#ui-tabs-3]").click(function() {
         $("#tabs").tabs("option", "active", 2);
     });
-    $("a[href=#andere-serien]").click(function() {
-        window.location = "http://bs.to/andere-serien/";
+    $("a[href=#ui-tabs-4]").click(function() {
+        $("#ui-tabs-4 title").remove();
+        $("#ui-tabs-4 base").remove();
+        $("#ui-tabs-4 meta").remove();
+        $("#ui-tabs-4 #root header").remove();
+        $("#ui-tabs-4 #root nav").remove();
+        $("#ui-tabs-4 #root .andere-serien p").remove();
+        $("#serInput").css("font-size", "15px");
     });
 });
 
@@ -702,3 +713,14 @@ function addSerieInfoToElements(cookieArray) {
 }
 
 addSerieInfoToElements(getAllSeriesCookies());
+
+timeout = null;
+
+series = [];
+seriesContainer = document.getElementById('seriesContainer');
+seriesElements = seriesContainer.getElementsByTagName("a");
+seriesNum = seriesElements.length;
+
+for (var i = 0; i < seriesNum; ++i) {
+    series.push(seriesElements[i].innerHTML);
+}
