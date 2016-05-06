@@ -68,6 +68,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Forever", "Forever"],
                                                         ["Nip/Tuck", "Nip-Tuck-Schoenheit-hat-ihren-Preis"], 
                                                         ["Revolution", "Revolution"],
+                                                        ["The Tomorrow-People", "The-Tomorrow-People"]])
                               ];
 
 var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoushitsu", "Assassination-Classroom"], 
