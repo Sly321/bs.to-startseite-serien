@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.1.2
+// @version      0.9.2.0
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -35,7 +35,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Daredevil", "Marvel-s-Daredevil"], 
                                                         ["Elementary", "Elementary"], 
                                                         ["Extant", "Extant"], 
-                                                        ["Fear the Walking Dead", "Fear-the-Walking-Dead"], 
+                                                        ["Fear the Walking Dead", "Fear-The-Walking-Dead"], 
                                                         ["Game of Thrones", "Game-of-Thrones"], 
                                                         ["Gotham", "Gotham"],
                                                         ["House of Cards", "House-of-Cards-US"], 
@@ -723,7 +723,16 @@ function addSerieInfoToElements(cookieArray) {
     for (var x = 0; x < cookieArray.length; x++) {
         var parsedCookie = JSON.parse(cookieArray[x])[0][0];
         var element = $('a[href="serie/'+ parsedCookie.link + '"]');
-        element.html(element.html() + "<span class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</span>");
+        console.log(parsedCookie.link);
+        if(parsedCookie.Name !== undefined) {
+            console.log("undefined");
+            var thelink = "serie/" + parsedCookie.link + "/" + parsedCookie.season + "/" + parsedCookie.folge + "-" + parsedCookie.Name;
+            console.log("Link: " + thelink);
+            element.html(element.html() + "<a href='" + thelink + "'class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</a>");
+        } else {
+            console.log("else");
+            element.html(element.html() + "<span class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</span>");
+        }
     }
 }
 
