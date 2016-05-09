@@ -3,7 +3,7 @@
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
-// @version      1.2.0
+// @version      1.2.1
 // @include      https://bs.to/serie*
 // @icon         https://s.bs.to/favicon.ico
 // @grant        none
@@ -53,11 +53,11 @@ function get_cookie (cname)
 if(currentHref !== undefined) {
     var result = currentHref.match(linkRegex);
     var Link = result[1];
-    console.log ("LINK: " + Link);
+    //console.log ("LINK: " + Link);
     var Season = result[2];
     var Folge = result[3];
     var Name = result[4];
-    console.log ("NAME: " + Name);
+    //console.log ("NAME: " + Name);
     var exdays = 50;
     var d = new Date();
     d.setTime (d.getTime () + (exdays*24*60*60*1000));
@@ -90,7 +90,7 @@ if(parent.children().size() != indexOfNext)
     //console.log("Hoster: " + hoster);
 
     var nextEpisode = jQuery("a", children[indexOfNext]).attr("href");
-    console.log("Next Episode: " + nextEpisode);
+    //console.log("Next Episode: " + nextEpisode);
 
     // If there's still a "-" it's the episode itself. Hoster don't have it
     if(hoster.indexOf('-') == -1)
@@ -114,7 +114,7 @@ if(parent.children().size() != indexOfNext)
 
         if(element.length !== 0)
         {
-            console.log('Hoster: ' + hoster);
+            //console.log('Hoster: ' + hoster);
             nextEpisode = hosterLink;
         }
     }
