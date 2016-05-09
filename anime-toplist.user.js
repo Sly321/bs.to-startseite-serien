@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.2.1
+// @version      0.9.2.2
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -208,6 +208,7 @@ addGlobalStyle('#column2 { float:right; } ');
 addGlobalStyle('#tabbar { background-color: #66f; width: 900px; height: 45px; padding: 0; border-radius: 0px; border-left: 0px; border-right: 0px}');
 addGlobalStyle('#tabbar > li > a { padding-bottom: 11px; padding-top: 11px; height: 22px;}');
 addGlobalStyle('#tabbar > li { margin: 0px; border: 0px border-left: 1px; border-right: 1px; border-radius: 0px}');
+addGlobalStyle('.delbtn { color: white !important; float: right; font-size: 14px; border: none; background: #212121; border-radius: 100%; height: 19px; width: 20px; margin-top: 1px; padding: 0px 0px 0px 0px; z-index: 15; text-decoration: none; text-align: center; margin-left: 5px; }');
 
 var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' +
     '<table class="inner" style="min-width:0;margin-left: 5px;" align="center"><tbody><tr><td align="center">' +
