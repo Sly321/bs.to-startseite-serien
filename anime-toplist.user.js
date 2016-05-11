@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.2
+// @version      1.0.3
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -239,6 +239,10 @@ if(true) {
     addGlobalStyle('html { transition: background 1s ease; background: linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%); }');
     addGlobalStyle('.ui-widget-content .ui-state-active { transition: background 1s ease; background: #C2261A; }');
     addGlobalStyle('.home li:nth-child(even) { background-color: #E1ABA1; }');
+    addGlobalStyle('ul > li > a { text-decoration: none; font-size: 95%; }');
+    addGlobalStyle('ul > li > a:hover { color: #C2261A; }');
+    addGlobalStyle('ul > li > a > a { text-decoration: none; }');
+    addGlobalStyle('ul > li > a > a:hover { color: #C2261A;; }');
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
