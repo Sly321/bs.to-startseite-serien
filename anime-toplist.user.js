@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.1.0
+// @version      1.2.0
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -229,7 +229,8 @@ addGlobalStyle('.delbtn { color: white !important; float: right; font-size: 14px
 if(true) {
     addGlobalStyle('#root > header { background: url(https://img10.deviantart.net/8e83/i/2012/136/5/f/cat_woman_vs_harley_quinn__tmb__by_l15ard-d4zys2g.jpg) no-repeat #fff; }');
     addGlobalStyle('#root > header > h1 > a { width: 520px; }');
-    addGlobalStyle('#user { transition: all 1s ease; background-color: #C2261A; color: white;margin-right: 175px; }');
+    addGlobalStyle('#user { transition: all 1s ease; background-color: #C2261A; color: white;margin-right: 175px; height: 13px; width: 142px; padding-top: 2px; overflow: hidden; }');
+    addGlobalStyle('#user:hover { width: 142px; height: 132px; padding: 7px;}');
     addGlobalStyle('#user > a { transition: all 1s ease; color: white; }');
     addGlobalStyle('#tabbar { transition: background 1s ease; background: #C2261A; }');
     addGlobalStyle('.ui-state-default a { transition: background 1s ease; color: white; background-color: #E1ABA1; }');
@@ -246,6 +247,9 @@ if(true) {
     addGlobalStyle('.ui-accordion-content > ul > li { width: 420px; height: 21px; display: flex; }');
     addGlobalStyle('ul > li > .serie-title { float: left; flex-grow: 1; }');
     addGlobalStyle('ul > li > .serie-info { float: right;  }');
+    addGlobalStyle('tr:nth-child(even) { background-color: #E1ABA1; }');
+    addGlobalStyle('.pages>.current { background-color: #E1ABA1; }');
+    addGlobalStyle('.pages>li>a:hover {background-color: #C2261A;color: white;}');
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
