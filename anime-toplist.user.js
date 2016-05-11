@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.2.8
+// @version      0.9.2.9
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -225,6 +225,7 @@ addGlobalStyle('#ui-tabs-5 > div { padding: 15px; }');
 addGlobalStyle('#ui-tabs-5 > div >h3 { margin-top: 0; margin-bottom: 10px; }');
 addGlobalStyle('#ui-tabs-5 > div > input { margin-right: 15px; }');
 addGlobalStyle('.delbtn { color: white !important; float: right; font-size: 14px; border: none; background: #212121; border-radius: 100%; height: 19px; width: 20px; margin-top: 1px; padding: 0px 0px 0px 0px; z-index: 15; text-decoration: none; text-align: center; margin-left: 5px; }');
+addGlobalStyle('#root > header { background: url(https://img10.deviantart.net/8e83/i/2012/136/5/f/cat_woman_vs_harley_quinn__tmb__by_l15ard-d4zys2g.jpg) no-repeat #fff; }');
 
 var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' +
     '<table class="inner" style="min-width:0;margin-left: 5px;" align="center"><tbody><tr><td align="center">' +
