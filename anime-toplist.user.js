@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.1
+// @version      1.0.2
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -221,9 +221,9 @@ addGlobalStyle('#ui-accordion-accordionLinks-header-3 { padding: 5px 0px 5px 30p
 addGlobalStyle('#ui-accordion-accordionRechts-header-3 { padding: 5px 0px 5px 30px; }');
 addGlobalStyle('#ui-accordion-accordionLinks-header-4 { padding: 5px 0px 5px 30px; }');
 addGlobalStyle('#ui-accordion-accordionRechts-header-4 { padding: 5px 0px 5px 30px; }');
-addGlobalStyle('#ui-tabs-5 > div { padding: 15px; }');
-addGlobalStyle('#ui-tabs-5 > div >h3 { margin-top: 0; margin-bottom: 10px; }');
-addGlobalStyle('#ui-tabs-5 > div > input { margin-right: 15px; }');
+addGlobalStyle('#ui-tabs-5 > .half-prefs > div { padding: 15px; }');
+addGlobalStyle('#ui-tabs-5 > .half-prefs > div > h3 { margin-top: 0; margin-bottom: 10px; }');
+addGlobalStyle('#ui-tabs-5 > .half-prefs > div > input { margin-right: 15px; }');
 addGlobalStyle('.delbtn { color: white !important; float: right; font-size: 14px; border: none; background: #212121; border-radius: 100%; height: 19px; width: 20px; margin-top: 1px; padding: 0px 0px 0px 0px; z-index: 15; text-decoration: none; text-align: center; margin-left: 5px; }');
 
 if(true) {
@@ -240,6 +240,8 @@ if(true) {
     addGlobalStyle('.ui-widget-content .ui-state-active { transition: background 1s ease; background: #C2261A; }');
     addGlobalStyle('.home li:nth-child(even) { background-color: #E1ABA1; }');
 }
+
+addGlobalStyle('.half-prefs { width: 50%; float: left; };');
 
 var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' +
     '<table class="inner" style="min-width:0;margin-left: 5px;" align="center"><tbody><tr><td align="center">' +
@@ -772,7 +774,7 @@ var lTitles = $("#column1 div h3 .header-title");
 var rTitles = $("#column2 div h3 .header-title");
 
 var preferencesTab = $('#ui-tabs-5');
-var input = "<div><h3>Check to Hide</h3>";
+var input = "<div class='half-prefs'><div><h3>Check to Hide</h3>";
 
 for (var x = 0; x < lTitles.length; x++) {
     input += '<input type="checkbox" name="' + lTitles[x].innerHTML + '" value="0"/>' + lTitles[x].innerHTML + "<br>";
@@ -782,6 +784,9 @@ for (var x = 0; x < rTitles.length; x++) {
     input += '<input type="checkbox" name="' + rTitles[x].innerHTML + '" value="0"/>' + rTitles[x].innerHTML + "<br>";
 }
 
-input += "</div>";
+input += "</div></div><div class='half-prefs'><div><h3>Overlay</h3>";
+input += '<input type="radio" id="blue_standard" name="overlay" value="blue"><label for="blue_standard"> Blue - Standard</label><br><input type="radio" id="red_batman" name="overlay" value="red" checked><label for="red_batman">  Red - Batman</label><br>';
+input += "</div></div>";
+
 
 preferencesTab.html(input);
