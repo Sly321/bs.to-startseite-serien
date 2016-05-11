@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.2.4
+// @version      0.9.2.5
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -132,7 +132,7 @@ var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoush
 SerienLinks = [];
 for(var y = 0; y < SerienTabContainerLinks.length; y++)
 {
-  var Serien = '<h3>' + SerienTabContainerLinks[y].name + '</h3><div><ul>';
+  var Serien = '<h3><span class="header-title">' + SerienTabContainerLinks[y].name + '</span></h3><div><ul>';
   for(var x = 0; x < SerienTabContainerLinks[y].serien.length; x++) {
     Serien += '<li><a href="serie/' + SerienTabContainerLinks[y].serien[x][1] + '">' + SerienTabContainerLinks[y].serien[x][0] + '</a></li>';
   }
@@ -143,7 +143,7 @@ for(var y = 0; y < SerienTabContainerLinks.length; y++)
 SerienRechts = [];
 for(var y = 0; y < SerienTabContainerRechts.length; y++)
 {
-  var Serien = '<h3>' + SerienTabContainerRechts[y].name + '</h3><div><ul>';
+  var Serien = '<h3><span class="header-title">' + SerienTabContainerRechts[y].name + '</span></h3><div><ul>';
   for(var x = 0; x < SerienTabContainerRechts[y].serien.length; x++) {
     Serien += '<li><a href="serie/' + SerienTabContainerRechts[y].serien[x][1] + '">' + SerienTabContainerRechts[y].serien[x][0] + '</a></li>';
   }
@@ -217,6 +217,8 @@ addGlobalStyle('#ui-accordion-accordionLinks-header-2 { padding: 5px 0px 5px 30p
 addGlobalStyle('#ui-accordion-accordionRechts-header-2 { padding: 5px 0px 5px 30px; }');
 addGlobalStyle('#ui-accordion-accordionLinks-header-3 { padding: 5px 0px 5px 30px; }');
 addGlobalStyle('#ui-accordion-accordionRechts-header-3 { padding: 5px 0px 5px 30px; }');
+addGlobalStyle('#ui-tabs-5 > div { padding: 15px; }');
+addGlobalStyle('#ui-tabs-5 > div > input { margin-right: 15px; }');
 addGlobalStyle('.delbtn { color: white !important; float: right; font-size: 14px; border: none; background: #212121; border-radius: 100%; height: 19px; width: 20px; margin-top: 1px; padding: 0px 0px 0px 0px; z-index: 15; text-decoration: none; text-align: center; margin-left: 5px; }');
 
 var proxerAnimes = '<div style="min-width:0;" align="center"><h1>Anime Toplist</h1></div>' +
@@ -746,3 +748,20 @@ addSerieInfoToElements(getAllSeriesCookies());
 
 // Get the headers!
 // $("#column1 div h3");
+var lTitles = $("#column1 div h3 .header-title");
+var rTitles = $("#column2 div h3 .header-title");
+
+var preferencesTab = $('#ui-tabs-5');
+var input = "<div><h3>Check to Hide</h3><br>";
+
+for (var x = 0; x < lTitles.length; x++) {
+    input += '<input type="checkbox" name="' + lTitles[x].innerHTML + '" value="0"/>' + lTitles[x].innerHTML + "<br>";
+}
+
+for (var x = 0; x < rTitles.length; x++) {
+    input += '<input type="checkbox" name="' + rTitles[x].innerHTML + '" value="0"/>' + rTitles[x].innerHTML + "<br>";
+}
+
+input += "</div>";
+
+preferencesTab.html(input);
