@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.9.2.2
+// @version      0.9.2.3
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -42,6 +42,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["iZombie", "iZombie"], 
                                                         ["Lucifer", "Lucifer"], 
                                                         ["Marvels Agent Carter", "Marvel-s-Agent-Carter"], 
+                                                        ["Mr. Robot", "Mr-Robot"], 
                                                         ["Supernatural", "Supernatural"], 
                                                         ["Suits", "Suits"], 
                                                         ["The 100", "The-100"], 
