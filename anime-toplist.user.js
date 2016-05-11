@@ -5,7 +5,6 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.4
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -110,20 +109,20 @@ var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoush
                                                         ["Dragonball", "Dragonball"],
                                                         ["Dragonball-Z", "Dragonball-Z"],
                                                         ["Fairy Tail", "Fairy-Tail"],
-                                                        ["Full Metal Alchemist: Brotherhood", "Fullmetal-Alchemist-Brotherhood"], 
-                                                        ["Hunter-x-Hunter", "Hunter-x-Hunter-2011"], 
-                                                        ["InuYasha", "InuYasha"], 
-                                                        ["Naruto", "Naruto"], 
-                                                        ["Naruto Shippuden", "Naruto-Shippuuden"], 
+                                                        ["Full Metal Alchemist: Brotherhood", "Fullmetal-Alchemist-Brotherhood"],
+                                                        ["Hunter-x-Hunter", "Hunter-x-Hunter-2011"],
+                                                        ["InuYasha", "InuYasha"],
+                                                        ["Naruto", "Naruto"],
+                                                        ["Naruto Shippuden", "Naruto-Shippuuden"],
                                                         ["One Piece", "One-Piece"]]),
-             new SerienTab("Good and completed Anime", [["Afro Samurai", "Afro-Samurai"], 
-                                                        ["Akame ga Kill!", "Akame-ga-Kill"], 
-                                                        ["Blue Exorcist", "Blue-Exorcist"], 
-                                                        ["Code Geass", "Code-Geass"], 
-                                                        ["Death Note", "Death-Note"], 
-                                                        ["Fate/Zero", "Fate-Zero"], 
+             new SerienTab("Good and completed Anime", [["Afro Samurai", "Afro-Samurai"],
+                                                        ["Akame ga Kill!", "Akame-ga-Kill"],
+                                                        ["Blue Exorcist", "Blue-Exorcist"],
+                                                        ["Code Geass", "Code-Geass"],
+                                                        ["Death Note", "Death-Note"],
+                                                        ["Fate/Zero", "Fate-Zero"],
                                                         ["Fate/Stay Night: Unlimited Blade Works", "Fate-Stay-Night-Unlimited-Blade-Works"],
-                                                        ["Nanatsu no Tasai", "The-Seven-Deadly-Sins"], 
+                                                        ["Nanatsu no Tasai", "The-Seven-Deadly-Sins"],
                                                         ["Psycho Pass", "Psycho-Pass"],
                                                         ["Soul Eater", "Soul-Eater"],
                                                         ["Steins;Gate", "Steins-Gate"],
@@ -147,7 +146,7 @@ for(var y = 0; y < SerienTabContainerRechts.length; y++)
 {
   var Serien = '<h3><span class="header-title">' + SerienTabContainerRechts[y].name + '</span></h3><div><ul>';
   for(var x = 0; x < SerienTabContainerRechts[y].serien.length; x++) {
-    Serien += '<li><a href="serie/' + SerienTabContainerRechts[y].serien[x][1] + '">' + SerienTabContainerRechts[y].serien[x][0] + '</a></li>';
+    Serien += '<li><a class="serie-title" href="serie/' + SerienTabContainerRechts[y].serien[x][1] + '">' + SerienTabContainerRechts[y].serien[x][0] + '</a></li>';
   }
   Serien += '</ul></div>';
   SerienRechts.push(Serien);
@@ -243,8 +242,9 @@ if(true) {
     addGlobalStyle('ul > li > a:hover { color: #C2261A; }');
     addGlobalStyle('ul > li > a > a { text-decoration: none; }');
     addGlobalStyle('ul > li > a > a:hover { color: #C2261A; font-weight: bold; }');
-    addGlobalStyle('.ui-accordion-content > ul > li { width: 420px; }');
-    addGlobalStyle('ul > li > .serie-title {  }');
+    addGlobalStyle('.ui-accordion-content > ul > li { width: 420px; height: 21px; display: flex; }');
+    addGlobalStyle('ul > li > .serie-title { float: left; flex-grow: 1; }');
+    addGlobalStyle('ul > li > .serie-info { float: right;  }');
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
@@ -762,12 +762,19 @@ function getAllSeriesCookies() {
 function addSerieInfoToElements(cookieArray) {
     for (var x = 0; x < cookieArray.length; x++) {
         var parsedCookie = JSON.parse(cookieArray[x])[0][0];
-        var element = $('a[href="serie/'+ parsedCookie.link + '"]');
-        if(parsedCookie.Name !== undefined) {
-            var thelink = "serie/" + parsedCookie.link + "/" + parsedCookie.season + "/" + parsedCookie.folge + "-" + parsedCookie.Name;
-            element.html(element.html() + "<a href='" + thelink + "'class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</a>");
+        var element;
+        if ($('a[href="serie/'+ parsedCookie.link + '"]')[0] === undefined) {
+            console.log("Undefined: " + parsedCookie.link);
         } else {
-            element.html(element.html() + "<span class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</span>");
+            element = $('a[href="serie/'+ parsedCookie.link + '"]')[0].parentElement;
+            if(parsedCookie.Name !== undefined) {
+                var thelink = "serie/" + parsedCookie.link + "/" + parsedCookie.season + "/" + parsedCookie.folge + "-" + parsedCookie.Name;
+                console.log(element);
+                console.log(element.innerHTML);
+                element.innerHTML += "<a href='" + thelink + "'class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</a>";
+            } else {
+                element.innerHTML += "<span class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</span>";
+            }
         }
     }
 }
