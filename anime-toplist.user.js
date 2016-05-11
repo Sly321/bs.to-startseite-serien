@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.3
+// @version      1.0.4
 // @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -136,7 +136,7 @@ for(var y = 0; y < SerienTabContainerLinks.length; y++)
 {
   var Serien = '<h3><span class="header-title">' + SerienTabContainerLinks[y].name + '</span></h3><div><ul>';
   for(var x = 0; x < SerienTabContainerLinks[y].serien.length; x++) {
-    Serien += '<li><a href="serie/' + SerienTabContainerLinks[y].serien[x][1] + '">' + SerienTabContainerLinks[y].serien[x][0] + '</a></li>';
+    Serien += '<li><a class="serie-title" href="serie/' + SerienTabContainerLinks[y].serien[x][1] + '">' + SerienTabContainerLinks[y].serien[x][0] + '</a></li>';
   }
   Serien += '</ul></div>';
   SerienLinks.push(Serien);
@@ -242,7 +242,9 @@ if(true) {
     addGlobalStyle('ul > li > a { text-decoration: none; font-size: 95%; }');
     addGlobalStyle('ul > li > a:hover { color: #C2261A; }');
     addGlobalStyle('ul > li > a > a { text-decoration: none; }');
-    addGlobalStyle('ul > li > a > a:hover { color: #C2261A;; }');
+    addGlobalStyle('ul > li > a > a:hover { color: #C2261A; font-weight: bold; }');
+    addGlobalStyle('.ui-accordion-content > ul > li { width: 420px; }');
+    addGlobalStyle('ul > li > .serie-title {  }');
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
