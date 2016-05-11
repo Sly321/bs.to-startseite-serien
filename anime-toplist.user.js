@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.1
+// @version      1.2.2
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -249,6 +249,7 @@ if(true) {
     addGlobalStyle('tr:nth-child(even) { background-color: #E1ABA1; }');
     addGlobalStyle('.pages>.current { background-color: #E1ABA1; }');
     addGlobalStyle('.pages>li>a:hover {background-color: #C2261A;color: white;}');
+    addGlobalStyle('.dynamic-back { height: 20px; background: #C2261A; margin-top: 10px; margin-left: 20px; margin-right: 20px; border-radius: 5px; color: white; text-align: center; font-size: 16px; cursor: pointer; }');
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
@@ -325,6 +326,8 @@ unsafeWindow.loadUITab = function(_link) {
                 console.log("blank: " + href);
             }
         });
+
+        $("#ui-tabs-2 > #root").html('<div class="dynamic-back" onclick="' + "loadUITab('https://bs.to/andere-serien/');" + '">Zurück zur Suche</div>' + $("#ui-tabs-2 > #root").html());
     });
 };
 
