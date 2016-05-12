@@ -14,7 +14,7 @@ Dann auf:
 [bs.to](https://bs.to/)
 
 ### Mozilla Nutzer
-[Greasemonkey](https://addons.mozilla.org/de/firefox/addon/greasemonkey/) als Extension hinzufügen
+[Tampermonkey Beta](https://addons.mozilla.org/de/firefox/addon/tampermonkey/) als Extension hinzufügen
 
 Dann jeweils diese hier anklicken und installieren:
 
