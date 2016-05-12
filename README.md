@@ -5,8 +5,11 @@ Kleines skript zum Anzeigen der Serien auf der Startseite
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de&gl=DE) als Extension hinzufügen
 
 Dann jeweils diese hier anklicken und installieren:
+
 [Startseiten Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js)
+
 [Next Episode Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js)
+
 [Verlinkungs Fixes](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js)
 
 Dann auf:
@@ -16,8 +19,11 @@ Dann auf:
 [Greasemonkey](https://addons.mozilla.org/de/firefox/addon/greasemonkey/) als Extension hinzufügen
 
 Dann jeweils diese hier anklicken und installieren:
+
 [Startseiten Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js)
+
 [Next Episode Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js)
+
 [Verlinkungs Fixes](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js)
 
 Dann auf:
