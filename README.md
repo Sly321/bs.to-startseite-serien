@@ -6,11 +6,9 @@ Kleines skript zum Anzeigen der Serien auf der Startseite
 
 Dann jeweils diese hier anklicken und installieren:
 
-[Startseiten Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js)
-
-[Next Episode Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js)
-
-[Verlinkungs Fixes](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js)
+* [Startseiten Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js)
+* [Next Episode Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js)
+* [Verlinkungs Fixes](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js)
 
 Dann auf:
 [bs.to](https://bs.to/)
@@ -20,11 +18,9 @@ Dann auf:
 
 Dann jeweils diese hier anklicken und installieren:
 
-[Startseiten Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js)
-
-[Next Episode Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js)
-
-[Verlinkungs Fixes](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js)
+* [Startseiten Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js)
+* [Next Episode Skript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js)
+* [Verlinkungs Fixes](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js)
 
 Dann auf:
 [bs.to](https://bs.to/)
