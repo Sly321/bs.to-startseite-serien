@@ -5,7 +5,6 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.3
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -181,6 +180,38 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
 
 $("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">');
 
+//delete cookie
+unsafeWindow.del_cookie = function (cname)
+{
+    if (get_cookie (cname))
+        document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+};
+
+//get cookie
+unsafeWindow.get_cookie = function (cname)
+{
+    var name = cname + "=";
+    var ca = document.cookie.split (';');
+    for (var i = 0; i < ca.length; i++)
+    {
+        var c = ca[i];
+        while (c.charAt (0) == ' ')
+            c = c.substring( 1);
+        if (c.indexOf (name) === 0)
+            return JSON.parse(c.substring (name.length, c.length));
+    }
+    return;
+};
+
+unsafeWindow.set_cookie = function (cname, value)
+{
+    var d = new Date();
+    var exdays = 50;
+    d.setTime (d.getTime () + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toUTCString ();
+    document.cookie = cname + "=" + JSON.stringify(value) + "; " + expires + "; path=/";
+};
+
 function addGlobalStyle(css) {
     var head, style;
     head = document.getElementsByTagName('head')[0];
@@ -236,7 +267,16 @@ addGlobalStyle('ul > li > .serie-title { float: left; flex-grow: 1; }');
 addGlobalStyle('ul > li > .serie-info { float: right;  }');
 addGlobalStyle('.dynamic-back { height: 20px; margin-top: 10px; margin-left: 20px; margin-right: 20px; border-radius: 5px; text-align: center; font-size: 16px; cursor: pointer; }');
 
+var overlay = "";
+if (unsafeWindow.get_cookie("overlay") === undefined) {
+    unsafeWindow.set_cookie("overlay", "blue");
+    overlay = "blue";
+}
+
 if(true) {
+}
+
+unsafeWindow.setRedOverlay = function() {
     addGlobalStyle('#root > header { background: url(https://img10.deviantart.net/8e83/i/2012/136/5/f/cat_woman_vs_harley_quinn__tmb__by_l15ard-d4zys2g.jpg) no-repeat #fff; }');
     addGlobalStyle('#user { background-color: #C2261A; color: white; }');
     addGlobalStyle('#user > a { transition: all 1s ease; color: white; }');
@@ -244,16 +284,39 @@ if(true) {
     addGlobalStyle('.ui-state-default a { transition: background 1s ease; color: white; background-color: #E1ABA1; }');
     addGlobalStyle('.ui-state-active a { transition: background 1s ease; color: white; background-color: #C2261A; }');
     addGlobalStyle('.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border-color: white; color: white; }');
-    addGlobalStyle('.ui-state-default a, .ui-state-default a:link { color: white }');
+    addGlobalStyle('.ui-state-default a, .ui-state-default a:link { color: #EFEFEF; }');
+    addGlobalStyle('.ui-state-active a:link { color: white; }');
     addGlobalStyle('html { transition: background 1s ease; background: linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%); }');
     addGlobalStyle('.ui-widget-content .ui-state-active { transition: background 1s ease; background: #C2261A; }');
+    addGlobalStyle('.ui-widget-header .ui-state-hover a { background: #E2736A url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x; }');
     addGlobalStyle('.home li:nth-child(even) { background-color: #E1ABA1; }');
     addGlobalStyle('ul > li > a:hover { color: #C2261A; }');
     addGlobalStyle('tr:nth-child(even) { background-color: #E1ABA1; }');
     addGlobalStyle('.pages>.current { background-color: #E1ABA1; }');
     addGlobalStyle('.pages>li>a:hover {background-color: #C2261A;color: white;}');
     addGlobalStyle('.dynamic-back { background: #C2261A; color: white; }');
-}
+};
+
+unsafeWindow.setBlueOverlay = function() {
+    addGlobalStyle('#root > header { background: url(https://s.bs.to/img/header.png) no-repeat #fff; }');
+    addGlobalStyle('#user { background-color: #66f; color: #000; }');
+    addGlobalStyle('#user > a { transition: all 1s ease; color: black; }');
+    addGlobalStyle('#tabbar { transition: background 1s ease; background: #66f; }');
+    addGlobalStyle('.ui-state-default a { transition: background 1s ease; color: #555555; background-color: #BBBBFF; }');
+    addGlobalStyle('.ui-state-active a { transition: background 1s ease; color:#212121; background-color: #6666FF; }');
+    addGlobalStyle('.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border-color: #aaaaaa; color: #212121; }');
+    addGlobalStyle('.ui-state-default a, .ui-state-default a:link { color: #555555; }');
+    addGlobalStyle('.ui-state-active a:link { color: #212121; }');
+    addGlobalStyle('html { transition: background 1s ease; background: linear-gradient(to bottom,#003d71 0,#112276 200px,#003d71 100%); }');
+    addGlobalStyle('.ui-widget-content .ui-state-active { transition: background 1s ease; background: #6666FF; }');
+    addGlobalStyle('.ui-widget-header .ui-state-hover a { background: #9A9AFF url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x; }');
+    addGlobalStyle('.home li:nth-child(even) { background-color: #bbf; }');
+    addGlobalStyle('ul > li > a:hover { color: #66F; }');
+    addGlobalStyle('tr:nth-child(even) { background-color: #bbf; }');
+    addGlobalStyle('.pages>.current { background-color: #E1ABA1; }');
+    addGlobalStyle('.pages>li>a:hover {background-color: #C2261A;color: white;}');
+    addGlobalStyle('.dynamic-back { background: #6666FF; color: white; }');
+};
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
 
