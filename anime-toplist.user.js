@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.4
+// @version      1.2.5
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -272,9 +272,8 @@ var overlay = "";
 if (unsafeWindow.get_cookie("overlay") === undefined) {
     unsafeWindow.set_cookie("overlay", "blue");
     overlay = "blue";
-}
-
-if(true) {
+} else {
+    overlay = unsafeWindow.get_cookie("overlay");
 }
 
 unsafeWindow.setRedOverlay = function() {
@@ -318,6 +317,12 @@ unsafeWindow.setBlueOverlay = function() {
     addGlobalStyle('.pages>li>a:hover {background-color: #C2261A;color: white;}');
     addGlobalStyle('.dynamic-back { background: #6666FF; color: white; }');
 };
+
+if(overlay == "blue") {
+    unsafeWindow.setBlueOverlay();
+} else if (overlay == "red") {
+    unsafeWindow.setRedOverlay();
+}
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
 
@@ -497,8 +502,12 @@ for (var x = 0; x < rTitles.length; x++) {
 }
 
 input += "</div></div><div class='half-prefs'><div><h3>Overlay</h3>";
-input += '<input type="radio" id="blue_standard" name="overlay" value="blue"><label for="blue_standard"> Blue - Standard</label><br><input type="radio" id="red_batman" name="overlay" value="red" checked><label for="red_batman">  Red - Batman</label><br>';
+input += '<input onclick="set_cookie(' + "'overlay', 'blue'" + '); setBlueOverlay();" type="radio" id="blue_standard" name="overlay" value="blue"><label for="blue_standard"> Blue - Standard</label><br><input onclick="set_cookie(' + "'overlay', 'red'" + '); setRedOverlay();" type="radio" id="red_batman" name="overlay" value="red"><label for="red_batman">  Red - Batman</label><br>';
 input += "</div></div>";
 
-
 preferencesTab.html(input);
+
+if(overlay == "blue")
+    $("#blue_standard").attr('checked', true);
+else if(overlay == "red")
+    $("#red_batman").attr('checked', true);
