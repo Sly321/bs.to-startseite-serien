@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.2
+// @version      1.2.3
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -226,11 +226,19 @@ addGlobalStyle('#ui-tabs-5 > .half-prefs > div > h3 { margin-top: 0; margin-bott
 addGlobalStyle('#ui-tabs-5 > .half-prefs > div > input { margin-right: 15px; }');
 addGlobalStyle('.delbtn { color: white !important; float: right; font-size: 14px; border: none; background: #212121; border-radius: 100%; height: 19px; width: 20px; margin-top: 1px; padding: 0px 0px 0px 0px; z-index: 15; text-decoration: none; text-align: center; margin-left: 5px; }');
 
+addGlobalStyle('#root > header > h1 > a { width: 520px; }');
+addGlobalStyle('#user:hover { width: 142px; height: 132px; padding: 7px;}');
+addGlobalStyle('#user { transition: all 1s ease; margin-right: 175px; height: 13px; width: 142px; padding-top: 2px; overflow: hidden; }');
+addGlobalStyle('ul > li > a { text-decoration: none; font-size: 95%; }');
+addGlobalStyle('ul > li > span:hover { cursor: not-allowed;; }');
+addGlobalStyle('.ui-accordion-content > ul > li { width: 420px; height: 21px; display: flex; }');
+addGlobalStyle('ul > li > .serie-title { float: left; flex-grow: 1; }');
+addGlobalStyle('ul > li > .serie-info { float: right;  }');
+addGlobalStyle('.dynamic-back { height: 20px; margin-top: 10px; margin-left: 20px; margin-right: 20px; border-radius: 5px; text-align: center; font-size: 16px; cursor: pointer; }');
+
 if(true) {
     addGlobalStyle('#root > header { background: url(https://img10.deviantart.net/8e83/i/2012/136/5/f/cat_woman_vs_harley_quinn__tmb__by_l15ard-d4zys2g.jpg) no-repeat #fff; }');
-    addGlobalStyle('#root > header > h1 > a { width: 520px; }');
-    addGlobalStyle('#user { transition: all 1s ease; background-color: #C2261A; color: white;margin-right: 175px; height: 13px; width: 142px; padding-top: 2px; overflow: hidden; }');
-    addGlobalStyle('#user:hover { width: 142px; height: 132px; padding: 7px;}');
+    addGlobalStyle('#user { background-color: #C2261A; color: white; }');
     addGlobalStyle('#user > a { transition: all 1s ease; color: white; }');
     addGlobalStyle('#tabbar { transition: background 1s ease; background: #C2261A; }');
     addGlobalStyle('.ui-state-default a { transition: background 1s ease; color: white; background-color: #E1ABA1; }');
@@ -240,16 +248,11 @@ if(true) {
     addGlobalStyle('html { transition: background 1s ease; background: linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%); }');
     addGlobalStyle('.ui-widget-content .ui-state-active { transition: background 1s ease; background: #C2261A; }');
     addGlobalStyle('.home li:nth-child(even) { background-color: #E1ABA1; }');
-    addGlobalStyle('ul > li > a { text-decoration: none; font-size: 95%; }');
     addGlobalStyle('ul > li > a:hover { color: #C2261A; }');
-    addGlobalStyle('ul > li > span:hover { cursor: not-allowed;; }');
-    addGlobalStyle('.ui-accordion-content > ul > li { width: 420px; height: 21px; display: flex; }');
-    addGlobalStyle('ul > li > .serie-title { float: left; flex-grow: 1; }');
-    addGlobalStyle('ul > li > .serie-info { float: right;  }');
     addGlobalStyle('tr:nth-child(even) { background-color: #E1ABA1; }');
     addGlobalStyle('.pages>.current { background-color: #E1ABA1; }');
     addGlobalStyle('.pages>li>a:hover {background-color: #C2261A;color: white;}');
-    addGlobalStyle('.dynamic-back { height: 20px; background: #C2261A; margin-top: 10px; margin-left: 20px; margin-right: 20px; border-radius: 5px; color: white; text-align: center; font-size: 16px; cursor: pointer; }');
+    addGlobalStyle('.dynamic-back { background: #C2261A; color: white; }');
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
@@ -343,9 +346,9 @@ $('#ui-tabs-4').load('https://bs.to/andere-serien/', function() {
     $("#ui-tabs-4 #root nav").remove();
     $("#ui-tabs-4 #root .andere-serien p").remove();
     $("#ui-tabs-4 #root .andere-serien h2").remove();
-    $("#serInput").css("font-size", "15px");
-    $("#seriesContainer").css("font-size", "17px");
-    $("#seriesContainer").css("font-family", "calibri");
+    $("#ui-tabs-4 > #root #serInput").css("font-size", "15px");
+    $("#ui-tabs-4 > #root #seriesContainer").css("font-size", "17px");
+    $("#ui-tabs-4 > #root #seriesContainer").css("font-family", "calibri");
 });
 
 $(function() {
