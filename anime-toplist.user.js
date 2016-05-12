@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.5
+// @version      1.2.6
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -276,25 +276,71 @@ if (unsafeWindow.get_cookie("overlay") === undefined) {
     overlay = unsafeWindow.get_cookie("overlay");
 }
 
+var setStyles = function(std_bg, def_bg, hov_bg, def_tc, std_tc, bord_c, bg_url, htm_bg) {
+    var tr_all = "transition: background 1s ease;";
+    addGlobalStyle('#root > header { background: url(' + bg_url + ') no-repeat #fff; }');
+    addGlobalStyle('#user { background-color: '+ std_bg +' color: ' + std_tc + '; }');
+    addGlobalStyle('#user > a { transition: all 1s ease; color: ' + std_tc + '; }');
+    addGlobalStyle('#tabbar { ' + tr_all + ' background: '+ std_bg +' }');
+    addGlobalStyle('.ui-state-default a { ' + tr_all + ' color: ' + std_tc + '; background-color: ' + def_bg + ' }');
+    addGlobalStyle('.ui-state-active a { ' + tr_all + ' color: ' + std_tc + '; background-color: '+ std_bg +' }');
+    addGlobalStyle('.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border-color: ' + bord_c + ' color: ' + std_tc + '; }');
+    addGlobalStyle('.ui-state-default a, .ui-state-default a:link { color: ' + def_tc + ' }');
+    addGlobalStyle('.ui-state-active a:link { color: ' + std_tc + '; }');
+    addGlobalStyle('html { ' + tr_all + ' background: ' + htm_bg + ' }');
+    addGlobalStyle('.ui-widget-content .ui-state-active { ' + tr_all + ' background: '+ std_bg +' }');
+    addGlobalStyle('.ui-widget-header .ui-state-hover a { background: ' + hov_bg + ' url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x; }');
+    addGlobalStyle('.home li:nth-child(even) { background-color: ' + def_bg + ' }');
+    addGlobalStyle('ul > li > a:hover { color: '+ std_bg +' }');
+    addGlobalStyle('tr:nth-child(even) { background-color: ' + def_bg + ' }');
+    addGlobalStyle('.pages>.current { background-color: ' + def_bg + ' }');
+    addGlobalStyle('.pages>li>a:hover {background-color: '+ std_bg +'color: ' + std_tc + ';}');
+    addGlobalStyle('.dynamic-back { background: '+ std_bg +' color: ' + std_tc + '; }');
+};
+
 unsafeWindow.setRedOverlay = function() {
-    addGlobalStyle('#root > header { background: url(https://img10.deviantart.net/8e83/i/2012/136/5/f/cat_woman_vs_harley_quinn__tmb__by_l15ard-d4zys2g.jpg) no-repeat #fff; }');
-    addGlobalStyle('#user { background-color: #C2261A; color: white; }');
-    addGlobalStyle('#user > a { transition: all 1s ease; color: white; }');
-    addGlobalStyle('#tabbar { transition: background 1s ease; background: #C2261A; }');
-    addGlobalStyle('.ui-state-default a { transition: background 1s ease; color: white; background-color: #E1ABA1; }');
-    addGlobalStyle('.ui-state-active a { transition: background 1s ease; color: white; background-color: #C2261A; }');
-    addGlobalStyle('.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border-color: white; color: white; }');
-    addGlobalStyle('.ui-state-default a, .ui-state-default a:link { color: #EFEFEF; }');
-    addGlobalStyle('.ui-state-active a:link { color: white; }');
-    addGlobalStyle('html { transition: background 1s ease; background: linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%); }');
-    addGlobalStyle('.ui-widget-content .ui-state-active { transition: background 1s ease; background: #C2261A; }');
-    addGlobalStyle('.ui-widget-header .ui-state-hover a { background: #E2736A url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x; }');
-    addGlobalStyle('.home li:nth-child(even) { background-color: #E1ABA1; }');
-    addGlobalStyle('ul > li > a:hover { color: #C2261A; }');
-    addGlobalStyle('tr:nth-child(even) { background-color: #E1ABA1; }');
-    addGlobalStyle('.pages>.current { background-color: #E1ABA1; }');
-    addGlobalStyle('.pages>li>a:hover {background-color: #C2261A;color: white;}');
-    addGlobalStyle('.dynamic-back { background: #C2261A; color: white; }');
+    var std_bg = "#C2261A;";  // Von User Hintergrund, Aktiven Elementen wie der Liste / Des Tabs
+    var def_bg = "#E1ABA1;";  // Default Background, von Inaktiven Tab Elementen und jedem 2. Serien Link
+    var hov_bg = '#E2736A';   // Hover Background von Tab Elementen
+    var def_tc = "#EFEFEF;";  // Default Textcolor von den Inaktiven Tabelement (leicht ausgegraut)
+    var std_tc = "white;";    // Default Textcolor von den Aktiven Element in Liste / Tab und Account
+    var bord_c = "white;";    // Border Color der Tabs
+    // Hintergrundbild (900x169 pixel)
+    var bg_url = "https://img10.deviantart.net/8e83/i/2012/136/5/f/cat_woman_vs_harley_quinn__tmb__by_l15ard-d4zys2g.jpg";
+    // Farbverlauf des Hintergrunds
+    var htm_bg = "linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%);";
+
+    setStyles(std_bg, def_bg, hov_bg, def_tc, std_tc, bord_c, bg_url, htm_bg);
+};
+
+unsafeWindow.setOrangeOverlay = function() {
+    var std_bg = "#B86100;";  // Von User Hintergrund, Aktiven Elementen wie der Liste / Des Tabs
+    var def_bg = "#E0A25D;";  // Default Background, von Inaktiven Tab Elementen und jedem 2. Serien Link
+    var hov_bg = '#D47C1D;';   // Hover Background von Tab Elementen
+    var def_tc = "#EFEFEF;";  // Default Textcolor von den Inaktiven Tabelement (leicht ausgegraut)
+    var std_tc = "white;";    // Default Textcolor von den Aktiven Element in Liste / Tab und Account
+    var bord_c = "white;";    // Border Color der Tabs
+    // Hintergrundbild (900x169 pixel)
+    var bg_url = "http://img11.deviantart.net/23c7/i/2012/211/0/e/magnetic_orange_5760x1080_by_crackruckles-d594wqv.jpg";
+    // Farbverlauf des Hintergrunds
+    var htm_bg = "linear-gradient(to bottom,#B96100 0,#D0822F 200px,#BB6404 100%);";
+
+    setStyles(std_bg, def_bg, hov_bg, def_tc, std_tc, bord_c, bg_url, htm_bg);
+};
+
+unsafeWindow.setRedOverlay = function() {
+    var std_bg = "#C2261A;";  // Von User Hintergrund, Aktiven Elementen wie der Liste / Des Tabs
+    var def_bg = "#E1ABA1;";  // Default Background, von Inaktiven Tab Elementen und jedem 2. Serien Link
+    var hov_bg = '#E2736A';   // Hover Background von Tab Elementen
+    var def_tc = "#EFEFEF;";  // Default Textcolor von den Inaktiven Tabelement (leicht ausgegraut)
+    var std_tc = "white;";    // Default Textcolor von den Aktiven Element in Liste / Tab und Account
+    var bord_c = "white;";    // Border Color der Tabs
+    // Hintergrundbild (900x169 pixel)
+    var bg_url = "https://img10.deviantart.net/8e83/i/2012/136/5/f/cat_woman_vs_harley_quinn__tmb__by_l15ard-d4zys2g.jpg";
+    // Farbverlauf des Hintergrunds
+    var htm_bg = "linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%);";
+
+    setStyles(std_bg, def_bg, hov_bg, def_tc, std_tc, bord_c, bg_url, htm_bg);
 };
 
 unsafeWindow.setBlueOverlay = function() {
@@ -322,6 +368,8 @@ if(overlay == "blue") {
     unsafeWindow.setBlueOverlay();
 } else if (overlay == "red") {
     unsafeWindow.setRedOverlay();
+} else if (overlay == "orange") {
+    unsafeWindow.setOrangeOverlay();
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
@@ -502,7 +550,9 @@ for (var x = 0; x < rTitles.length; x++) {
 }
 
 input += "</div></div><div class='half-prefs'><div><h3>Overlay</h3>";
-input += '<input onclick="set_cookie(' + "'overlay', 'blue'" + '); setBlueOverlay();" type="radio" id="blue_standard" name="overlay" value="blue"><label for="blue_standard"> Blue - Standard</label><br><input onclick="set_cookie(' + "'overlay', 'red'" + '); setRedOverlay();" type="radio" id="red_batman" name="overlay" value="red"><label for="red_batman">  Red - Batman</label><br>';
+input += '<input onclick="set_cookie(' + "'overlay', 'blue'" + '); setBlueOverlay();" type="radio" id="blue_standard" name="overlay" value="blue"><label for="blue_standard"> Blue - Standard</label><br>';
+input += '<input onclick="set_cookie(' + "'overlay', 'red'" + '); setRedOverlay();" type="radio" id="red_batman" name="overlay" value="red"><label for="red_batman">  Red - Batman</label><br>';
+input += '<input onclick="set_cookie(' + "'overlay', 'orange'" + '); setOrangeOverlay();" type="radio" id="orange_black" name="overlay" value="orange"><label for="orange_black">  Orange is the new Black</label><br>';
 input += "</div></div>";
 
 preferencesTab.html(input);
@@ -511,3 +561,5 @@ if(overlay == "blue")
     $("#blue_standard").attr('checked', true);
 else if(overlay == "red")
     $("#red_batman").attr('checked', true);
+else if(overlay == "orange")
+    $("#orange_black").attr('checked', true);
