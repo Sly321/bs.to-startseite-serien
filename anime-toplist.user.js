@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.8
+// @version      1.2.9
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -582,4 +582,4 @@ else if(overlay == "red")
 else if(overlay == "orange")
     $("#orange_black").attr('checked', true);
 else if(overlay == "got")
-    $("#orange_black").attr('checked', true);
+    $("#got").attr('checked', true);
