@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.7
+// @version      1.2.8
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -314,16 +314,16 @@ unsafeWindow.setRedOverlay = function() {
 };
 
 unsafeWindow.setGOTOverlay = function() {
-    var std_bg = "#C2261A;";  // Von User Hintergrund, Aktiven Elementen wie der Liste / Des Tabs
-    var def_bg = "#E1ABA1;";  // Default Background, von Inaktiven Tab Elementen und jedem 2. Serien Link
-    var hov_bg = '#E2736A';   // Hover Background von Tab Elementen
-    var def_tc = "#EFEFEF;";  // Default Textcolor von den Inaktiven Tabelement (leicht ausgegraut)
+    var std_bg = "#7F1C16;";  // Von User Hintergrund, Aktiven Elementen wie der Liste / Des Tabs
+    var def_bg = "#DEDEDE;";  // Default Background, von Inaktiven Tab Elementen und jedem 2. Serien Link
+    var hov_bg = '#E3C606;';   // Hover Background von Tab Elementen
+    var def_tc = "#B92308;";  // Default Textcolor von den Inaktiven Tabelement (leicht ausgegraut)
     var std_tc = "white;";    // Default Textcolor von den Aktiven Element in Liste / Tab und Account
     var bord_c = "white;";    // Border Color der Tabs
     // Hintergrundbild (900x169 pixel)
     var bg_url = "http://fs5.directupload.net/images/160512/svpl4cby.jpg";
     // Farbverlauf des Hintergrunds
-    var htm_bg = "linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%);";
+    var htm_bg = "linear-gradient(to bottom,#919191 0,#000000 200px,#919191 100%);";
 
     setStyles(std_bg, def_bg, hov_bg, def_tc, std_tc, bord_c, bg_url, htm_bg);
 };
