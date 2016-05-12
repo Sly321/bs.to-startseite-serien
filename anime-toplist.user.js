@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.6
+// @version      1.2.7
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -313,6 +313,21 @@ unsafeWindow.setRedOverlay = function() {
     setStyles(std_bg, def_bg, hov_bg, def_tc, std_tc, bord_c, bg_url, htm_bg);
 };
 
+unsafeWindow.setGOTOverlay = function() {
+    var std_bg = "#C2261A;";  // Von User Hintergrund, Aktiven Elementen wie der Liste / Des Tabs
+    var def_bg = "#E1ABA1;";  // Default Background, von Inaktiven Tab Elementen und jedem 2. Serien Link
+    var hov_bg = '#E2736A';   // Hover Background von Tab Elementen
+    var def_tc = "#EFEFEF;";  // Default Textcolor von den Inaktiven Tabelement (leicht ausgegraut)
+    var std_tc = "white;";    // Default Textcolor von den Aktiven Element in Liste / Tab und Account
+    var bord_c = "white;";    // Border Color der Tabs
+    // Hintergrundbild (900x169 pixel)
+    var bg_url = "http://fs5.directupload.net/images/160512/svpl4cby.jpg";
+    // Farbverlauf des Hintergrunds
+    var htm_bg = "linear-gradient(to bottom,#710000 0,#842A2A 200px,#720202 100%);";
+
+    setStyles(std_bg, def_bg, hov_bg, def_tc, std_tc, bord_c, bg_url, htm_bg);
+};
+
 unsafeWindow.setOrangeOverlay = function() {
     var std_bg = "#B86100;";  // Von User Hintergrund, Aktiven Elementen wie der Liste / Des Tabs
     var def_bg = "#E0A25D;";  // Default Background, von Inaktiven Tab Elementen und jedem 2. Serien Link
@@ -370,6 +385,8 @@ if(overlay == "blue") {
     unsafeWindow.setRedOverlay();
 } else if (overlay == "orange") {
     unsafeWindow.setOrangeOverlay();
+} else if (overlay == "got") {
+    unsafeWindow.setGOTOverlay();
 }
 
 addGlobalStyle('.half-prefs { width: 50%; float: left; };');
@@ -553,6 +570,7 @@ input += "</div></div><div class='half-prefs'><div><h3>Overlay</h3>";
 input += '<input onclick="set_cookie(' + "'overlay', 'blue'" + '); setBlueOverlay();" type="radio" id="blue_standard" name="overlay" value="blue"><label for="blue_standard"> Blue - Standard</label><br>';
 input += '<input onclick="set_cookie(' + "'overlay', 'red'" + '); setRedOverlay();" type="radio" id="red_batman" name="overlay" value="red"><label for="red_batman">  Red - Batman</label><br>';
 input += '<input onclick="set_cookie(' + "'overlay', 'orange'" + '); setOrangeOverlay();" type="radio" id="orange_black" name="overlay" value="orange"><label for="orange_black">  Orange is the new Black</label><br>';
+input += '<input onclick="set_cookie(' + "'overlay', 'got'" + '); setGOTOverlay();" type="radio" id="got" name="overlay" value="got"><label for="got">  GOT - Alpha</label><br>';
 input += "</div></div>";
 
 preferencesTab.html(input);
@@ -562,4 +580,6 @@ if(overlay == "blue")
 else if(overlay == "red")
     $("#red_batman").attr('checked', true);
 else if(overlay == "orange")
+    $("#orange_black").attr('checked', true);
+else if(overlay == "got")
     $("#orange_black").attr('checked', true);
