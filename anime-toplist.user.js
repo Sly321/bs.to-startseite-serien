@@ -5,7 +5,7 @@
 // @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.9
+// @version      1.2.10
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -240,8 +240,8 @@ addGlobalStyle('::-webkit-scrollbar { width: 0.5em; height: 0.5em; }::-webkit-sc
 addGlobalStyle('.column { width: 420; margin: 5px; } ');
 addGlobalStyle('#column1 { float:left; } ');
 addGlobalStyle('#column2 { float:right; } ');
-addGlobalStyle('#tabbar { background-color: #66f; width: 900px; height: 45px; padding: 0; border-radius: 0px; border-left: 0px; border-right: 0px}');
-addGlobalStyle('#tabbar > li > a { padding-bottom: 11px; padding-top: 11px; height: 22px;}');
+addGlobalStyle('#tabbar { background-color: #66f; width: 900px; height: 33px; padding: 0; border-radius: 0px; border-left: 0px; border-right: 0px}');
+addGlobalStyle('#tabbar > li > a { padding-bottom: 5px; padding-top: 5px; height: 22px;}');
 addGlobalStyle('#tabbar > li { margin: 0px; border: 0px border-left: 1px; border-right: 1px; border-radius: 0px}');
 addGlobalStyle('#ui-accordion-accordionLinks-header-0 { padding: 5px 0px 5px 30px; }');
 addGlobalStyle('#ui-accordion-accordionRechts-header-0 { padding: 5px 0px 5px 30px; }');
