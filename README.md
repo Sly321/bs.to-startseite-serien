@@ -35,7 +35,7 @@ Dann auf:
 * Starten des Players
 * Automatisches Weiterleiten nach 11 Sekunden
 
-### Bs.to Overlay 
+#### Bs.to Overlay 
 [Overlay Script](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-overlay.user.js)
 
 ##### Features
