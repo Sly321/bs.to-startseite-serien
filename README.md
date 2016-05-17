@@ -24,3 +24,11 @@ Dann jeweils diese hier anklicken und installieren:
 
 Dann auf:
 [bs.to](https://bs.to/)
+
+### Streamcloud
+[Streamcloud Script](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/streamcloud/banner-removal.user.js)
+
+#### Features
+* Banner Removal of JWPlayer
+* Starten des Players
+* Automatisches Weiterleiten nach 11 Sekunden
