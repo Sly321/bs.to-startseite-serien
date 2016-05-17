@@ -25,10 +25,21 @@ Dann jeweils diese hier anklicken und installieren:
 Dann auf:
 [bs.to](https://bs.to/)
 
-### Streamcloud
+### Andere Extensions
+
+#### Streamcloud
 [Streamcloud Script](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/streamcloud/banner-removal.user.js)
 
-#### Features
+##### Features
 * Banner Removal of JWPlayer
 * Starten des Players
 * Automatisches Weiterleiten nach 11 Sekunden
+
+### Bs.to Overlay 
+[Overlay Script](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-overlay.user.js)
+
+##### Features
+* Overlay für die Serien Seiten
+
+##### Beispiel
+![Beispiel für Overlay](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/img/overlay-example.PNG "Beispiel für Overlay")
