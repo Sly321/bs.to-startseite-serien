@@ -10,6 +10,11 @@
 // @grant        none
 // ==/UserScript==
 
+setTimeout(function() {
+    $(".proform").submit();
+}, 11000);
+
 jwplayer().onReady(function() {
     $("#mediaplayer_logo").remove();
+    jwplayer().play();
 });
