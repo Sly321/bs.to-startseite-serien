@@ -1,6 +1,6 @@
 # bs.to-startseite-serien
 Kleines skript zum Anzeigen der Serien auf der Startseite
-+12^-*-////**/2
+
 ### Chrome Nutzer
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de&gl=DE) als Extension hinzufügen
 
