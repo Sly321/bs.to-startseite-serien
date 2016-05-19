@@ -5,7 +5,7 @@
 // @description  Stellt des Stil von bs.to um.
 // @include      https://bs.to/serie/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0
+// @version      1.0.1
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-overlay.user.js
 // ==/UserScript==
 
@@ -170,6 +170,8 @@ if(overlay == "blue") {
     unsafeWindow.setOrangeOverlay();
 } else if (overlay == "got") {
     unsafeWindow.setGOTOverlay();
+} else {
+    console.log("not even undefined: " + overlay);
 }
 addGlobalStyle('#root > header > h1 > a { width: 520px; }');
 addGlobalStyle('#user:hover { width: 142px; height: 132px; padding: 7px;}');
