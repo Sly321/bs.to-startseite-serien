@@ -5,7 +5,7 @@
 // @description  Startseiten script für bs.to (unter grease)
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.1
+// @version      1.0.2
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs-to-startseiten-script-grease.user.js
 // ==/UserScript==
@@ -408,34 +408,34 @@ $('nav').html('<div id="tabsbar">' +
                  '<ul id="tabbar">' +
                    '<li>' +
                      '<a href="#ui-tabs-1">Serien</a>' +
-                   '</li>' +
+                   '</li>' +/*
                    '<li>' +
                      '<a href="#ui-tabs-2">Dynamisch</a>' +
-                   '</li>' +
+                   '</li>' +*/
                    '<li>' +
                      '<a href="#ui-tabs-3">Links</a>' +
                    '</li>' +
                    '<li>' +
                        '<a class="btn" href="#ui-tabs-4">Alle Serien</a>' +
-                   '</li>' +
+                   '</li>' +/*
                    '<li>' +
                        '<a class="btn" href="#ui-tabs-5">Einstellungen</a>' +
-                   '</li>' +
+                   '</li>' +*/
                  '</ul>' + '<div id="ui-tabs-1" style="display: block; padding: 0px;">' +
                  section +
-                 '</div>' +
+                 '</div>' +/*
                  '<div id="ui-tabs-2" style="display: block; padding: 0px;">' +
-                 //proxerAnimes   +
-                 '</div>' +
+                 '</div>' +*/
                  '<div id="ui-tabs-3" style="display: block; padding: 0px;">' +
                  other +
                  '</div>'+
                  '<div id="ui-tabs-4" style="display: block; padding: 0px;">' +
-                 '</div>'+
+                 '</div>'+/*
                  '<div id="ui-tabs-5" style="display: block; padding: 0px;">' +
-                 '</div>'+
+                 '</div>'+*/
                '</div>');
 
+/*
 loadUITab = function(_link) {
     $('#ui-tabs-2').load(_link, function() {
         $("#ui-tabs-2 title").remove();
@@ -465,7 +465,7 @@ loadUITab = function(_link) {
 
         $("#ui-tabs-2 > #root").html('<div class="dynamic-back" onclick="' + "loadUITab('https://bs.to/andere-serien/');" + '">Zurück zur Suche</div>' + $("#ui-tabs-2 > #root").html());
     });
-};
+};*/
 
 //loadUITab('https://bs.to/andere-serien/');
 
@@ -488,19 +488,19 @@ $(function() {
     $("#tabsbar").tabs();
     $("a[href=#ui-tabs-1]").click(function() {
         $("#tabs").tabs("option", "active", 0);
-    });
+    });/*
     $("a[href=#ui-tabs-2]").click(function() {
         $("#tabs").tabs("option", "active", 1);
-    });
+    });*/
     $("a[href=#ui-tabs-3]").click(function() {
         $("#tabs").tabs("option", "active", 2);
     });
     $("a[href=#ui-tabs-4]").click(function() {
         $("#tabs").tabs("option", "active", 3);
-    });
+    });/*
     $("a[href=#ui-tabs-5]").click(function() {
         $("#tabs").tabs("option", "active", 4);
-    });
+    });*/
 });
 
 $(function() {
@@ -551,6 +551,7 @@ addSerieInfoToElements(getAllSeriesCookies());
 
 // Get the headers!
 // $("#column1 div h3");
+/*
 var lTitles = $("#column1 div h3 .header-title");
 var rTitles = $("#column2 div h3 .header-title");
 
@@ -581,4 +582,4 @@ else if(overlay == "red")
 else if(overlay == "orange")
     $("#orange_black").attr('checked', true);
 else if(overlay == "got")
-    $("#got").attr('checked', true);
+    $("#got").attr('checked', true);*/
