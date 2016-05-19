@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         bs.to Top Anime Script
+// @name         bs.to Startseiten
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
+// @description  Startseiten script für bs.to (unter grease)
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
 // @version      1.0
