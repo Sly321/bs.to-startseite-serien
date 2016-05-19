@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         bs.to Startseite Serien Skript
+// @name         bs.to verlinkungs script zur Startseite
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
+// @description  Bringt dich zur Startseite und nicht auf /home
 // @include		 https://bs.to/home*
 // @include		 https://bs.to/andere-serien*
 // @include		 https://bs.to/serie*
@@ -10,7 +10,7 @@
 // @include		 https://bs.to/random*
 // @include		 https://bs.to/android*
 // @icon		 https://s.bs.to/favicon.ico
-// @version      2.0.3
+// @version      2.0.4
 // @grant        none
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/script.user.js
 // ==/UserScript==

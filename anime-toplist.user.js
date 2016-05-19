@@ -1,11 +1,11 @@
 ﻿// ==UserScript==
-// @name         bs.to Top Anime Script
+// @name         bs.to Startseiten script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @description  Zeigt dir eine Anime Toplist auf der Startseite an 25/100 verlinkt.
+// @description  Zeigt dir deine Lieblingsserien auf der Startseiten an uvm.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.10
+// @version      1.2.11
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js

@@ -5,7 +5,7 @@
 // @description  Startseiten script für bs.to (unter grease)
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0
+// @version      1.0.1
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs-to-startseiten-script-grease.user.js
 // ==/UserScript==
