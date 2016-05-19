@@ -5,7 +5,7 @@
 // @description  Stellt des Stil von bs.to um.
 // @include      https://bs.to/serie/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.1
+// @version      1.0.2
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-overlay.user.js
 // ==/UserScript==
 
@@ -163,13 +163,13 @@ setBlueOverlay = function() {
 };
 
 if(overlay == "blue") {
-    unsafeWindow.setBlueOverlay();
+    setBlueOverlay();
 } else if (overlay == "red") {
-    unsafeWindow.setRedOverlay();
+    setRedOverlay();
 } else if (overlay == "orange") {
-    unsafeWindow.setOrangeOverlay();
+    setOrangeOverlay();
 } else if (overlay == "got") {
-    unsafeWindow.setGOTOverlay();
+    setGOTOverlay();
 } else {
     console.log("not even undefined: " + overlay);
 }
