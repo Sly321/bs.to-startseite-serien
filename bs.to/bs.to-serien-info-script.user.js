@@ -2,14 +2,15 @@
 // @name         MovieDB Serien Info Script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      1.0
+// @version      1.0.1
 // @description  Crossloads series informations.
 // @icon         https://s.bs.to/favicon.ico
 // @include      https://bs.to/
-// @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs-to-info-script.user.js
 // ==/UserScript==
+
+console.log("test");
 
 var lEle = $('#column1 > div > .ui-accordion-content > ul > li');
 var rEle = $('#column2 > div > .ui-accordion-content > ul > li');
@@ -54,6 +55,8 @@ wrapper.append(document.createElement("h3"));
 wrapper.append(seasonTable);
 wrapper.append(closeA);
 $("body").append(div);
+
+console.log("test");
 
 var loadSeriesInfo = function(data, action) {
     switch(action) {
@@ -113,6 +116,7 @@ var loadSeriesInfo = function(data, action) {
             break;
     }
 };
+console.log("test");
 
 var url = 'https://api.themoviedb.org/3/';
 var key = 'api_key=2e74839a423b1266f0ccf5043bade403';
@@ -178,35 +182,43 @@ var getSerieByName = function(name) {
         }
     });
 };
+ $(document).ready(function() {
+    var lEle = $('#column1 > div > .ui-accordion-content > ul > li');
+    var rEle = $('#column2 > div > .ui-accordion-content > ul > li');
+    console.log("lEle.length: " + lEle.length);
+    console.log(lEle);
+    var a;
+    var serie_name = "";
+    for(var x = 0; x < lEle.length; x++) {
+        console.log("test3");
+        serie_name = (lEle[x].children[0].innerHTML);
+        new_a = $(document.createElement("a"));
+        new_a.html("🕐");
+        new_a.attr("id", serie_name);
+        new_a.css("cursor", "help");
+        new_a.css("margin-left", "5px");
+        new_a.css("font-size","16px");
+        new_a.on('click', function() {
+            console.log($(this).attr("id"));
+            aString = $(this).attr("id");
+            getSerieByName(aString);
+        });
+        $(lEle[x]).append(new_a);
+    }
 
-var a;
-var serie_name = "";
-for(var x = 0; x < lEle.length; x++) {
-    serie_name = (lEle[x].children[0].innerHTML);
-    new_a = $(document.createElement("a"));
-    new_a.html("🕐");
-    new_a.attr("id", serie_name);
-    new_a.css("cursor", "help");
-    new_a.css("margin-left", "5px");
-    new_a.on('click', function() {
-        console.log($(this).attr("id"));
-        aString = $(this).attr("id");
-        getSerieByName(aString);
-    });
-    $(lEle[x]).append(new_a);
-}
-
-for(var x = 0; x < rEle.length; x++) {
-    serie_name = (rEle[x].children[0].innerHTML);
-    new_a = $(document.createElement("a"));
-    new_a.html("🕐");
-    new_a.attr("id", serie_name);
-    new_a.css("cursor", "help");
-    new_a.css("margin-left", "5px");
-    new_a.on('click', function() {
-        console.log($(this).attr("id"));
-        aString = $(this).attr("id");
-        getSerieByName(aString);
-    });
-    $(rEle[x]).append(new_a);
-}
+    for(var x = 0; x < rEle.length; x++) {
+        serie_name = (rEle[x].children[0].innerHTML);
+        new_a = $(document.createElement("a"));
+        new_a.html("🕐");
+        new_a.attr("id", serie_name);
+        new_a.css("cursor", "help");
+        new_a.css("margin-left", "5px");
+        new_a.css("font-size","16px");
+        new_a.on('click', function() {
+            console.log($(this).attr("id"));
+            aString = $(this).attr("id");
+            getSerieByName(aString);
+        });
+        $(rEle[x]).append(new_a);
+    }
+});
