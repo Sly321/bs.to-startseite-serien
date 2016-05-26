@@ -2,7 +2,7 @@
 // @name         MovieDB Serien Info Script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      1.0.5
+// @version      1.0.6
 // @description  Crossloads series informations.
 // @icon         https://s.bs.to/favicon.ico
 // @include      https://bs.to/
@@ -134,7 +134,7 @@ var getSerieById = function(id, aLink) {
         contentType: 'application/json',
         dataType: 'jsonp',
         success: function(json) {
-            console.dir(json);
+            //console.dir(json);
             loadSeriesInfo(json, 'load-series');
             getSeasonById(id, json.number_of_seasons, aLink);
         },
@@ -159,7 +159,6 @@ var getSeasonById = function(id, season, aLink) {
         contentType: 'application/json',
         dataType: 'jsonp',
         success: function(json) {
-            console.dir(json);
             loadSeriesInfo(json, 'load-season', aLink);
         },
         error: function(e) {
@@ -212,7 +211,6 @@ var setFunctionLinks = function() {
        new_a.attr("staffel", curstaffel);
        new_a.attr("episode", curepisode);
        new_a.on('click', function() {
-           console.log($(this).attr("id"));
            aString = $(this).attr("id");
            getSerieByName(aString, this);
        });
@@ -225,7 +223,6 @@ var setFunctionLinks = function() {
        curepisode = 0;
        curstaffel = 0;
        if(rEle[x].children[1] !== undefined) {
-            console.log("nicht undefined");
           var lastseriestring = rEle[x].children[1].innerHTML;
           var regexr = /[\w]*:\sS(\d)*\sE([\d]*)/;
           var match = lastseriestring.match(regexr);
@@ -242,7 +239,6 @@ var setFunctionLinks = function() {
        new_a.attr("staffel", curstaffel);
        new_a.attr("episode", curepisode);
        new_a.on('click', function() {
-           console.log($(this).attr("id"));
            aString = $(this).attr("id");
            getSerieByName(aString, this);
        });
@@ -258,7 +254,6 @@ var setFunctionLinks = function() {
            lEle = $('#column1 > div > .ui-accordion-content > ul > li');
            rEle = $('#column2 > div > .ui-accordion-content > ul > li');
 
-           console.log("interval3");
            if(rEle.length !== 0 && lEle.length !== 0) {
                clearInterval(eleInt);
                setFunctionLinks();
