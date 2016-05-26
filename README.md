@@ -44,4 +44,16 @@ Dann auf:
 
 ##### Beispiel
 ![Beispiel für Overlay](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/img/overlay-example.PNG "Beispiel für Overlay")
-	
+
+#### Bs.to Serien Info 
+[Info Script](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs-to-info-script.user.js)
+current-episode
+##### Features
+* Zeigt dir beim klicken auf die Uhr die aktuelle Staffel der Serie an
+* Infos wann welche Episode von der aktuellen Staffel released wird
+* Falls die Info's bereitstehen, ist deine aktuelle Folge markiert
+* Das heutige Datum wird farblich markiert
+* Zukünftige Datum wird rot auch markiert
+
+##### Beispiel
+![Beispiel für Overlay](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/img/current-episode.PNG "Beispiel für Overlay")
