@@ -5,7 +5,7 @@
 // @description  Zeigt dir deine Lieblingsserien auf der Startseiten an uvm.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.11
+// @version      1.2.12
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -74,7 +74,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The Tomorrow-People", "The-Tomorrow-People"]])
                               ];
 
-var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoushitsu", "Assassination-Classroom"],
+var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyōshitsu", "Assassination-Classroom"],
                                                         ["Btooom!", "Btooom"],
                                                         ["Devil is a Part Timer", "The-Devil-is-a-Part-Timer"],
                                                         ["Dragonball Super", "Dragonball-Super"],
@@ -82,15 +82,15 @@ var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoush
                                                         ["Gate: Jieitai Kanochi nite, Kaku Tatakaeri", "Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri"],
                                                         ["God Eater", "God-Eater"],
                                                         ["Guilty Crown", "Guilty-Crown"],
-                                                        ["Gutten Lagann", "Gurren-Lagann"],
-                                                        ["Highschool DxD", "High-School-D-D"],
+                                                        ["Gurren Lagann", "Gurren-Lagann"],
+                                                        ["High School DxD", "High-School-D-D"],
                                                         ["Kuusen Madoushi Kouhosei no Kyoukan", "Kuusen-Madoushi-Kouhosei-no-Kyoukan"],
-                                                        ["Magi - The Labyrinth of Magic", "Magi-The-Labyrinth-of-Magic"],
+                                                        ["Magi", "Magi-The-Labyrinth-of-Magic"],
                                                         ["Neon Genesis Evangelion", "Neon-Genesis-Evangelion"],
                                                         ["No Game No Life", "No-Game-No-Life"],
                                                         ["Overlord", "Overlord"],
                                                         ["Rokka no Yuusha", "Rokka-no-Yuusha"],
-                                                        ["Shingeki no Kyojin", "Shingeki-no-Kyojin"],
+                                                        ["Attack on Titan", "Shingeki-no-Kyojin"],
                                                         ["Spice and Wolf", "Spice-and-Wolf"],
                                                         ["Sword Art Online", "Sword-Art-Online"]]),
                     new SerienTab("Anime Season 2015", [["Owari no Seraph", "Owari-no-Seraph"],
@@ -110,7 +110,7 @@ var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyoush
                                                         ["Dragonball", "Dragonball"],
                                                         ["Dragonball-Z", "Dragonball-Z"],
                                                         ["Fairy Tail", "Fairy-Tail"],
-                                                        ["Full Metal Alchemist: Brotherhood", "Fullmetal-Alchemist-Brotherhood"],
+                                                        ["Fullmetal Alchemist: Brotherhood", "Fullmetal-Alchemist-Brotherhood"],
                                                         ["Hunter-x-Hunter", "Hunter-x-Hunter-2011"],
                                                         ["InuYasha", "InuYasha"],
                                                         ["Naruto", "Naruto"],
