@@ -5,7 +5,7 @@
 // @description  Zeigt dir deine Lieblingsserien auf der Startseiten an uvm.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.12
+// @version      1.2.13
 // @grant        unsafeWindow
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
@@ -264,7 +264,7 @@ addGlobalStyle('#user { transition: all 1s ease; margin-right: 175px; height: 13
 addGlobalStyle('ul > li > a { text-decoration: none; font-size: 95%; }');
 addGlobalStyle('ul > li > span:hover { cursor: not-allowed;; }');
 addGlobalStyle('.ui-accordion-content > ul > li { width: 420px; height: 21px; display: flex; }');
-addGlobalStyle('ul > li > .serie-title { float: left; flex-grow: 1; }');
+addGlobalStyle('ul > li > .serie-title { float: left; flex-grow: 1; font-size: 15px; padding-top: 1px;}');
 addGlobalStyle('ul > li > .serie-info { float: right;  }');
 addGlobalStyle('.dynamic-back { height: 20px; margin-top: 10px; margin-left: 20px; margin-right: 20px; border-radius: 5px; text-align: center; font-size: 16px; cursor: pointer; }');
 
