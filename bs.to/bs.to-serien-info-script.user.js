@@ -2,7 +2,7 @@
 // @name         MovieDB Serien Info Script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      1.0.3
+// @version      1.0.5
 // @description  Crossloads series informations.
 // @icon         https://s.bs.to/favicon.ico
 // @include      https://bs.to/
@@ -187,11 +187,9 @@ var getSerieByName = function(name, aLink) {
 };
 
 var setFunctionLinks = function() {
-    console.log("lEle.length: " + lEle.length);
     var a;
     var serie_name = "";
     for(var x = 0; x < lEle.length; x++) {
-       console.log("test3");
        serie_name = (lEle[x].children[0].innerHTML);
 
        curepisode = 0;
@@ -223,16 +221,30 @@ var setFunctionLinks = function() {
 
     for(var x = 0; x < rEle.length; x++) {
        serie_name = (rEle[x].children[0].innerHTML);
+
+       curepisode = 0;
+       curstaffel = 0;
+       if(rEle[x].children[1] !== undefined) {
+            console.log("nicht undefined");
+          var lastseriestring = rEle[x].children[1].innerHTML;
+          var regexr = /[\w]*:\sS(\d)*\sE([\d]*)/;
+          var match = lastseriestring.match(regexr);
+          curstaffel = match[1];
+          curepisode = match[2];
+       }
+
        new_a = $(document.createElement("a"));
        new_a.html("🕐");
        new_a.attr("id", serie_name);
        new_a.css("cursor", "help");
        new_a.css("margin-left", "5px");
        new_a.css("font-size","16px");
+       new_a.attr("staffel", curstaffel);
+       new_a.attr("episode", curepisode);
        new_a.on('click', function() {
            console.log($(this).attr("id"));
            aString = $(this).attr("id");
-           getSerieByName(aString);
+           getSerieByName(aString, this);
        });
        $(rEle[x]).append(new_a);
     }
