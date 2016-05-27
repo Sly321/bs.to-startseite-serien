@@ -5,8 +5,7 @@
 // @description  Zeigt dir deine Lieblingsserien auf der Startseiten an uvm.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.14
-// @grant        unsafeWindow
+// @version      1.2.15
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
@@ -470,21 +469,6 @@ unsafeWindow.loadUITab = function(_link) {
 
 unsafeWindow.loadUITab('https://bs.to/andere-serien/');
 
-$('#ui-tabs-4').load('https://bs.to/andere-serien/', function() {
-    $("#ui-tabs-4 title").remove();
-    $("#ui-tabs-4 base").remove();
-    $("#ui-tabs-4 meta").remove();
-    $("#ui-tabs-4 link").remove();
-    $("#ui-tabs-4 #root header").remove();
-    $("#ui-tabs-4 #root footer").remove();
-    $("#ui-tabs-4 #root nav").remove();
-    $("#ui-tabs-4 #root .andere-serien p").remove();
-    $("#ui-tabs-4 #root .andere-serien h2").remove();
-    $("#ui-tabs-4 > #root #serInput").css("font-size", "15px");
-    $("#ui-tabs-4 > #root #seriesContainer").css("font-size", "17px");
-    $("#ui-tabs-4 > #root #seriesContainer").css("font-family", "calibri");
-});
-
 $(function() {
     $("#tabsbar").tabs();
     $("a[href=#ui-tabs-1]").click(function() {
@@ -497,6 +481,7 @@ $(function() {
         $("#tabs").tabs("option", "active", 2);
     });
     $("a[href=#ui-tabs-4]").click(function() {
+        window.location = 'https://bs.to/andere-serien/';
         $("#tabs").tabs("option", "active", 3);
     });
     $("a[href=#ui-tabs-5]").click(function() {

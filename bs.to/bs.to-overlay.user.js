@@ -4,8 +4,9 @@
 // @author       Sly321
 // @description  Stellt des Stil von bs.to um.
 // @include      https://bs.to/serie/*
+// @include      https://bs.to/andere-serien/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.2
+// @version      1.0.3
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-overlay.user.js
 // ==/UserScript==
 
