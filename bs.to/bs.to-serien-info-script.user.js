@@ -2,7 +2,7 @@
 // @name         MovieDB Serien Info Script
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      1.0.6
+// @version      1.0.7
 // @description  Crossloads series informations.
 // @icon         https://s.bs.to/favicon.ico
 // @include      https://bs.to/
@@ -100,7 +100,7 @@ var loadSeriesInfo = function(data, action, aLink) {
                     var date = new Date(episoden[x].air_date);
                     var today = new Date();
                     var tag = date.getDate().toString().length == 1 ? "0" + date.getDate().toString() : date.getDate().toString();
-                    var mon = date.getMonth().toString().length == 1 ? "0" + (date.getMonth()+1) : (date.getMonth()+1);
+                    var mon = (date.getMonth()+1).toString().length == 1 ? "0" + (date.getMonth()+1) : (date.getMonth()+1);
                     datestring += tag + "." + mon + "." + date.getFullYear();
                     if(date < today) {
                         dateStyle += "text-align: right;";
