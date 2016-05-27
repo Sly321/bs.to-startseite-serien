@@ -5,7 +5,7 @@
 // @description  Startseiten script für bs.to (unter grease)
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.4
+// @version      1.0.5
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs-to-startseiten-script-grease.user.js
 // ==/UserScript==
@@ -76,7 +76,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
 var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyōshitsu", "Assassination-Classroom"],
                                                         ["Btooom!", "Btooom"],
                                                         ["Devil is a Part Timer", "The-Devil-is-a-Part-Timer"],
-                                                        ["Dragonball Super", "Dragonball-Super"],
+                                                        ["Dragon Ball Super", "Dragonball-Super"],
                                                         ["Elfen Lied", "Elfen-Lied"],
                                                         ["Gate: Jieitai Kanochi nite, Kaku Tatakaeri", "Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri"],
                                                         ["God Eater", "God-Eater"],

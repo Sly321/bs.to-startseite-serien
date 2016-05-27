@@ -77,7 +77,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
 var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyōshitsu", "Assassination-Classroom"],
                                                         ["Btooom!", "Btooom"],
                                                         ["Devil is a Part Timer", "The-Devil-is-a-Part-Timer"],
-                                                        ["Dragonball Super", "Dragonball-Super"],
+                                                        ["Dragon Ball Super", "Dragonball-Super"],
                                                         ["Elfen Lied", "Elfen-Lied"],
                                                         ["Gate: Jieitai Kanochi nite, Kaku Tatakaeri", "Gate-Jieitai-Kanochi-nite-Kaku-Tatakaeri"],
                                                         ["God Eater", "God-Eater"],
