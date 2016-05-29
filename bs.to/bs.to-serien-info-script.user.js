@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name			MovieDB Serien Info Script
+// @name				 MovieDB Serien Info Script
 // @namespace		https://github.com/Sly321/bs.to-startseite-serien
-// @author			Sly321
+// @author			 Sly321
 // @version			1.0.9
-// @description		Crossloads series informations.
-// @icon			https://s.bs.to/favicon.ico
+// @description	Crossloads series informations.
+// @icon				 https://s.bs.to/favicon.ico
 // @include			https://bs.to/
 // @require			https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL		https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs-to-info-script.user.js
@@ -127,13 +127,14 @@ var loadSeriesInfo = function(data, action, aLink) {
 										var today = new Date();
 										var tag = date.getDate().toString().length == 1 ? "0" + date.getDate().toString() : date.getDate().toString();
 										var mon = (date.getMonth()+1).toString().length == 1 ? "0" + (date.getMonth()+1) : (date.getMonth()+1);
+										var year = date.getFullYear();
 										datestring += tag + "." + mon + "." + date.getFullYear();
-										if(date < today) {
-												dateStyle += "text-align: right;";
+										if (year == today.getFullYear() ? (date.getMonth() == today.getMonth() ? (date.getDate() == today.getDate() ? true : false) : false) : false) {
+												dateStyle += "text-align: right; color: #057729; font-weight: bolder;";
 										} else if (date > today) {
 												dateStyle += "text-align: right; color: #C2261A; font-weight: bolder;";
 										} else {
-												dateStyle += "text-align: right; color: #057729; font-weight: bolder;";
+												dateStyle += "text-align: right;";
 										}
 								}
 
