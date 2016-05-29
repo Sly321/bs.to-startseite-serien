@@ -1,15 +1,15 @@
 // ==UserScript==
-// @name				 MovieDB Serien Info Script
+// @name			MovieDB Serien Info Script
 // @namespace		https://github.com/Sly321/bs.to-startseite-serien
-// @author			 Sly321
-// @version			1.0.8
-// @description	Crossloads series informations.
-// @icon				 https://s.bs.to/favicon.ico
+// @author			Sly321
+// @version			1.0.9
+// @description		Crossloads series informations.
+// @icon			https://s.bs.to/favicon.ico
 // @include			https://bs.to/
 // @require			https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL		https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs-to-info-script.user.js
 // ==/UserScript==
-// 
+//
 var curepisode = 0;
 var curstaffel = 0;
 var lEle;
@@ -18,10 +18,20 @@ var rEle;
 var div = $(document.createElement("div"));
 var wrapper = $(document.createElement("div"));
 var closeA = $(document.createElement("div"));
+var descriptionDiv = $(document.createElement("div"));
+var descriptionHead = $(document.createElement("h5"));
 var seasonTable = $(document.createElement("table"));
 seasonTable.html('<thead><tr><td></td><td>Name</td><td style="float: right; ">Release Date</td></tr></thead><tbody></tbody>');
 seasonTable.css('width', '100%');
 seasonTable.css('margin-top', '15px');
+descriptionDiv.attr('id', 'descriptionDiv');
+descriptionDiv.css('height', '0');
+descriptionDiv.css('transition', 'height 0.5s ease');
+descriptionDiv.css('font-size', '14px');
+descriptionDiv.css('font-family', 'calibri');
+descriptionHead.css('margin-top', '5px');
+descriptionHead.html('▼ Beschreibung');
+descriptionDiv.css('overflow', 'hidden');
 closeA.css("position", "absolute");
 closeA.css("top", "2px");
 closeA.css("right", "5px");
@@ -52,7 +62,9 @@ div.css("border", "1px solid #181A20");
 div.css("transition","opacity 0.5s ease");
 div.css("opacity", "0");
 div.append(wrapper);
-wrapper.append(document.createElement("h1"));
+wrapper.append(document.createElement("h2"));
+wrapper.append(descriptionHead);
+wrapper.append(descriptionDiv);
 wrapper.append(document.createElement("h3"));
 wrapper.append(seasonTable);
 wrapper.append(closeA);
@@ -63,20 +75,32 @@ var loadSeriesInfo = function(data, action, aLink) {
 				case 'load-series':
 						$("#infodiv").css("opacity", "1");
 						$("#infodiv").css("z-index", "30");
+                        var innerHtmlString = data.original_name;
 						switch(data.status) {
 								case 'Returning Series':
-										$("#infodiv > div > h1").html(data.original_name + '<span style="color: green; font-size: 16px;"> Running</span>');
+										innerHtmlString += '<span style="color: green; font-size: 16px;"> Running</span>';
 										break;
 								case 'Ended':
-										$("#infodiv > div > h1").html(data.original_name + '<span style="color: red; font-size: 16px;"> Ended</span>');
+										innerHtmlString += '<span style="color: red; font-size: 16px;"> Ended</span>';
 										break;
 								case 'Canceled':
-										$("#infodiv > div > h1").html(data.original_name + '<span style="color: red; font-size: 16px;"> Abgebrochen</span>');
+										innerHtmlString += '<span style="color: red; font-size: 16px;"> Abgebrochen</span>';
 										break;
 								default:
 										console.log("not defined: " + data.status);
 										break;
 						}
+                        innerHtmlString += '<span style="float: right;padding-top: 20px;font-size: 12px;padding-right: 5px;">' + data.vote_average + ' aus ' + data.vote_count + ' votes</span>';
+                        $("#infodiv > div > h2").html(innerHtmlString);
+                        $("#infodiv > div > #descriptionDiv").html(data.overview);
+                        $("#infodiv > div > h5").on('click', function() {
+                                if($("#infodiv > div > #descriptionDiv").css("height") == "85px") {
+                                    $("#infodiv > div > #descriptionDiv").css("height", "0");
+                                }
+                                else {
+                                    $("#infodiv > div > #descriptionDiv").css("height", "85px");
+                                }
+                        });
 						break;
 				case 'load-season':
 						$("#infodiv > div > h3").html('Staffel ' + data.season_number + ' - ' + data.name);
