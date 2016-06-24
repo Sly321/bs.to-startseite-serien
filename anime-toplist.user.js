@@ -47,6 +47,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["The 100", "The-100"],
                                                         ["The Blacklist", "The-Blacklist"],
                                                         ["The Flash", "The-Flash"],
+                                                        ["The Newsroom", "The-Newsroom"],
                                                         ["The Originals", "The-Originals"],
                                                         ["The Royals", "The-Royals"],
                                                         ["The Strain", "The-Strain"],
@@ -63,7 +64,8 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                              new SerienTab("Sitcom's", [["How I Met Your Mother", "How-I-Met-Your-Mother"],
                                                         ["Sirens", "Sirens"],
                                                         ["The Big Bang Theory", "The-Big-Bang-Theory"],
-                                                        ["The IT Crowd", "The-IT-Crowd"]
+                                                        ["The IT Crowd", "The-IT-Crowd"],
+                                                        ["Two and a Half Men", "Two-and-a-Half-Men"]
                                                         ]),
                             new SerienTab("Completed", [["Constantine", "Constantine"],
                                                         ["Dexter", "Dexter"],
