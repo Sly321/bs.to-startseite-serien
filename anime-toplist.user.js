@@ -5,7 +5,7 @@
 // @description  Zeigt dir deine Lieblingsserien auf der Startseiten an uvm.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.18
+// @version      1.2.19
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/anime-toplist.user.js
 // ==/UserScript==
@@ -32,7 +32,7 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Arrow", "Arrow"],
                                                         ["Better Call Saul", "Better-Call-Saul"],
                                                         ["Daredevil", "Marvel-s-Daredevil"],
-							["Legends of Tomorrow", "DC-s-Legends-of-Tomorrow"],
+							                            ["Legends of Tomorrow", "DC-s-Legends-of-Tomorrow"],
                                                         ["Elementary", "Elementary"],
                                                         ["Extant", "Extant"],
                                                         ["Fear the Walking Dead", "Fear-The-Walking-Dead"],
@@ -59,10 +59,10 @@ var SerienTabContainerLinks = [new SerienTab("Serien", [["Agents-of-S-H-I-E-L-D"
                                                         ["Into the Badlands", "Into-the-Badlands"],
                                                         ["Limitless", "Limitless"],
                                                         ["Minority Report", "Minority-Report"],
-							["Numb3rs", "Numb3rs"],
+							                            ["Numb3rs", "Numb3rs"],
                                                         ["Scorpion", "Scorpion"],
                                                         ["Shadowhunters: The Mortal Instruments", "Shadowhunters-The-Mortal-Instruments"],
-							["The Magicians", "The-Magicians"],
+							                            ["The Magicians", "The-Magicians"],
                                                         ["The Shannara Chronicles", "The-Shannara-Chronicles"]]),
                              new SerienTab("Sitcom's", [["How I Met Your Mother", "How-I-Met-Your-Mother"],
                                                         ["Sirens", "Sirens"],
@@ -132,15 +132,15 @@ var SerienTabContainerRechts = [new SerienTab("Anime running", [["Ansatsu Kyōsh
                                                         ["Psycho Pass", "Psycho-Pass"],
                                                         ["Soul Eater", "Soul-Eater"],
                                                         ["Steins;Gate", "Steins-Gate"],
-                                                        ["Tokyo Ghoul", "Tokyo-Ghoul"]])
+                                                        ["Tokyo Ghoul", "Tokyo-Ghoul"]]),
                  new SerienTab("ist halt ganz ok, ne", [["Boku dake ga Inai Machi", "Boku-dake-ga-Inai-Machi"],
-							["Berserk (2016)", "Berserk-2016"],
-							["Noragami", "Noragami"],
-							["Black Lagoon", "Black-Lagoon"],
-							["Hidan no Aria", "Hidan-no-Aria"],
-							["Joker Game", "Joker-Game"],
-							["11eyes", "11eyes"],
-							["Mirai Nikki", "Mirai-Nikki"],
+                            							["Berserk (2016)", "Berserk-2016"],
+                            							["Noragami", "Noragami"],
+                            							["Black Lagoon", "Black-Lagoon"],
+                            							["Hidan no Aria", "Hidan-no-Aria"],
+                            							["Joker Game", "Joker-Game"],
+                            							["11eyes", "11eyes"],
+                            							["Mirai Nikki", "Mirai-Nikki"],
                                                         ["Samurai Champloo", "Samurai-Champloo"]]), 
 					];
 
