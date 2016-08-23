@@ -2,22 +2,20 @@
 // @name         bs.to-favorite-fix
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      0.2
+// @version      0.3.1
 // @description  For fixing the bs.to favorite site
 // @match        https://bs.to/settings/series
 // @icon         https://s.bs.to/favicon.ico
 // @grant        unsafeWindow
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-favorite-fix.user.js
-// @resource     fontAwesome https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css
-// @grant        GM_addStyle
-// @grant        GM_getResourceText
 // ==/UserScript==
 
 (function() {
     'use strict';
+	$("head").append('<script src="https://use.fontawesome.com/15d925a7dd.js"></script>');
 	// Styles
-	var fontAwesomeCSS = GM_getResourceText ("fontAwesome");
-	GM_addStyle (fontAwesomeCSS);
+	//var fontAwesome = GM_getResourceText ("fontAwesome");
+	//GM_addStyle (fontAwesome);
 	// Vars
 	unsafeWindow.currentFavorites = $("#series-menu > li");
 	currentFavorites.sort(function(a, b) {
@@ -30,11 +28,12 @@
 	// Start
 	buildLogin();
 	buildNav();
-	nav.append($(document.createElement("div")).html("Ich weiß die Seite ist laggy, aber besser geht es grad nicht. Sorry!").css("margin-top", "10px").css("font-size", "14px"));
+	nav.append($(document.createElement("div")).html("Ich weiß die Seite ist laggy, aber besser geht es grad nicht. Sorry!").css("margin-top", "10px").css("font-size", "12px"));
+	nav.append($(document.createElement("div")).html("Wenn die Favoriten Leer sind dann kommt ein Kreuz ohne zusammenhang, dafür kann ich nichts liegt an der Struktur im Backend. Einfach das Kreuz wegklicken.").css("margin-top", "5px").css("font-size", "12px"));
 	nav.append($(document.createElement("label")).html("Filter: ").append($(document.createElement("input")).attr("type", "text").attr("id", "filterInput").css("width", "385px").keyup(function() {
         var filterValue = $("#filterInput").val();
 		filterAllList(filterValue);
-	})).css("float", "right").css("margin-top", "38px").css("font-size", "15px"));
+	})).css("float", "right").css("margin-top", "10px").css("font-size", "15px"));
 	clearRoot();
 	appendEssentialsToRoot();
 	// Favorite List
@@ -108,24 +107,6 @@
 		console.time("filter");
 		$(allList[0].children).removeClass("hidden");
 		$(allList[0].children).not(":contains('" + str + "')").addClass("hidden");
-		/*
-		var len = allList[0].children.length;
-		var x = 0;
-		var childs = allList[0].children;
-		while(x < len) {
-			var name = childs[x].innerText;
-			if(name.indexOf(str) == -1) {
-				$(childs[x]).detach();
-			}
-			x++;
-		}
-		/*
-		$(allList[0].children).each(function() {
-			var name = this.innerText;
-			if(name.indexOf(str) > -1) {
-				$(this).addClass("hidden");
-			}
-		});*/
 		console.timeEnd("filter");
 	};
 	unsafeWindow.submitBtn = $(document.createElement("button"));
@@ -138,20 +119,4 @@
 		saveFavorites();
 	});
 	root.append(submitBtn);
-	/*
-	$(document).ready(function(){
-		$("#series-menu").sticky({topSpacing: 5,wrapperClassName: "colSticky"});
-	});
-
-    $("ul.col, #series-menu").sortable({
-        connectWith:"ul.col",
-        stop: function(event, ui) {
-            $("#msg").text("Speichern...");
-            series = [];
-            $("#series-menu li").each(function() {
-                series[series.length] = this.dataset.id;
-            });
-        }
-    }).disableSelection();
-    $("#msg").text("Du kannst nun deine Lieblingsserien in das 'Andere Serien'-Menü ziehen.");*/
 })();
