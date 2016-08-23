@@ -5,6 +5,8 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
+// @version      0.3
+// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-pre-format.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
 // ==/UserScript==

@@ -2,10 +2,12 @@
 // @name         bs.to-favorite-fix
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
+// @version      0.2
 // @description  For fixing the bs.to favorite site
 // @match        https://bs.to/settings/series
 // @icon         https://s.bs.to/favicon.ico
 // @grant        unsafeWindow
+// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-favorite-fix.user.js
 // @resource     fontAwesome https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
