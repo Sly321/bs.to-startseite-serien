@@ -5,7 +5,7 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.2
+// @version      1.1.0
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -84,7 +84,10 @@
 			}
 			var serie = $(document.createElement("a"));
 			serie.html(data[x].name);
-			serie.attr("href", data[x].link);
+			if(title != "Favoriten")
+			   serie.attr("href", "serie/" + data[x].link);
+			else
+			   serie.attr("href", data[x].link);
 			serie.css("float", "left");
 			serienElement.append(serie);
 			seriesList.append(serienElement);
@@ -218,5 +221,31 @@
 		ele.css("line-height", "21px");
 		ele.css("margin-right", "5px");
         return ele;
+	};
+	//delete cookie
+	unsafeWindow.del_cookie = function (cname) {
+		if (get_cookie (cname))
+			document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	};
+	//get cookie
+	unsafeWindow.get_cookie = function (cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split (';');
+		for (var i = 0; i < ca.length; i++)
+		{
+			var c = ca[i];
+			while (c.charAt (0) == ' ')
+				c = c.substring( 1);
+			if (c.indexOf (name) === 0)
+				return JSON.parse(c.substring (name.length, c.length));
+		}
+		return;
+	};
+    unsafeWindow.set_cookie = function (cname, value) {
+		var d = new Date();
+		var exyears = 2;
+		d.setTime (d.getTime () + (exyears*365*24*60*60*1000));
+		var expires = "expires=" + d.toUTCString ();
+		document.cookie = cname + "=" + JSON.stringify(value) + "; " + expires + "; path=/";
 	};
 })();
