@@ -6,7 +6,7 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.2
+// @version      1.2.3
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -184,7 +184,7 @@ animeSeason16.sort(function(a, b) {
 });
 
 // Füge Serien hier ihren Containern Hinzu:
-unsafeWindow.serienContainer = [];
+var serienContainer = [];
 serienContainer.push({ values: serien, title: "Serien", position: "left" });
 serienContainer.push({ values: sitcoms, title: "Sitcoms", position: "left" });
 serienContainer.push({ values: upcoming, title: "Upcoming", position: "left" });
@@ -193,3 +193,5 @@ serienContainer.push({ values: animeRunning, title: "Anime", position: "right" }
 serienContainer.push({ values: animeSeason16, title: "Season-2016", position: "right" });
 serienContainer.push({ values: animeClassics, title: "Classics", position: "right" });
 serienContainer.push({ values: animeFinished, title: "Anime-Finished", position: "right" });
+
+unsafeWindow.serienContainer = cloneInto(serienContainer, unsafeWindow);
