@@ -5,7 +5,7 @@
 // @description  Hier sind alle Serien drinnen enthalten.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0
+// @version      1.0.1
 // @updateURL	   https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -64,7 +64,7 @@ upcoming.push({name: "Numb3rs", link: "Numb3rs"});
 upcoming.push({name: "Scorpion", link: "Scorpion"});
 upcoming.push({name: "Shadowhunters: The Mortal Instruments", link: "Shadowhunters-The-Mortal-Instruments"});
 upcoming.push({name: "The Magicians", link: "The-Magicians"});
-upcoming.push({name: "The Shannara Chronicles", link: "The-Shannara-Chronicles"]]});
+upcoming.push({name: "The Shannara Chronicles", link: "The-Shannara-Chronicles"});
 // Template zum Hinzufügen:
 // serien.push({name: "name", link: "link"});
 upcoming.sort(function(a, b) {
@@ -110,7 +110,7 @@ animeFinished.push({name: "Devil is a Part Timer", link: "The-Devil-is-a-Part-Ti
 animeFinished.push({name: "Gurren Lagann", link: "Gurren-Lagann"});
 animeFinished.push({name: "High School DxD", link: "High-School-D-D"});
 animeFinished.push({name: "Magi", link: "Magi-The-Labyrinth-of-Magic"});
-animeFinished.push({name: "No Game No Life", link: "No-Game-No-Life"}););
+animeFinished.push({name: "No Game No Life", link: "No-Game-No-Life"});
 animeFinished.push({name: "Afro Samurai", link: "Afro-Samurai"});
 animeFinished.push({name: "Akame ga Kill!", link: "Akame-ga-Kill"});
 animeFinished.push({name: "Blue Exorcist", link: "Blue-Exorcist"});
@@ -140,7 +140,7 @@ animeClassics.push({name: "Hunter-x-Hunter", link: "Hunter-x-Hunter-2011"});
 animeClassics.push({name: "InuYasha", link: "InuYasha"});
 animeClassics.push({name: "Naruto", link: "Naruto"});
 animeClassics.push({name: "Naruto Shippuden", link: "Naruto-Shippuuden"});
-animeClassics.push({name: "One Piece", link: "One-Piece"]]});
+animeClassics.push({name: "One Piece", link: "One-Piece"});
 // Template zum Hinzufügen:
 // serienFinished.push({name: "name", link: "link"});
 animeClassics.sort(function(a, b) {
@@ -161,7 +161,7 @@ animeSeason16.push({name: "Magic Kaito", link: "Magic-Kaito"});
 animeSeason16.push({name: "Pandora Hearts", link: "Pandora-Hearts"});
 animeSeason16.push({name: "Oda Nobuna no Yabou", link: "Oda-Nobuna-no-Yabou"});
 animeSeason16.push({name: "Trinity-Seven", link: "Trinity-Seven-7-nin-no-Masho-Tsukai"});
-animeSeason16.push({name: "Re: Zero Kara Hajimeru Isekai Seikatsu", link: "Re-Zero-Kara-Hajimeru-Isekai-Seikatsu"]]}
+animeSeason16.push({name: "Re: Zero Kara Hajimeru Isekai Seikatsu", link: "Re-Zero-Kara-Hajimeru-Isekai-Seikatsu"});
 animeSeason16.push({name: "Boku dake ga Inai Machi", link: "Boku-dake-ga-Inai-Machi"});
 animeSeason16.push({name: "Berserk (2016)", link: "Berserk-2016"});
 animeSeason16.push({name: "Noragami", link: "Noragami"});
@@ -178,7 +178,7 @@ animeSeason16.sort(function(a, b) {
 });
 
 // Füge Serien hier ihren Containern Hinzu:
-unsafeWindow.serienContainer = []
+unsafeWindow.serienContainer = [];
 seriencontainer.push({ vals: serien, title: "Serien" });
 seriencontainer.push({ vals: sitcoms, title: "Sitcoms" });
 seriencontainer.push({ vals: upcoming, title: "Upcoming" });
