@@ -2,10 +2,11 @@
 // @name		    bs.to-infoscript-moviedb
 // @namespace		https://github.com/Sly321/bs.to-startseite-serien
 // @author			Sly321
-// @version			1.0
+// @version			1.0.1
 // @description	Crossloads series informations.
 // @icon		    https://s.bs.to/favicon.ico
 // @include			https://bs.to/
+// @include         https://bs.to/home
 // @require			https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
 // @updateURL		https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-infoscript-moviedb.user.js
 // ==/UserScript==

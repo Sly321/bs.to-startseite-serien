@@ -4,6 +4,7 @@
 // @author       Sly321
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/
+// @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
 // @version      1.2.2
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-pre-format.user.js
