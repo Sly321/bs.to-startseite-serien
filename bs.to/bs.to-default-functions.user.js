@@ -5,7 +5,7 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2
+// @version      1.3
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -89,8 +89,8 @@
 			serienElement.append(serie);
 			seriesList.append(serienElement);
 		}
-		var root = $("#" + root);
-		root.append(seriesList);
+		var rootE = $("#" + root);
+		rootE.append(seriesList);
 	};
 	/**
 	 * Hides the List with the given title
@@ -153,10 +153,33 @@
 		nav.append(navigationContainerRight);
 		nav.append(line);
 	};
+    var buildCheckBox = function(title) {
+		var checkboxLabel = $(document.createElement("label")).html(title + " ").addClass("label-" + title);
+		var checkbox = $(document.createElement("input")).attr("type", "checkbox").on("change", function() {
+			if ($(this).prop("checked")) {
+				showList(title);
+				set_cookie("is_checked_" + title, "checked");
+			}
+			else {
+				hideList(title);
+				set_cookie("is_checked_" + title, "unchecked");
+			}
+		});
+		var cookieValue = get_cookie("is_checked_" + title);
+		if(cookieValue === undefined) {
+			set_cookie("is_checked_" + title, "checked");
+			checkbox.attr("checked", "checked");
+		} else if(cookieValue == "unchecked") {
+			hideList(title);
+		} else {
+			checkbox.attr("checked", "checked");
+		}
+		checkboxLabel.append(checkbox);
+		return checkboxLabel;
+	};
 	// Root
 	var clearRoot = function() {
-		// Root Element
-	  var root = $(document.getElementById("root"));
+	    var root = $(document.getElementById("root"));
 		root.css("background", "white");
 		root.css("border", "none");
 		root.css("border-radius", "0");
@@ -250,6 +273,7 @@
 		document.cookie = cname + "=" + JSON.stringify(value) + "; " + expires + "; path=/";
 	};
 	// Export the Functions
+    unsafeWindow.buildCheckBox = exportFunction(buildCheckBox, unsafeWindow);
 	unsafeWindow.addGlobalStyle = exportFunction(addGlobalStyle, unsafeWindow);
 	unsafeWindow.getFavorites = exportFunction(getFavorites, unsafeWindow);
 	unsafeWindow.getSearchLink = exportFunction(getSearchLink, unsafeWindow);
