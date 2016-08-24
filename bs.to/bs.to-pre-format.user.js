@@ -16,37 +16,22 @@
     'use strict';
 
 	// Standard Data
-	var favorites = unsafeWindow.getFavorites();
+	var favorites = [];
+	favorites.push({values: unsafeWindow.getFavorites(), title: "Favoriten", position: "left"});
+	favorites.push.apply(favorites, unsafeWindow.serienContainer);
 	// Building the essentiell elements
 	unsafeWindow.buildLogin();
 	unsafeWindow.buildNav();
 	unsafeWindow.clearRoot();
 	unsafeWindow.appendEssentialsToRoot();
 	// Start
-	var favoritesLabel = $(document.createElement("label")).html("Favoriten ").addClass("label-Favoriten");
-	var favoritesCheckbox = $(document.createElement("input")).attr("type", "checkbox").attr("checked", "checked").on("change", function() {
-		if (favoritesCheckbox.prop("checked"))
-			showList("Favoriten");
-		else
-			hideList("Favoriten");
-	});
 	var nav = $(".navigation-panel");
 	var root = $("#root");
-	favoritesLabel.append(favoritesCheckbox);
-	nav.append(favoritesLabel);
-	// Building list elements
-	var leftContainer = $(document.createElement("div"));
-	leftContainer.css("float", "left");
-	leftContainer.css("width", "443px");
-	leftContainer.attr("id", "left-container");
-	var rightContainer = $(document.createElement("div"));
-	rightContainer.css("float", "left");
-	rightContainer.css("width", "443px");
-	rightContainer.attr("id", "right-container");
+	var leftContainer = $(document.createElement("div")).css("float", "left").css("width", "443px").attr("id", "left-container");
+	var rightContainer = $(document.createElement("div")).css("float", "left").css("width", "443px").attr("id", "right-container");
 	root.append(leftContainer, rightContainer);
-	unsafeWindow.buildListElement("left-container", favorites, "Favoriten");
 
-	$(unsafeWindow.serienContainer).each(function() {
+	$(favorites).each(function() {
 		if(this.position == "left")
 			unsafeWindow.buildListElement("left-container", this.values, this.title);
 		else
