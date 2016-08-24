@@ -5,18 +5,15 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.1.1
+// @version      1.2
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
 // ==/UserScript==
 
-(function() {
-    'use strict';
 	// Vars
 	var rootPadding = 5;
-
-	unsafeWindow.addGlobalStyle = function(css) {
+	var addGlobalStyle = function(css) {
 		var head, style;
 		head = document.getElementsByTagName('head')[0];
 		if (!head) { return; }
@@ -25,7 +22,7 @@
 		style.innerHTML = css;
 		head.appendChild(style);
 	};
-    unsafeWindow.getFavorites = function() {
+    var getFavorites = function() {
 		var favoriteElements = $("#other-series-nav > ul > li > a");
 		var favorites = [];
 		for(var x = 0; x < favoriteElements.length; x++) {
@@ -38,10 +35,10 @@
 			return a.name.localeCompare(b.name);
 		});
 	};
-	unsafeWindow.getSearchLink = function() {
+	var getSearchLink = function() {
 		return $("#other-series-nav > a")[0].href;
 	};
-	unsafeWindow.setStandardCSS = function(element) {
+	var setStandardCSS = function(element) {
 		element.css("float", "left");
 		element.css("border-radius", "0");
 		element.css("border", "1px solid #cccccc");
@@ -50,19 +47,19 @@
 		element.css("background", "white");
 		element.css("box-shadow", "1px 5px 10px -1px darkgrey");
 	};
-	unsafeWindow.setNavCSS = function(element) {
+	var setNavCSS = function(element) {
 		element.css("width", "33.33333333%");
 		element.css("height", "20px");
 		element.css("float", "left");
 		element.css("text-align", "center");
 	};
-	unsafeWindow.setListContainerCSS = function(element) {
+	var setListContainerCSS = function(element) {
 		setStandardCSS(element);
 		element.css("width", "422px");
 		element.css("overflow-y", "auto");
 		element.css("height", "700px");
 	};
-	unsafeWindow.buildListElement = function(root, data, title) {
+	var buildListElement = function(root, data, title) {
 		var seriesList = $(document.createElement("div"));
 		setStandardCSS(seriesList);
 		seriesList.css("width", "422px");
@@ -92,31 +89,34 @@
 			serienElement.append(serie);
 			seriesList.append(serienElement);
 		}
+		var root = $("#" + root);
 		root.append(seriesList);
 	};
 	/**
 	 * Hides the List with the given title
 	 */
-	unsafeWindow.hideList = function(title) {
+	var hideList = function(title) {
 		$("#root > div > ." + title).css("display", "none");
 	};
 	/**
 	 * Shows the List with the given title
 	 */
-	unsafeWindow.showList = function(title) {
+	var showList = function(title) {
 		$("#root > div > ." + title).css("display", "block");
 	};
 	// Login
-	unsafeWindow.loginElement = $("#user");
-	unsafeWindow.buildLogin = function() {
+	var loginElement = $("#user");
+	var buildLogin = function() {
+		loginElement = $(loginElement);
 		loginElement.css("width", "145px");
 		loginElement.css("height", "105px");
 		loginElement.css("font-size", "12px");
 		setStandardCSS(loginElement);
 	};
 	// Nav Element
-	unsafeWindow.nav = $(document.createElement("div"));
-	unsafeWindow.buildNav = function() {
+	var nav = document.createElement("div");
+	var buildNav = function() {
+		nav = $(nav);
 		setStandardCSS(nav);
 		nav.addClass("navigation-panel");
 		nav.css("position", "relative");
@@ -154,9 +154,9 @@
 		nav.append(line);
 	};
 	// Root
-	unsafeWindow.root = $("body > #root");
-	unsafeWindow.clearRoot = function() {
+	var clearRoot = function() {
 		// Root Element
+	  var root = $(document.getElementById("root"));
 		root.css("background", "white");
 		root.css("border", "none");
 		root.css("border-radius", "0");
@@ -165,7 +165,8 @@
 		root.css("overflow", "auto");
 		root.html("");
 	};
-	unsafeWindow.appendEssentialsToRoot = function() {
+	var appendEssentialsToRoot = function() {
+	  var root = $(document.getElementById("root"));
 		root.append(loginElement);
 		// CSS For User Login
 		$($("#user > fieldset > label")[1]).css("margin-top", "12px");
@@ -185,7 +186,7 @@
 		// Appending Elements
 		root.append(nav);
 	};
-	unsafeWindow.createDelBtn = function() {
+	var createDelBtn = function() {
 		var deleteBtn = $(document.createElement("div"));
 		deleteBtn.css("cursor", "pointer");
 		deleteBtn.css("float", "right");
@@ -195,7 +196,7 @@
 		deleteBtn.append(crossSign);
 		return deleteBtn;
 	};
-	unsafeWindow.createAddBtn = function() {
+	var createAddBtn = function() {
 		var addBtn = $(document.createElement("div"));
 		addBtn.css("cursor", "pointer");
 		addBtn.css("float", "right");
@@ -214,7 +215,7 @@
 		addBtn.append(favSign);
 		return addBtn;
 	};
-	unsafeWindow.createFontAwesome = function(classStr) {
+	var createFontAwesome = function(classStr) {
 		var ele = $(document.createElement("i"));
 		ele.addClass("fa " + classStr);
 		ele.css("float", "left");
@@ -223,12 +224,12 @@
         return ele;
 	};
 	//delete cookie
-	unsafeWindow.del_cookie = function (cname) {
+	var del_cookie = function (cname) {
 		if (get_cookie (cname))
 			document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	};
 	//get cookie
-	unsafeWindow.get_cookie = function (cname) {
+	var get_cookie = function (cname) {
 		var name = cname + "=";
 		var ca = document.cookie.split (';');
 		for (var i = 0; i < ca.length; i++)
@@ -241,11 +242,30 @@
 		}
 		return;
 	};
-    unsafeWindow.set_cookie = function (cname, value) {
+    var set_cookie = function (cname, value) {
 		var d = new Date();
 		var exyears = 2;
 		d.setTime (d.getTime () + (exyears*365*24*60*60*1000));
 		var expires = "expires=" + d.toUTCString ();
 		document.cookie = cname + "=" + JSON.stringify(value) + "; " + expires + "; path=/";
 	};
-})();
+	// Export the Functions
+	unsafeWindow.addGlobalStyle = exportFunction(addGlobalStyle, unsafeWindow);
+	unsafeWindow.getFavorites = exportFunction(getFavorites, unsafeWindow);
+	unsafeWindow.getSearchLink = exportFunction(getSearchLink, unsafeWindow);
+	unsafeWindow.setNavCSS = exportFunction(setNavCSS, unsafeWindow);
+	unsafeWindow.setStandardCSS = exportFunction(setStandardCSS, unsafeWindow);
+	unsafeWindow.setListContainerCSS = exportFunction(setListContainerCSS, unsafeWindow);
+	unsafeWindow.buildListElement = exportFunction(buildListElement, unsafeWindow);
+	unsafeWindow.showList = exportFunction(showList, unsafeWindow);
+	unsafeWindow.hideList = exportFunction(hideList, unsafeWindow);
+	unsafeWindow.buildLogin = exportFunction(buildLogin, unsafeWindow);
+	unsafeWindow.buildNav = exportFunction(buildNav, unsafeWindow);
+	unsafeWindow.clearRoot = exportFunction(clearRoot, unsafeWindow);
+	unsafeWindow.appendEssentialsToRoot = exportFunction(appendEssentialsToRoot, unsafeWindow);
+	unsafeWindow.createDelBtn = exportFunction(createDelBtn, unsafeWindow);
+	unsafeWindow.createAddBtn = exportFunction(createAddBtn, unsafeWindow);
+	unsafeWindow.createFontAwesome = exportFunction(createFontAwesome, unsafeWindow);
+	unsafeWindow.del_cookie = exportFunction(del_cookie, unsafeWindow);
+	unsafeWindow.get_cookie = exportFunction(get_cookie, unsafeWindow);
+	unsafeWindow.set_cookie = exportFunction(set_cookie, unsafeWindow);
