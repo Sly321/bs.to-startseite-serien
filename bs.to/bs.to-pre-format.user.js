@@ -5,7 +5,7 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.0
+// @version      1.2.1
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-pre-format.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -65,7 +65,7 @@
 			unsafeWindow.set_cookie("is_checked_" + this.title, "checked");
 			checkbox.attr("checked", "checked");
 		} else if(cookieValue == "unchecked") {
-			hideList(this.title);
+			unsafeWindow.hideList(this.title);
 		} else {
 			checkbox.attr("checked", "checked");
 		}
