@@ -6,7 +6,7 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.1
+// @version      1.2.2
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -25,6 +25,7 @@ serien.push({name: "Gotham", link: "Gotham"});
 serien.push({name: "House of Cards", link: "House-of-Cards-US"});
 serien.push({name: "iZombie", link: "iZombie"});
 serien.push({name: "Lucifer", link: "Lucifer"});
+serien.push({name: "Narcos", link: "Narcos"});
 serien.push({name: "Marvels Agent Carter", link: "Marvel-s-Agent-Carter"});
 serien.push({name: "Mr. Robot", link: "Mr-Robot"});
 serien.push({name: "Supernatural", link: "Supernatural"});
