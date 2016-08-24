@@ -5,7 +5,7 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0
+// @version      1.0.2
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -115,6 +115,7 @@
 	unsafeWindow.nav = $(document.createElement("div"));
 	unsafeWindow.buildNav = function() {
 		setStandardCSS(nav);
+		nav.addClass("navigation-panel");
 		nav.css("position", "relative");
 		nav.css("width", "699px");
 		nav.css("height", "105px");
