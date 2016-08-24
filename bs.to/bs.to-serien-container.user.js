@@ -5,7 +5,7 @@
 // @description  Hier sind alle Serien drinnen enthalten.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.2
+// @version      1.0.3
 // @updateURL	   https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -184,6 +184,6 @@ serienContainer.push({ values: sitcoms, title: "Sitcoms", position: "left" });
 serienContainer.push({ values: upcoming, title: "Upcoming", position: "left" });
 serienContainer.push({ values: serienFinished, title: "Finished", position: "left" });
 serienContainer.push({ values: animeRunning, title: "Anime", position: "right" });
-serienContainer.push({ values: animeSeason16, title: "Season 2016", position: "right" });
+serienContainer.push({ values: animeSeason16, title: "Season-2016", position: "right" });
 serienContainer.push({ values: animeClassics, title: "Classics", position: "right" });
-serienContainer.push({ values: animeFinished, title: "Finished", position: "right" });
+serienContainer.push({ values: animeFinished, title: "Anime-Finished", position: "right" });
