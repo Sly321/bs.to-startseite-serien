@@ -2,7 +2,7 @@
 // @name         bs.to-favorite-fix
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      0.3.1
+// @version      1.0
 // @description  For fixing the bs.to favorite site
 // @match        https://bs.to/settings/series
 // @icon         https://s.bs.to/favicon.ico
@@ -17,28 +17,32 @@
 	//var fontAwesome = GM_getResourceText ("fontAwesome");
 	//GM_addStyle (fontAwesome);
 	// Vars
-	unsafeWindow.currentFavorites = $("#series-menu > li");
+	var currentFavorites = $("#series-menu > li");
 	currentFavorites.sort(function(a, b) {
 		return a.innerHTML.slice(0, 4).localeCompare(b.innerHTML.slice(0, 4));
 	});
-	unsafeWindow.notFavorites = $.merge($("#waste1 > li"), $("#waste2 > li"));
+	var notFavorites = $.merge($("#waste1 > li"), $("#waste2 > li"));
 	notFavorites.sort(function(a, b) {
 		return a.innerHTML.slice(0, 4).localeCompare(b.innerHTML.slice(0, 4));
 	});
 	// Start
-	buildLogin();
-	buildNav();
+	unsafeWindow.buildLogin();
+	unsafeWindow.buildNav();
+	unsafeWindow.clearRoot();
+	unsafeWindow.appendEssentialsToRoot();
+	
+	var nav = $(".navigation-panel");
 	nav.append($(document.createElement("div")).html("Ich weiß die Seite ist laggy, aber besser geht es grad nicht. Sorry!").css("margin-top", "10px").css("font-size", "12px"));
 	nav.append($(document.createElement("div")).html("Wenn die Favoriten Leer sind dann kommt ein Kreuz ohne zusammenhang, dafür kann ich nichts liegt an der Struktur im Backend. Einfach das Kreuz wegklicken.").css("margin-top", "5px").css("font-size", "12px"));
 	nav.append($(document.createElement("label")).html("Filter: ").append($(document.createElement("input")).attr("type", "text").attr("id", "filterInput").css("width", "385px").keyup(function() {
         var filterValue = $("#filterInput").val();
 		filterAllList(filterValue);
 	})).css("float", "right").css("margin-top", "10px").css("font-size", "15px"));
-	clearRoot();
-	appendEssentialsToRoot();
+	nav = $(".navigation-panel");
+	var root = $("#root");
 	// Favorite List
 	for(var x = 0; x < currentFavorites.length; x++) {
-		var deleteBtn = createDelBtn();
+		var deleteBtn = unsafeWindow.createDelBtn();
 		deleteBtn.on("click", function() {
 			var dataId = this.parentElement.attributes[0].value;
 			for(var z = 0; z < currentFavorites.length; z++) {
@@ -52,19 +56,19 @@
 		});
 		$(currentFavorites[x]).append(deleteBtn);
 	}
-	var favoritesFontAwesome = createFontAwesome("fa-star");
+	var favoritesFontAwesome = unsafeWindow.createFontAwesome("fa-star");
 	var favoritesHeadline = $(document.createElement("h3")).html("Favoriten").css("margin", 0);
 	var line_one = $(document.createElement("hr"));
-	unsafeWindow.favoritesList = $(document.createElement("ul")).append(currentFavorites);
+	var favoritesList = $(document.createElement("ul")).append(currentFavorites);
 	var favoritesContainer = $(document.createElement("div")).append(favoritesFontAwesome, favoritesHeadline, line_one, favoritesList);
-	setListContainerCSS(favoritesContainer);
+	unsafeWindow.setListContainerCSS(favoritesContainer);
 	root.append(favoritesContainer);
 	// Nicht Favoriten
-	var allFontAwesome = createFontAwesome("fa-globe");
+	var allFontAwesome = unsafeWindow.createFontAwesome("fa-globe");
 	var allHeadline = $(document.createElement("h3")).html("Alle Serien").css("margin", 0);
 	var line_two = $(document.createElement("hr"));
 	for(var y = 0; y < notFavorites.length; y++) {
-		var addBtn = createAddBtn();
+		var addBtn = unsafeWindow.createAddBtn();
 		addBtn.on("click", function() {
 			var dataId = this.parentElement.attributes[0].value;
 			for(var z = 0; z < notFavorites.length; z++) {
