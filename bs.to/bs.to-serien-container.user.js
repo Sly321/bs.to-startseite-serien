@@ -5,7 +5,7 @@
 // @description  Hier sind alle Serien drinnen enthalten.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.1
+// @version      1.0.2
 // @updateURL	   https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -179,11 +179,11 @@ animeSeason16.sort(function(a, b) {
 
 // Füge Serien hier ihren Containern Hinzu:
 unsafeWindow.serienContainer = [];
-seriencontainer.push({ vals: serien, title: "Serien" });
-seriencontainer.push({ vals: sitcoms, title: "Sitcoms" });
-seriencontainer.push({ vals: upcoming, title: "Upcoming" });
-seriencontainer.push({ vals: serienFinished, title: "Finished" });
-seriencontainer.push({ vals: animeRunning, title: "Anime" });
-seriencontainer.push({ vals: animeSeason16, title: "Season 2016" });
-seriencontainer.push({ vals: animeClassics, title: "Classics" });
-seriencontainer.push({ vals: animeFinished, title: "Finished" });
+serienContainer.push({ values: serien, title: "Serien", position: "left" });
+serienContainer.push({ values: sitcoms, title: "Sitcoms", position: "left" });
+serienContainer.push({ values: upcoming, title: "Upcoming", position: "left" });
+serienContainer.push({ values: serienFinished, title: "Finished", position: "left" });
+serienContainer.push({ values: animeRunning, title: "Anime", position: "right" });
+serienContainer.push({ values: animeSeason16, title: "Season 2016", position: "right" });
+serienContainer.push({ values: animeClassics, title: "Classics", position: "right" });
+serienContainer.push({ values: animeFinished, title: "Finished", position: "right" });

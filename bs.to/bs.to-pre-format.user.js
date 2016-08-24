@@ -5,7 +5,7 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.3
+// @version      1.0.1
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-pre-format.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -36,7 +36,19 @@
 	});
 	favoritesLabel.append(favoritesCheckbox);
 	nav.append(favoritesLabel);
-	// Root Element
-	buildListElement(root, favorites, "Favoriten");
-	buildListElement(root, favorites, "Favoriten_neu");
+	// Building list elements
+	var leftContainer = $(document.createElement("div"));
+	leftContainer.css("float", "left");
+	leftContainer.css("width", "443px");
+	var rightContainer = $(document.createElement("div"));
+	rightContainer.css("float", "left");
+	rightContainer.css("width", "443px");
+	root.append(leftContainer, rightContainer);
+	buildListElement(leftContainer, favorites, "Favoriten");
+	$(serienContainer).each(function() {
+		if(this.position == "left")
+			buildListElement(leftContainer, this.values, this.title);
+		else
+			buildListElement(rightContainer, this.values, this.title);
+	});
 })();

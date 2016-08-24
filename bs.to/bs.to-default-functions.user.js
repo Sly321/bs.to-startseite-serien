@@ -5,7 +5,7 @@
 // @description  Formatiert die bs.to Startseite für die späteren Designs.
 // @include      https://bs.to/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      0.2
+// @version      1.0
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -95,13 +95,13 @@
 	 * Hides the List with the given title
 	 */
 	unsafeWindow.hideList = function(title) {
-		$("#root > ." + title).css("display", "none");
+		$("#root > div > ." + title).css("display", "none");
 	};
 	/**
 	 * Shows the List with the given title
 	 */
 	unsafeWindow.showList = function(title) {
-		$("#root > ." + title).css("display", "block");
+		$("#root > div > ." + title).css("display", "block");
 	};
 	// Login
 	unsafeWindow.loginElement = $("#user");
