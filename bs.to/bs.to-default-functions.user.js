@@ -2,9 +2,10 @@
 // @name         bs.to-default-functions
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @description  Formatiert die bs.to Startseite für die späteren Designs.
+// @description  Default Funktionen welche später benötigt werden..
 // @include      https://bs.to/*
 // @icon         https://s.bs.to/favicon.ico
+// @version      1.3.1
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
