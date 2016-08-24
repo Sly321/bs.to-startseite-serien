@@ -5,7 +5,7 @@
 // @description  Hier sind alle Serien drinnen enthalten.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.4
+// @version      1.2
 // @updateURL	   https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
