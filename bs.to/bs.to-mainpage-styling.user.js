@@ -7,7 +7,7 @@
 // @include      https://bs.to/settings/series
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.1
+// @version      1.1.0
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-mainpage-styling.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -27,6 +27,8 @@
 	unsafeWindow.addGlobalStyle(".navigation-panel > .label-Season-2016 { top: 48px; right: 6px; }");
 	unsafeWindow.addGlobalStyle(".navigation-panel > .label-Classics { top: 66px; right: 6px; }");
 	unsafeWindow.addGlobalStyle(".navigation-panel > .label-Anime-Finished { top: 84px; right: 6px; }");
+	unsafeWindow.addGlobalStyle(".navigation-panel > hr { width: 100%; float: left; }");
+
 	// Color related
 	unsafeWindow.addGlobalStyle(".serienElement.highlighted { background: #cfddff }");
 })();
