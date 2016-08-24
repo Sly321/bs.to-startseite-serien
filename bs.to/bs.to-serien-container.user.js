@@ -1,4 +1,4 @@
-// ==UserScript==
+﻿// ==UserScript==
 // @name         bs.to-serien-container
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
@@ -6,7 +6,7 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.4
+// @version      1.2.5
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -145,7 +145,7 @@ animeFinished.push({name: "Hidan no Aria", link: "Hidan-no-Aria"});
 animeFinished.push({name: "Jormungand", link: "Jormungand"});
 animeFinished.push({name: "Overlord", link: "Overlord"});
 animeFinished.push({name: "Spice and Wolf", link: "Spice-and-Wolf"});
-animeFinished.push({name: "Owari no Seraph", link: "Owari-no-Seraph"});
+animeFinished.push({name: "Owari no Seraph", link: "Seraph-of-the-End"});
 animeFinished.push({name: "Sky Wizards Academy", link: "Kuusen-Madoushi-Kouhosei-no-Kyoukan"});
 animeFinished.push({name: "One Punch Man", link: "One-Punch-Man"});
 // Template zum Hinzufügen:
