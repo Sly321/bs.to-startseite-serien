@@ -41,6 +41,7 @@ serien.push({name: "The Walking Dead", link: "The-Walking-Dead"});
 serien.push({name: "Stranger Things", link: "Stranger-Things"});
 serien.push({name: "Vampire Diaries", link: "Vampire-Diaries"});
 serien.push({name: "True Detective", link: "True-Detective"});
+serien.push({name: "Quantico", link: "Quantico"});
 // Template zum Hinzufügen:
 // serien.push({name: "name", link: "link"});
 serien.sort(function(a, b) {
@@ -69,6 +70,7 @@ upcoming.push({name: "Scorpion", link: "Scorpion"});
 upcoming.push({name: "Shadowhunters: The Mortal Instruments", link: "Shadowhunters-The-Mortal-Instruments"});
 upcoming.push({name: "The Magicians", link: "The-Magicians"});
 upcoming.push({name: "The Shannara Chronicles", link: "The-Shannara-Chronicles"});
+upcoming.push({name: "Blindspot", link: "Blindspot"});
 // Template zum Hinzufügen:
 // serien.push({name: "name", link: "link"});
 upcoming.sort(function(a, b) {
