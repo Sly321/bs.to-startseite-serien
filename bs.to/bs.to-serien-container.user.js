@@ -6,7 +6,7 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.3
+// @version      1.2.4
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -38,8 +38,8 @@ serien.push({name: "The Royals", link: "The-Royals"});
 serien.push({name: "The Strain", link: "The-Strain"});
 serien.push({name: "The Man in the High Castle", link: "The-Man-in-the-High-Castle"});
 serien.push({name: "The Walking Dead", link: "The-Walking-Dead"});
-serien.push({name: "Stranger Things", link: "Vampire-Diaries"});
-serien.push({name: "Vampire Diaries", link: "Stranger-Things"});
+serien.push({name: "Stranger Things", link: "Stranger-Things"});
+serien.push({name: "Vampire Diaries", link: "Vampire-Diaries"});
 serien.push({name: "True Detective", link: "True-Detective"});
 // Template zum Hinzufügen:
 // serien.push({name: "name", link: "link"});
