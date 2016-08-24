@@ -5,7 +5,7 @@
 // @description  Hier sind alle Serien drinnen enthalten.
 // @include      https://bs.to/
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.0.3
+// @version      1.0.4
 // @updateURL	   https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -18,7 +18,6 @@ serien.push({name: "Better Call Saul", link: "Better-Call-Saul"});
 serien.push({name: "Daredevil", link: "Marvel-s-Daredevil"});
 serien.push({name: "Legends of Tomorrow", link: "DC-s-Legends-of-Tomorrow"});
 serien.push({name: "Elementary", link: "Elementary"});
-serien.push({name: "Extant", link: "Extant"});
 serien.push({name: "Fear the Walking Dead", link: "Fear-The-Walking-Dead"});
 serien.push({name: "Game of Thrones", link: "Game-of-Thrones"});
 serien.push({name: "Gotham", link: "Gotham"});
@@ -37,7 +36,9 @@ serien.push({name: "The Royals", link: "The-Royals"});
 serien.push({name: "The Strain", link: "The-Strain"});
 serien.push({name: "The Man in the High Castle", link: "The-Man-in-the-High-Castle"});
 serien.push({name: "The Walking Dead", link: "The-Walking-Dead"});
-serien.push({name: "Vampire Diaries", link: "Vampire-Diaries"});
+serien.push({name: "Stranger Things", link: "Vampire-Diaries"});
+serien.push({name: "Vampire Diaries", link: "Stranger-Things"});
+serien.push({name: "True Detective", link: "True-Detective"});
 // Template zum Hinzufügen:
 // serien.push({name: "name", link: "link"});
 serien.sort(function(a, b) {
@@ -49,6 +50,7 @@ sitcoms.push({name: "The Big Bang Theory", link: "The-Big-Bang-Theory"});
 sitcoms.push({name: "The IT Crowd", link: "The-IT-Crowd"});
 sitcoms.push({name: "How I Met Your Mother", link: "How-I-Met-Your-Mother"});
 sitcoms.push({name: "Sirens", link: "Sirens"});
+sitcoms.push({name: "Anger Management", link: "Anger-Management"});
 // Template zum Hinzufügen:
 // sitcoms.push({name: "name", link: "link"});
 sitcoms.sort(function(a, b) {
@@ -78,6 +80,7 @@ serienFinished.push({name: "Hannibal", link: "Hannibal"});
 serienFinished.push({name: "Nip/Tuck", link: "Nip-Tuck-Schoenheit-hat-ihren-Preis"});
 serienFinished.push({name: "Revolution", link: "Revolution"});
 serienFinished.push({name: "The Tomorrow-People", link: "The-Tomorrow-People"});
+serienFinished.push({name: "Extant", link: "Extant"});
 // Template zum Hinzufügen:
 // serienFinished.push({name: "name", link: "link"});
 serienFinished.sort(function(a, b) {
@@ -92,9 +95,9 @@ animeRunning.push({name: "Gate: Jieitai Kanochi nite, Kaku Tatakaeri", link: "Ga
 animeRunning.push({name: "God Eater", link: "God-Eater"});
 animeRunning.push({name: "Attack on Titan", link: "Shingeki-no-Kyojin"});
 animeRunning.push({name: "Sword Art Online", link: "Sword-Art-Online"});
-animeRunning.push({name: "Owari no Seraph", link: "Owari-no-Seraph"});
-animeRunning.push({name: "Ajin", link: "Ajin"});
 animeRunning.push({name: "Koutetsujou no Kabaneri", link: "Koutetsujou-no-Kabaneri"});
+animeRunning.push({name: "Nanatsu no Taizai", link: "The-Seven-Deadly-Sins"});
+animeRunning.push({name: "Rokka no Yuusha", link: "Rokka-no-Yuusha"});
 // Template zum Hinzufügen:
 // serienFinished.push({name: "name", link: "link"});
 animeRunning.sort(function(a, b) {
@@ -118,12 +121,31 @@ animeFinished.push({name: "Code Geass", link: "Code-Geass"});
 animeFinished.push({name: "Death Note", link: "Death-Note"});
 animeFinished.push({name: "Fate/Zero", link: "Fate-Zero"});
 animeFinished.push({name: "Fate/Stay Night: Unlimited Blade Works", link: "Fate-Stay-Night-Unlimited-Blade-Works"});
-animeFinished.push({name: "Nanatsu no Tasai", link: "The-Seven-Deadly-Sins"});
 animeFinished.push({name: "Psycho Pass", link: "Psycho-Pass"});
 animeFinished.push({name: "Soul Eater", link: "Soul-Eater"});
 animeFinished.push({name: "Steins;Gate", link: "Steins-Gate"});
 animeFinished.push({name: "Tokyo Ghoul", link: "Tokyo-Ghoul"});
 animeFinished.push({name: "Neon Genesis Evangelion", link: "Neon-Genesis-Evangelion"});
+animeFinished.push({name: "Samurai Champloo", link: "Samurai-Champloo"});
+animeFinished.push({name: "Trinity-Seven", link: "Trinity-Seven-7-nin-no-Masho-Tsukai"});
+animeFinished.push({name: "Mirai Nikki", link: "Mirai-Nikki"});
+animeFinished.push({name: "Pandora Hearts", link: "Pandora-Hearts"});
+animeFinished.push({name: "Log-Horizon", link: "Log-Horizon"});
+animeFinished.push({name: "D.Gray-Man", link: "D-Gray-Man"});
+animeFinished.push({name: "Magic Kaito", link: "Magic-Kaito"});
+animeFinished.push({name: "Oda Nobuna no Yabou", link: "Oda-Nobuna-no-Yabou"});
+animeFinished.push({name: "Noragami", link: "Noragami"});
+animeFinished.push({name: "11eyes", link: "11eyes"});
+animeFinished.push({name: "Black Lagoon", link: "Black-Lagoon"});
+animeFinished.push({name: "Black Bullet", link: "Black-Bullet"});
+animeFinished.push({name: "K-Project", link: "K-Project"});
+animeFinished.push({name: "Hidan no Aria", link: "Hidan-no-Aria"});
+animeFinished.push({name: "Jormungand", link: "Jormungand"});
+animeFinished.push({name: "Overlord", link: "Overlord"});
+animeFinished.push({name: "Spice and Wolf", link: "Spice-and-Wolf"});
+animeFinished.push({name: "Owari no Seraph", link: "Owari-no-Seraph"});
+animeFinished.push({name: "Sky Wizards Academy", link: "Kuusen-Madoushi-Kouhosei-no-Kyoukan"});
+animeFinished.push({name: "One Punch Man", link: "One-Punch-Man"});
 // Template zum Hinzufügen:
 // serienFinished.push({name: "name", link: "link"});
 animeFinished.sort(function(a, b) {
@@ -148,29 +170,11 @@ animeClassics.sort(function(a, b) {
 });
 
 var animeSeason16 = [];
-animeSeason16.push({name: "Kuusen Madoushi Kouhosei no Kyoukan", link: "Kuusen-Madoushi-Kouhosei-no-Kyoukan"});
-animeSeason16.push({name: "Overlord", link: "Overlord"});
-animeSeason16.push({name: "Rokka no Yuusha", link: "Rokka-no-Yuusha"});
-animeSeason16.push({name: "Spice and Wolf", link: "Spice-and-Wolf"});
-animeSeason16.push({name: "K-Project", link: "K-Project"});
-animeSeason16.push({name: "Jormungand", link: "Jormungand"});
-animeSeason16.push({name: "Black Bullet", link: "Black-Bullet"});
-animeSeason16.push({name: "Log-Horizon", link: "Log-Horizon"});
-animeSeason16.push({name: "D.Gray-Man", link: "D-Gray-Man"});
-animeSeason16.push({name: "Magic Kaito", link: "Magic-Kaito"});
-animeSeason16.push({name: "Pandora Hearts", link: "Pandora-Hearts"});
-animeSeason16.push({name: "Oda Nobuna no Yabou", link: "Oda-Nobuna-no-Yabou"});
-animeSeason16.push({name: "Trinity-Seven", link: "Trinity-Seven-7-nin-no-Masho-Tsukai"});
 animeSeason16.push({name: "Re: Zero Kara Hajimeru Isekai Seikatsu", link: "Re-Zero-Kara-Hajimeru-Isekai-Seikatsu"});
 animeSeason16.push({name: "Boku dake ga Inai Machi", link: "Boku-dake-ga-Inai-Machi"});
 animeSeason16.push({name: "Berserk (2016)", link: "Berserk-2016"});
-animeSeason16.push({name: "Noragami", link: "Noragami"});
-animeSeason16.push({name: "Black Lagoon", link: "Black-Lagoon"});
-animeSeason16.push({name: "Hidan no Aria", link: "Hidan-no-Aria"});
 animeSeason16.push({name: "Joker Game", link: "Joker-Game"});
-animeSeason16.push({name: "11eyes", link: "11eyes"});
-animeSeason16.push({name: "Mirai Nikki", link: "Mirai-Nikki"});
-animeSeason16.push({name: "Samurai Champloo", link: "Samurai-Champloo"});
+animeSeason16.push({name: "Ajin", link: "Ajin"});
 // Template zum Hinzufügen:
 // serienFinished.push({name: "name", link: "link"});
 animeSeason16.sort(function(a, b) {

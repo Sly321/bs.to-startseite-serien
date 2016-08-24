@@ -55,14 +55,26 @@
 		checkboxLabel.html(this.title + " ");
 		var checkbox = $(document.createElement("input"));
 		checkbox.attr("type", "checkbox");
-		checkbox.attr("checked", "checked");
+		var cookieValue = get_cookie("is_checked_" + this.title);
+		if(cookieValue === undefined) {
+			set_cookie("is_checked_" + this.title, "checked");
+			checkbox.attr("checked", "checked");
+		} else if(cookieValue == "unchecked") {
+			hideList(this.title);
+		} else {
+			checkbox.attr("checked", "checked");
+		}
 		var self = this;
 		checkboxLabel.addClass("label-" + this.title);
 		checkbox.on("change", function() {
-			if ($(this).prop("checked"))
+			if ($(this).prop("checked")) {
 				showList(self.title);
-			else
+				set_cookie("is_checked_" + self.title, "checked");
+			}
+			else {
 				hideList(self.title);
+				set_cookie("is_checked_" + self.title, "unchecked");
+			}
 		});
 		checkboxLabel.append(checkbox);
 		nav.append(checkboxLabel);
