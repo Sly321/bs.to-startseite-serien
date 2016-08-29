@@ -5,7 +5,7 @@
 // @description  Default Funktionen welche später benötigt werden..
 // @include      https://bs.to/*
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.3.1
+// @version      1.4
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -266,7 +266,7 @@
 	};
     var set_cookie = function (cname, value) {
 		var d = new Date();
-		var exyears = 2;
+		var exyears = 10;
 		d.setTime (d.getTime () + (exyears*365*24*60*60*1000));
 		var expires = "expires=" + d.toUTCString ();
 		document.cookie = cname + "=" + JSON.stringify(value) + "; " + expires + "; path=/";
