@@ -6,7 +6,7 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.5
+// @version      1.2.6
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -124,7 +124,7 @@ animeFinished.push({name: "Blue Exorcist", link: "Blue-Exorcist"});
 animeFinished.push({name: "Code Geass", link: "Code-Geass"});
 animeFinished.push({name: "Death Note", link: "Death-Note"});
 animeFinished.push({name: "Fate/Zero", link: "Fate-Zero"});
-animeFinished.push({name: "Fate/Stay Night: Unlimited Blade Works", link: "Fate-Stay-Night-Unlimited-Blade-Works"});
+animeFinished.push({name: "Fate/Stay Night: Unlimited Blade Works", link: "Fate-stay-night-Unlimited-Blade-Works"});
 animeFinished.push({name: "Psycho Pass", link: "Psycho-Pass"});
 animeFinished.push({name: "Soul Eater", link: "Soul-Eater"});
 animeFinished.push({name: "Steins;Gate", link: "Steins-Gate"});
