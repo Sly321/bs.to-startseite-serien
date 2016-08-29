@@ -7,7 +7,7 @@
 // @include      https://bs.to/settings/series
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.1.0
+// @version      1.1.1
 // @updateURL    https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-mainpage-styling.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -30,5 +30,8 @@
 	unsafeWindow.addGlobalStyle(".navigation-panel > hr { width: 100%; float: left; }");
 
 	// Color related
-	unsafeWindow.addGlobalStyle(".serienElement.highlighted { background: #cfddff }");
+	unsafeWindow.addGlobalStyle(".serienElement:nth-child(2n+1) { background: #cfddff }");
+	unsafeWindow.addGlobalStyle(".serienElement.seen { background: #dadada; }");
+	unsafeWindow.addGlobalStyle(".serienElement.seen > a { color: #b3b3b3; }");
+	//unsafeWindow.addGlobalStyle(".serienElement.highlighted { background: #cfddff }");
 })();
