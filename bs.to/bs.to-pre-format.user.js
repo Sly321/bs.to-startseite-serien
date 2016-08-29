@@ -6,7 +6,7 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.2
+// @version      1.2.3
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-pre-format.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // @grant        unsafeWindow
@@ -20,6 +20,7 @@
 	var favorites = [];
 	favorites.push({values: unsafeWindow.getFavorites(), title: "Favoriten", position: "left"});
 	favorites.push.apply(favorites, unsafeWindow.serienContainer);
+	unsafeWindow.serienContainer = favorites;
 	// Building the essentiell elements
 	unsafeWindow.buildLogin();
 	unsafeWindow.buildNav();
