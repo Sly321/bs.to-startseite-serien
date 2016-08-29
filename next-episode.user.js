@@ -3,7 +3,7 @@
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
 // @description  Zeigt dir deine Serienlinks direkt auf der Startseite an
-// @version      1.2.1
+// @version      1.3
 // @include      https://bs.to/serie*
 // @icon         https://s.bs.to/favicon.ico
 // @grant        none
@@ -60,7 +60,8 @@ if(currentHref !== undefined) {
     //console.log ("NAME: " + Name);
     var exdays = 50;
     var d = new Date();
-    d.setTime (d.getTime () + (exdays*24*60*60*1000));
+    var exyears = 10;
+    d.setTime (d.getTime () + (exyears*365*24*60*60*1000));
     var expires = "expires=" + d.toUTCString ();
     var value = [{link: Link, season: Season, folge: Folge, Name: Name}];
     var old_value = [];
