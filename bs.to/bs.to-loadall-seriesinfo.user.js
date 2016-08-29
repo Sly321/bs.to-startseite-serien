@@ -2,7 +2,7 @@
 // @name		    bs.to-loadall-moviedb
 // @namespace		https://github.com/Sly321/bs.to-startseite-serien
 // @author			Sly321
-// @version			1.1
+// @version			1.4
 // @description	    Crossloads series informations.
 // @icon		    https://s.bs.to/favicon.ico
 // @include			https://bs.to/
@@ -327,6 +327,26 @@ $(document).ready(function() {
 								break;
 							case "Steins;Gate":
 								if(parsedCookie.season == 1 && parsedCookie.folge == 24)
+									specialCase = true;
+								break;
+							case "Bleach":
+								if(parsedCookie.season == 16 && parsedCookie.folge == 18)
+									specialCase = true;
+								break;
+							case "Dragonball":
+								if(parsedCookie.season == 3 && parsedCookie.folge == 54)
+									specialCase = true;
+								break;
+							case "Dragonball-Z":
+								if(parsedCookie.season == 10 && parsedCookie.folge == 84)
+									specialCase = true;
+								break;
+							case "Naruto":
+								if(parsedCookie.season == 9 && parsedCookie.folge == 12)
+									specialCase = true;
+								break;
+							case "Hunter-x-Hunter":
+								if(parsedCookie.season == 3 && parsedCookie.folge == 48)
 									specialCase = true;
 								break;
 						}
