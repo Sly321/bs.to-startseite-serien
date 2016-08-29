@@ -2,7 +2,7 @@
 // @name		    bs.to-loadall-moviedb
 // @namespace		https://github.com/Sly321/bs.to-startseite-serien
 // @author			Sly321
-// @version			1.0
+// @version			1.1
 // @description	    Crossloads series informations.
 // @icon		    https://s.bs.to/favicon.ico
 // @include			https://bs.to/
@@ -22,6 +22,8 @@ let key = 'api_key=2e74839a423b1266f0ccf5043bade403';
 var allSeries         = [];
 var counter           = 0;
 var seriesArray       = [];
+var currentImageUrl   = "";
+var infoLoaded        = false;
 
 var createModal = function(id) {
 	var modal = {};
@@ -67,6 +69,7 @@ Modal.wrapper.append($(document.createElement("button")).css("width", "100%").cs
 			$("#load-series-modal").css("z-index", "-1");
 		}, 500);
 	});
+	seriesArray = [];
 	getSerieByName(allSeries[0].name);
 }).html("Starte den Import"));
 
@@ -159,6 +162,9 @@ function loadSeriesByName(data) {
 		case "Dragonball":
 			result = data.results[2];
 			break;
+		case "Attack on Titan":
+			result = data.results[1];
+			break;
 		default:
 			result = data.results[0];
 			break;
@@ -178,6 +184,7 @@ unsafeWindow.loadSeriesByName = exportFunction(loadSeriesByName, unsafeWindow);
 function loadSeriesById(data) {
 	$($("#loadedContainer")).append($(document.createElement("h5")).html((counter+1) + ": " + data.name + " Series Info"));
 	getSeasonById(data.id, data.number_of_seasons);
+	currentImageUrl = "https://image.tmdb.org/t/p/w300_and_h450_bestv2" + data.poster_path;
 	$('#loadedContainer').animate({
         scrollTop: $("#loadedContainer").scrollTop() + $("#loadedContainer").height()
     }, 1);
@@ -191,7 +198,7 @@ function loadSeasonById(data) {
 	$($("#loadedContainer")).append($(document.createElement("h5")).html((counter+1) + ": " + data.name + " Season Info"));
 	var episodesCount = data.episodes.length;
 	var seasonCount = data.season_number;
-	var imageLink = "https://image.tmdb.org/t/p/w300_and_h450_bestv2" + data.poster_path;
+	var imageLink = currentImageUrl;
 	seriesArray.push({name: allSeries[counter].name, episodes: episodesCount, seasons: seasonCount, image: imageLink});
 
 	counter++;
@@ -201,7 +208,7 @@ function loadSeasonById(data) {
 	} else if(counter >= allSeries.length) {
 		setSpanText(counter, allSeries.length, "Alle Serieninfos erfolgreich geladen.");
 		unsafeWindow.seriesArray = cloneInto(seriesArray, unsafeWindow);
-		setInfoCookies();
+		setInfoLocalStorage();
 		buildToolTip();
 	}
 	$('#loadedContainer').animate({
@@ -211,19 +218,25 @@ function loadSeasonById(data) {
 unsafeWindow.loadSeasonById = exportFunction(loadSeasonById, unsafeWindow);
 
 function buildToolTip() {
-	var tooltip = $(document.createElement("div")).css("position", "absolute").css("z-index", "-1").css("transition","opacity 0.5s ease").css("opacity", "0").css("width", "402px").css("height", "130px").css("padding", "10px").css("background", "white").css("border", "1px solid black");
-	var image = $(document.createElement("img")).attr("src", "https://image.tmdb.org/t/p/w300_and_h450_bestv2/ayebqASxTXVSo9Qoug6M5YowZS0.jpg").css("height", "100%");
-	var tooltipTitle = $(document.createElement("h2")).html("Test");
-	tooltip.append(image, tooltipTitle);
+	var tooltip = $(document.createElement("div")).css("position", "absolute").css("top", "5px").css("left", "5px").css("z-index", "-1").css("font-family", "calibri, consolas, arial").css("transition","opacity 0.5s ease").css("opacity", "0").css("width", "402px").css("height", "130px").css("padding", "10px").css("background", "white").css("border", "1px solid black");
+	var image = $(document.createElement("img")).attr("src", "https://image.tmdb.org/t/p/w300_and_h450_bestv2/ayebqASxTXVSo9Qoug6M5YowZS0.jpg").css("height", "100%").css("float", "left");
+	var tooltipTitle = $(document.createElement("h5")).html("Test").css("float", "left").css("margin-left", "10px").css("width", "305px");
+	var tooltipLine = $(document.createElement("hr")).css("float", "left").css("margin-left", "10px").css("margin-top", "10px").css("margin-bottom", "10px").css("width", "303px");
+	var seasonsAmount = $(document.createElement("h5")).html("Test").css("float", "left").css("margin-left", "10px").css("width", "305px");
+	var episodesAmount = $(document.createElement("h5")).html("Test").css("float", "left").css("margin-left", "10px").css("width", "305px");
+	tooltip.append(image, tooltipTitle, tooltipLine, seasonsAmount, episodesAmount);
 	var tooltiptimer = null;
 	$("body").append(tooltip);
 	$(".serienElement").mouseenter(function() {
 		var self = this;
+		var seriesName = self.children[0].innerHTML;
+		var obj = getObjectWhereName(seriesArray, seriesName);
+		seasonsAmount.html("Staffeln: " + obj.seasons);
+		episodesAmount.html("Episoden: " + obj.episodes);
+		image.attr("src", obj.image);
+		tooltipTitle.html(obj.name);
 		var tooltiptimer = setTimeout(function() {
-			console.log("timer done");
-			console.log(self);
 			position = $(self).offset();
-			console.log(position); // position = { left: 42, top: 567 }
 			tooltip.css("top", position.top - 155 + "px").css("left", position.left - 1 + "px").css("z-index", "10").css("opacity", "1");
 		}, 800 );
 		$('.serienElement').mouseleave( function() {
@@ -233,44 +246,95 @@ function buildToolTip() {
 	});
 }
 
-function setInfoCookies() {
-	for(var x = 0; x < seriesArray.length; x++) {
-		var seriesObject = {};
-		seriesObject.n = seriesArray[x].name;
-		seriesObject.s = seriesArray[x].seasons;
-		seriesObject.e = seriesArray[x].episodes;
-		seriesObject.i = seriesArray[x].image;
-		localStorage.setItem("series_info_" + seriesArray[x].name, JSON.stringify(seriesObject));
-	}
+function setInfoLocalStorage() {
+	localStorage.setItem("series_info", JSON.stringify(seriesArray));
 	unsafeWindow.set_cookie("series_info_loaded", true);
 }
 
-function getInfoCookies() {
-	for(var x = 0; x < allSeries.length; x++) {
-		var cookie_vals = unsafeWindow.get_cookie("series_info_" + allSeries[x].name);
-		console.log(cookie_vals);
-		//var name = unsafeWindow.get_cookie("");
-		//var episodesCount = unsafeWindow.get_cookie("");
-		//var seasonCount = unsafeWindow.get_cookie("");
-		//var imageLink = unsafeWindow.get_cookie("");
-		//seriesArray.push({name: allSeries[counter].name, episodes: episodesCount, seasons: seasonCount, image: imageLink});
+function getInfoLocalStorage() {
+	seriesArray = JSON.parse(localStorage.getItem("series_info"));
+}
+
+function getObjectWhereName(array, name) {
+	for(var x = 0; x < array.length; x++) {
+		if(array[x].name == name)
+			return array[x];
 	}
+	return null;
 }
 
 // Doc Ready
 $(document).ready(function() {
+	$(".navigation-panel").append($(document.createElement("div")).html("Daten Aktualisieren").css("position", "absolute").css("background", "#cfddff").css("width", "160px").css("text-align", "center").css("top", "35px").css("left", "calc(50% - 81px)").css("padding", "2px").css("cursor", "pointer").on("click", function() {
+		$("#load-series-modal").css("opacity", "1");
+		$("#load-series-modal").css("z-index", "30");
+	}));
 	for(var x = 0; x < unsafeWindow.serienContainer.length; x++) {
 		for(var y = 0; y < unsafeWindow.serienContainer[x].values.length; y++) {
 			allSeries.push(unsafeWindow.serienContainer[x].values[y]);
 		}
 	}
-	var seriesInfoLoaded = get_cookie("series_info_loaded");
+	var seriesInfoLoaded = unsafeWindow.get_cookie("series_info_loaded");
 	if (seriesInfoLoaded === undefined) {
 		$("#load-series-modal").css("opacity", "1");
 		$("#load-series-modal").css("z-index", "30");
 		setSpanText(counter, allSeries.length, "Du hast noch keine Daten, importier mal du Spast!");
 	} else {
-		getInfoCookies();
+		getInfoLocalStorage();
+		infoLoaded = true;
 		buildToolTip();
 	}
+
+	function getAllSeriesCookies() {
+		var theCookies = document.cookie.split(';');
+		var regexForSerie = /serien_stand_([\w-]*)=([.\[\]\{\}\"\w:,-]*)/;
+		var cookieArray = [];
+		for (var i = 1 ; i <= theCookies.length; i++) {
+			var theSerieMatch = theCookies[i-1].match(regexForSerie);
+			if(theSerieMatch !== null) {
+				cookieArray.push(theSerieMatch[2]);
+			}
+		}
+		return cookieArray;
+	}
+
+	function addSerieInfoToElements(cookieArray) {
+		for (var x = 0; x < cookieArray.length; x++) {
+			var parsedCookie = JSON.parse(cookieArray[x])[0][0];
+			var element;
+			if ($('a[href="serie/'+ parsedCookie.link + '"]')[0] === undefined && $('a[href="https://bs.to/serie/'+ parsedCookie.link + '"]')[0] === undefined) {
+				console.log("Undefined: " + parsedCookie.link);
+			} else {
+				if($('a[href="serie/'+ parsedCookie.link + '"]')[0] === undefined) {
+					element = $($('a[href="https://bs.to/serie/'+ parsedCookie.link + '"]')[0].parentElement);
+				} else {
+					element = $($('a[href="serie/'+ parsedCookie.link + '"]')[0].parentElement);
+				}
+				if(parsedCookie.Name !== undefined) {
+					var thelink = "serie/" + parsedCookie.link + "/" + parsedCookie.season + "/" + parsedCookie.folge + "-" + parsedCookie.Name;
+					var linkElement = $(document.createElement("a"));
+					linkElement.attr("href", thelink);
+					linkElement.css("float", "right").css("margin-right", "5px");
+					linkElement.html("Last: S" + parsedCookie.season + " E" + parsedCookie.folge);
+					element.append(linkElement);
+					if(infoLoaded) {
+						var seriesName = element.children()[0].innerHTML;
+						var obj = getObjectWhereName(seriesArray, seriesName);
+						var lastSeason = obj.seasons;
+						var lastEpisode =  obj.episodes;
+						if(lastSeason == parsedCookie.season && lastEpisode == parsedCookie.folge) {
+							var parent = element.parent();
+							element.detach();
+							parent.append(element);
+							element.addClass("seen");
+						}
+					}
+				} else {
+					element.innerHTML += "<span class='serie-info'>Last: S" + parsedCookie.season + " E" + parsedCookie.folge + "</span>";
+				}
+			}
+		}
+	}
+
+	addSerieInfoToElements(getAllSeriesCookies());
 });
