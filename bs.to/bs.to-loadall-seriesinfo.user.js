@@ -319,10 +319,21 @@ $(document).ready(function() {
 					element.append(linkElement);
 					if(infoLoaded) {
 						var seriesName = element.children()[0].innerHTML;
+						var specialCase = false;
+						switch(seriesName) {
+							case "Death Note":
+								if(parsedCookie.season == 2 && parsedCookie.folge == 18)
+									specialCase = true;
+								break;
+							case "Steins;Gate":
+								if(parsedCookie.season == 1 && parsedCookie.folge == 24)
+									specialCase = true;
+								break;
+						}
 						var obj = getObjectWhereName(seriesArray, seriesName);
 						var lastSeason = obj.seasons;
 						var lastEpisode =  obj.episodes;
-						if(lastSeason == parsedCookie.season && lastEpisode == parsedCookie.folge) {
+						if((lastSeason == parsedCookie.season && lastEpisode == parsedCookie.folge) | specialCase) {
 							var parent = element.parent();
 							element.detach();
 							parent.append(element);
