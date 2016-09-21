@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name         Vivo Script
 // @namespace    https://Github.com/Sly321
-// @version      0.1
-// @author       You
+// @author       Sly321
 // @match        https://vivo.sx/*
 // @grant        none
 // @icon		 https://static.vivo.sx/images/favicon.ico
