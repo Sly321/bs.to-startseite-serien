@@ -5,6 +5,11 @@
 // @author       You
 // @match        https://vivo.sx/*
 // @grant        none
+// @icon		 https://static.vivo.sx/images/favicon.ico
+// @version      1.0
+// @grant        none
+// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/vivo/vivo.user.js
+
 // ==/UserScript==
 
 (function() {
