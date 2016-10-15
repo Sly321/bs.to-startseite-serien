@@ -2,7 +2,7 @@
 // @name         bs.to-favorite-fix
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      1.0
+// @version      1.0.1
 // @description  For fixing the bs.to favorite site
 // @match        https://bs.to/settings/series
 // @icon         https://s.bs.to/favicon.ico
@@ -13,10 +13,7 @@
 (function() {
     'use strict';
 	$("head").append('<script src="https://use.fontawesome.com/15d925a7dd.js"></script>');
-	// Styles
-	//var fontAwesome = GM_getResourceText ("fontAwesome");
-	//GM_addStyle (fontAwesome);
-	// Vars
+	
 	var currentFavorites = $("#series-menu > li");
 	currentFavorites.sort(function(a, b) {
 		return a.innerHTML.slice(0, 4).localeCompare(b.innerHTML.slice(0, 4));
@@ -84,7 +81,7 @@
 	}
 	unsafeWindow.allList = $(document.createElement("ul")).append(notFavorites);
 	var allContainer = $(document.createElement("div")).append(allFontAwesome, allHeadline, line_two, allList);
-	setListContainerCSS(allContainer);
+	unsafeWindow.setListContainerCSS(allContainer);
 	root.append(allContainer);
 
 	unsafeWindow.saveFavorites = function() {
@@ -115,7 +112,7 @@
 	};
 	unsafeWindow.submitBtn = $(document.createElement("button"));
 	submitBtn.html("Speichern");
-	setStandardCSS(submitBtn);
+	unsafeWindow.setStandardCSS(submitBtn);
 	submitBtn.css("width", "881px");
 	submitBtn.css("font-size", "24px");
 	submitBtn.css("transition", "background 0.5s ease");
