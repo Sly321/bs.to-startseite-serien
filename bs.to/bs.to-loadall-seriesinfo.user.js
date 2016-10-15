@@ -2,15 +2,15 @@
 // @name		    bs.to-loadall-moviedb
 // @namespace		https://github.com/Sly321/bs.to-startseite-serien
 // @author			Sly321
-// @version			1.4
-// @description	    Crossloads series informations.
+// @version			1.4.1
+// @description	Crossloads series informations.
 // @icon		    https://s.bs.to/favicon.ico
 // @include			https://bs.to/
-// @include         https://bs.to/home
-// @require		    https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
-// @require         https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js
+// @include     https://bs.to/home
+// @require		  https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
+// @require     https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js
 // @updateURL		https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-loadall-seriesinfo.user.js
-// @grant           unsafeWindow
+// @grant       unsafeWindow
 // ==/UserScript==
 //
 
@@ -169,9 +169,14 @@ function loadSeriesByName(data) {
 			result = data.results[0];
 			break;
 	}
-	$($("#loadedContainer")).append($(document.createElement("h5")).html((counter + 1) + ": " + result.name));
-	setSpanText(counter + 1, allSeries.length, "... Lade serie: " + result.name + "...");
-	getSerieById(result.id);
+	if(result !== undefined) {
+		$($("#loadedContainer")).append($(document.createElement("h5")).html((counter + 1) + ": " + result.name));
+		setSpanText(counter + 1, allSeries.length, "... Lade serie: " + result.name + "...");
+		getSerieById(result.id);
+	} else {
+		setSpanText(counter + 1, " >>>>> ERROR beim nächsten. MovieDB sucked i.wo call 911!");
+		console.log(data);
+	}
 	$('#loadedContainer').animate({
         scrollTop: $("#loadedContainer").scrollTop() + $("#loadedContainer").height()
     }, 1);
@@ -366,6 +371,5 @@ $(document).ready(function() {
 			}
 		}
 	}
-
 	addSerieInfoToElements(getAllSeriesCookies());
 });
