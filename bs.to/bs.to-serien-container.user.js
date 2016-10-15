@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name         bs.to-serien-container
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
@@ -6,14 +6,14 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.6
+// @version      1.2.7
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
 
 /* Normale Serien Start */
 var serien = [];
-serien.push({name: "Agents-of-S-H-I-E-L-D", link: "Marvel-s-Agents-of-S-H-I-E-L-D"});
+serien.push({name: "Marvel's Agents of S.H.I.E.L.D.", link: "Marvel-s-Agents-of-S-H-I-E-L-D"});
 serien.push({name: "Arrow", link: "Arrow"});
 serien.push({name: "Better Call Saul", link: "Better-Call-Saul"});
 serien.push({name: "Daredevil", link: "Marvel-s-Daredevil"});
