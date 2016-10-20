@@ -6,7 +6,7 @@
 // @include      https://bs.to/
 // @include      https://bs.to/home
 // @icon         https://s.bs.to/favicon.ico
-// @version      1.2.7
+// @version      1.2.8
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js
 // @grant        unsafeWindow
 // ==/UserScript==
@@ -110,7 +110,7 @@ animeRunning.sort(function(a, b) {
 
 var animeFinished = [];
 animeFinished.push({name: "Btooom!", link: "Btooom"});
-animeFinished.push({name: "Ansatsu Kyōshitsu", link: "Assassination-Classroom"});
+animeFinished.push({name: "Assassination Classroom", link: "Assassination-Classroom"});
 animeFinished.push({name: "Elfen Lied", link: "Elfen-Lied"});
 animeFinished.push({name: "Guilty Crown", link: "Guilty-Crown"});
 animeFinished.push({name: "Devil is a Part Timer", link: "The-Devil-is-a-Part-Timer"});

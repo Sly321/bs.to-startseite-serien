@@ -58,9 +58,13 @@ current-episode
 ##### Beispiel
 ![Beispiel für Overlay](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/img/current-episode.PNG "Beispiel für Overlay")
 
-##### Neues Projekt
-* 1 [PreLoadScript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js)
+##### Ladereihenfolge
+* 1 [Default Function](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-default-functions.user.js)
 * 2 [SerienContainer](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien-container.user.js)
-* 3 [PreFormatStartseite](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-pre-format.user.js)
-* 4 [MainPageStyling](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-mainpage-styling.user.js)
+* 3 [FavoFix](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-favorite-fix.user.js)
+* 4 [PreFormatStartseite](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-pre-format.user.js)
 * 5 [InfoMovieDB](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-infoscript-moviedb.user.js)
+* 6 [MainPageStyling](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-mainpage-styling.user.js)
+* 7 [LoadAll](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-loadall-seriesinfo.user.js)
+* 8 [NextEpisode](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/next-episode.user.js)
+* 9 [VivoScript](https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/vivo/vivo.user.js)
