@@ -2,18 +2,18 @@
 // @name         bs.to-favorite-fix
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      1.0.1
+// @version      1.0.2
 // @description  For fixing the bs.to favorite site
 // @match        https://bs.to/settings/series
 // @icon         https://s.bs.to/favicon.ico
 // @grant        unsafeWindow
 // @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-favorite-fix.user.js
+// @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // ==/UserScript==
 
 (function() {
     'use strict';
 	$("head").append('<script src="https://use.fontawesome.com/15d925a7dd.js"></script>');
-	
 	var currentFavorites = $("#series-menu > li");
 	currentFavorites.sort(function(a, b) {
 		return a.innerHTML.slice(0, 4).localeCompare(b.innerHTML.slice(0, 4));
@@ -32,8 +32,8 @@
 	nav.append($(document.createElement("div")).html("Ich weiß die Seite ist laggy, aber besser geht es grad nicht. Sorry!").css("margin-top", "10px").css("font-size", "12px"));
 	nav.append($(document.createElement("div")).html("Wenn die Favoriten Leer sind dann kommt ein Kreuz ohne zusammenhang, dafür kann ich nichts liegt an der Struktur im Backend. Einfach das Kreuz wegklicken.").css("margin-top", "5px").css("font-size", "12px"));
 	nav.append($(document.createElement("label")).html("Filter: ").append($(document.createElement("input")).attr("type", "text").attr("id", "filterInput").css("width", "385px").keyup(function() {
-        var filterValue = $("#filterInput").val();
-		filterAllList(filterValue);
+    var filterValue = $("#filterInput").val();
+		unsafeWindow.filterAllList(filterValue);
 	})).css("float", "right").css("margin-top", "10px").css("font-size", "15px"));
 	nav = $(".navigation-panel");
 	var root = $("#root");
@@ -57,8 +57,7 @@
 	var favoritesHeadline = $(document.createElement("h3")).html("Favoriten").css("margin", 0);
 	var line_one = $(document.createElement("hr"));
 	var favoritesList = $(document.createElement("ul")).append(currentFavorites);
-	var favoritesContainer = $(document.createElement("div")).append(favoritesFontAwesome, favoritesHeadline, line_one, favoritesList);
-	unsafeWindow.setListContainerCSS(favoritesContainer);
+	var favoritesContainer = $(document.createElement("div")).append(favoritesFontAwesome, favoritesHeadline, line_one, favoritesList).addClass("list-container standard-css");
 	root.append(favoritesContainer);
 	// Nicht Favoriten
 	var allFontAwesome = unsafeWindow.createFontAwesome("fa-globe");
@@ -80,10 +79,8 @@
 		$(notFavorites[y]).append(addBtn);
 	}
 	unsafeWindow.allList = $(document.createElement("ul")).append(notFavorites);
-	var allContainer = $(document.createElement("div")).append(allFontAwesome, allHeadline, line_two, allList);
-	unsafeWindow.setListContainerCSS(allContainer);
+	var allContainer = $(document.createElement("div")).append(allFontAwesome, allHeadline, line_two, unsafeWindow.allList).addClass("list-container standard-css");
 	root.append(allContainer);
-
 	unsafeWindow.saveFavorites = function() {
 		var series = [];
 		$(favoritesList[0].children).each(function() {
@@ -105,19 +102,16 @@
 		});
 	};
 	unsafeWindow.filterAllList = function(str) {
-		console.time("filter");
-		$(allList[0].children).removeClass("hidden");
-		$(allList[0].children).not(":contains('" + str + "')").addClass("hidden");
-		console.timeEnd("filter");
+		$(unsafeWindow.allList[0].children).removeClass("hidden");
+		$(unsafeWindow.allList[0].children).not(":contains('" + str + "')").addClass("hidden");
 	};
-	unsafeWindow.submitBtn = $(document.createElement("button"));
+	var submitBtn = $(document.createElement("button")).addClass("standard-css");
 	submitBtn.html("Speichern");
-	unsafeWindow.setStandardCSS(submitBtn);
 	submitBtn.css("width", "881px");
 	submitBtn.css("font-size", "24px");
 	submitBtn.css("transition", "background 0.5s ease");
 	submitBtn.on("click", function() {
-		saveFavorites();
+		unsafeWindow.saveFavorites();
 	});
 	root.append(submitBtn);
 })();
