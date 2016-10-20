@@ -2,7 +2,7 @@
 // @name		    bs.to-loadall-moviedb
 // @namespace		https://github.com/Sly321/bs.to-startseite-serien
 // @author			Sly321
-// @version			1.4.1
+// @version			1.4.2
 // @description	Crossloads series informations.
 // @icon		    https://s.bs.to/favicon.ico
 // @include			https://bs.to/
@@ -305,11 +305,13 @@ $(document).ready(function() {
 
 	function addSerieInfoToElements(cookieArray) {
 		for (var x = 0; x < cookieArray.length; x++) {
+			console.log(x);
 			var parsedCookie = JSON.parse(cookieArray[x])[0][0];
 			var element;
 			if ($('a[href="serie/'+ parsedCookie.link + '"]')[0] === undefined && $('a[href="https://bs.to/serie/'+ parsedCookie.link + '"]')[0] === undefined) {
 				console.log("Undefined: " + parsedCookie.link);
 			} else {
+				console.log("Defined: " + parsedCookie.link);
 				if($('a[href="serie/'+ parsedCookie.link + '"]')[0] === undefined) {
 					element = $($('a[href="https://bs.to/serie/'+ parsedCookie.link + '"]')[0].parentElement);
 				} else {
@@ -356,8 +358,12 @@ $(document).ready(function() {
 								break;
 						}
 						var obj = getObjectWhereName(seriesArray, seriesName);
-						var lastSeason = obj.seasons;
-						var lastEpisode =  obj.episodes;
+						var lastSeason;
+						var lastEpisode;
+						if( obj !== null ) {
+							lastSeason = obj.seasons;
+							lastEpisode = obj.episodes;
+						}
 						if((lastSeason == parsedCookie.season && lastEpisode == parsedCookie.folge) | specialCase) {
 							var parent = element.parent();
 							element.detach();
