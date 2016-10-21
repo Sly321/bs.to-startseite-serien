@@ -2,7 +2,7 @@
 // @name         bs.to-serie
 // @namespace    https://github.com/Sly321/bs.to-startseite-serien
 // @author       Sly321
-// @version      1.1.0
+// @version      1.1.1
 // @description  For fixing the bs.to series site
 // @match        https://bs.to/serie/*
 // @icon         https://s.bs.to/favicon.ico
