@@ -7,7 +7,7 @@
 // @match        https://bs.to/serie/*
 // @icon         https://s.bs.to/favicon.ico
 // @grant        unsafeWindow
-// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serien.user.js
+// @updateURL	 https://raw.githubusercontent.com/Sly321/bs.to-startseite-serien/master/bs.to/bs.to-serie.user.js
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 // ==/UserScript==
 
